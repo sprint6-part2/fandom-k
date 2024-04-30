@@ -1,7 +1,5 @@
 import Test from '@/components/Test';
 
-function MyPage() {
-  return <Test />;
-}
+const MyPage = () => <Test />;
 
 export default MyPage;

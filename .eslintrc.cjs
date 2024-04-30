@@ -20,6 +20,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'react/function-component-definition': 'off',
     'linebreak-style': 0,
     'import/extensions': 'off',
     'react/react-in-jsx-scope': 'off',
