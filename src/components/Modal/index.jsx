@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Modal = () => {
+const Modal = ({ isOpen, title, children, closeModal }) => {
   return <div>Modal</div>;
 };
 
