@@ -20,6 +20,9 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'arrow-body-style': ['error', 'always'],
+    'react/prop-types': 'off',
+    'react/jsx-props-no-spreading': 'off',
     'react/function-component-definition': 'off',
     'linebreak-style': 0,
     'import/extensions': 'off',
