@@ -46,6 +46,7 @@ module.exports = {
           },
         ],
         pathGroupsExcludedImportTypes: ['react*'],
+        'arrow-body-style': ['error', 'always'],
       },
     ],
   },
