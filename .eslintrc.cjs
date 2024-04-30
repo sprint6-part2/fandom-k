@@ -20,6 +20,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'no-console': 'off',
     'arrow-body-style': ['error', 'always'],
     'react/prop-types': 'off',
     'react/jsx-props-no-spreading': 'off',
