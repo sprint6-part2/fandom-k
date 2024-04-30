@@ -1,20 +1,13 @@
 import React from 'react';
-import ProgressBar from '../../components/ProgressBar/index';
+import Sample from '@/components/Sample/Sample';
 
 const TestPage = () => {
-  const test = 1;
-
   return (
-    <div style={{width:"800px",height:"500px",backgroundColor:"black", padding:"50px", margin:"0 auto"}}>
-      <ProgressBar />
+    <div>
+      <p>공통 컴포넌트 만든거는 test 페이지에서 테스트합니다.</p>
+      <Sample />
     </div>
   );
-
-  // return (
-  //   <div>
-  //     <p>{test}</p>
-  //   </div>
-  // );
 };
 
 export default TestPage;
