@@ -3,16 +3,11 @@
   background-color: antiquewhite;
 }
 
-.profileItems {
-  display: flex;
-  justify-content: space-around;
-  gap: 16px;
-}
-
 .profile {
   height: 128px;
   width: 128px;
   border-radius: 50%;
+  margin-bottom: 10px;
 
   background-color: aquamarine;
 }

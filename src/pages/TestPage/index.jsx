@@ -17,21 +17,15 @@ const TestPage = () => {
       </Carousel>
       <p>마이페이지에 들어갈 캐러셀 컴포넌트 테스트</p>
       <Carousel customSettings={myPageSetting} isLongArrow>
-        {['1장', '2장', '3장'].map((page) => {
-          return (
-            <div key={page}>
-              <div className={styles.profileItems}>
-                {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => {
-                  return (
-                    <div key={item} className={styles.profile}>
-                      {page + item}
-                    </div>
-                  );
-                })}
+        {[1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17].map(
+          (item) => {
+            return (
+              <div className={styles.profile} key={item}>
+                {item}
               </div>
-            </div>
-          );
-        })}
+            );
+          },
+        )}
       </Carousel>
     </div>
   );
