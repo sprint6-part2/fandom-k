@@ -20,6 +20,12 @@ const CarouselArrow = ({ onClick, longArrow, hidden }) => {
   );
 };
 
+/**
+ * @param {children} children 캐러셀 안에 들어갈 내용
+ * @param {customSettings} object 캐러셀 세팅 객체
+ * @param {isLongArrow} boolean 캐러셀 화살표 길이 긴지 여부 (마이페이지에서 김)
+ * @returns
+ */
 const Carousel = ({ children, customSettings, isLongArrow = false }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const childCount = Children.count(children);
