@@ -1,0 +1,18 @@
+.cardItem {
+  height: 400px;
+  background-color: antiquewhite;
+}
+
+.profileItems {
+  display: flex;
+  justify-content: space-around;
+  gap: 16px;
+}
+
+.profile {
+  height: 128px;
+  width: 128px;
+  border-radius: 50%;
+
+  background-color: aquamarine;
+}
