@@ -1,3 +1,5 @@
+import { TABLET_WIDTH, MOBILE_WIDTH } from './screenSizes';
+
 /**
  * 캐러셀 세팅옵션
  */
@@ -20,7 +22,7 @@ export const listPageSettings = {
       },
     },
     {
-      breakpoint: 744,
+      breakpoint: TABLET_WIDTH,
       settings: {
         slidesToShow: 2.3,
         slidesToScroll: 1,
@@ -29,7 +31,7 @@ export const listPageSettings = {
       },
     },
     {
-      breakpoint: 375,
+      breakpoint: MOBILE_WIDTH,
       settings: {
         slidesToShow: 2.2,
         slidesToScroll: 1,
@@ -47,7 +49,7 @@ export const myPageSetting = {
 
   responsive: [
     {
-      breakpoint: 375,
+      breakpoint: MOBILE_WIDTH,
       settings: {
         arrows: false,
       },
