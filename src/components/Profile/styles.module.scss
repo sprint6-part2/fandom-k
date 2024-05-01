@@ -1,4 +1,5 @@
 $lg-size: 128px;
+$bg-size: 100px;
 $md-size: 98px;
 $sm-size: 70px;
 
@@ -7,31 +8,75 @@ $sm-size: 70px;
   border: 1.31px solid #f96868;
 
   position: relative;
-}
 
-:global {
-  .lg {
+  cursor: pointer;
+
+  &.lg {
     width: $lg-size;
     height: $lg-size;
   }
 
-  .md {
+  &.bg {
+    width: $bg-size;
+    height: $bg-size;
+  }
+
+  &.md {
     width: $md-size;
     height: $md-size;
   }
 
-  .sm {
+  &.sm {
     width: $sm-size;
     height: $sm-size;
   }
 }
 
-.image {
+.image,
+.selected {
   border-radius: 50%;
-  width: 95%;
-  height: 95%;
-
+  object-fit: cover;
   position: absolute;
-  top: 2.5%;
-  left: 2.5%;
+
+  inset: 0;
+  margin: auto;
+
+  &.lg {
+    width: $lg-size - 10;
+    height: $lg-size - 10;
+  }
+
+  &.bg {
+    width: $bg-size - 10;
+    height: $bg-size - 10;
+  }
+
+  &.md {
+    width: $md-size - 10;
+    height: $md-size - 10;
+  }
+
+  &.sm {
+    width: $sm-size - 10;
+    height: $sm-size - 10;
+  }
+}
+
+.selected {
+  z-index: 1;
+  background: linear-gradient(271.36deg, #f96e68 -9.84%, #fe578f 107.18%);
+  opacity: 50%;
+}
+
+.check {
+  position: absolute;
+  z-index: 2;
+
+  inset: 0;
+  margin: auto;
+
+  &.md {
+    width: 27px;
+    height: 20px;
+  }
 }
