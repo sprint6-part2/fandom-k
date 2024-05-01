@@ -33,7 +33,7 @@ $sm-size: 70px;
 }
 
 .image,
-.selected {
+.clicked {
   border-radius: 50%;
   object-fit: cover;
   position: absolute;
@@ -62,7 +62,7 @@ $sm-size: 70px;
   }
 }
 
-.selected {
+.clicked {
   z-index: 1;
   background: linear-gradient(271.36deg, #f96e68 -9.84%, #fe578f 107.18%);
   opacity: 50%;
@@ -78,5 +78,17 @@ $sm-size: 70px;
   &.md {
     width: 27px;
     height: 20px;
+  }
+}
+
+.selected {
+  position: absolute;
+  z-index: 3;
+  top: 1px;
+  right: -4px;
+
+  &.sm {
+    width: 22px;
+    height: 22px;
   }
 }
