@@ -1,0 +1,37 @@
+$lg-size: 128px;
+$md-size: 98px;
+$sm-size: 70px;
+
+.profile {
+  border-radius: 50%;
+  border: 1.31px solid #f96868;
+
+  position: relative;
+}
+
+:global {
+  .lg {
+    width: $lg-size;
+    height: $lg-size;
+  }
+
+  .md {
+    width: $md-size;
+    height: $md-size;
+  }
+
+  .sm {
+    width: $sm-size;
+    height: $sm-size;
+  }
+}
+
+.image {
+  border-radius: 50%;
+  width: 95%;
+  height: 95%;
+
+  position: absolute;
+  top: 2.5%;
+  left: 2.5%;
+}
