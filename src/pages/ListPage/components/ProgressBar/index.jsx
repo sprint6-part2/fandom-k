@@ -9,11 +9,14 @@ const ProgressBar = ({
   deadline = null,
   targetDonation = 0,
 }) => {
-  const progressed = (receivedDonations / targetDonation) * 100;
-  const credit = numberWithCommas(receivedDonations);
-  const countdown = getTimeLeft(deadline);
+  const progressed = (receivedDonations / targetDonation) * 100; // 현재 몇퍼센트 진행되었는지 계산
+  const credit = numberWithCommas(receivedDonations); // 정수형을 콤마를 넣은 문자열로 변화 5000 -> '5,000'
+  const countdown = getTimeLeft(deadline); // 마감기한 현재시간과 비교해서 남은 시간 계산
+
+  //prop에 값이 없을 경우 크레딧은 0, 마가기한은 만료됨, 진행바는 100% 설정됩니다.
 
   return (
+    // 높이는 26px로 고정
     <div className={styles.container}>
       <div className={styles.infoContainer}>
         <div className={styles.credit}>
