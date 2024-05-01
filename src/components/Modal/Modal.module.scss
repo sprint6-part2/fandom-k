@@ -1,0 +1,63 @@
+$closeButtonColor: #828282;
+$titleColor: #f7f7f8;
+$white: #fff;
+
+@mixin button-color($color) {
+  background-color: transparent;
+  color: $color;
+}
+
+@mixin font-color($color, $weight, $size, $lineHeight) {
+  font: {
+    family: Pretendard;
+    weight: $weight;
+    size: $size;
+  }
+  line-height: $lineHeight;
+  color: $color;
+}
+
+.ModalBackDrop {
+  z-index: 1; //위치지정 요소
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.ModalView {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 8px;
+  width: 327px;
+  height: 509px;
+  padding: 24px 32px 16px;
+  background-color: #181d26;
+}
+
+.ModalViewHeader {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  > h2 {
+    @include font-color($titleColor, 600, 18px, 21.48px);
+  }
+  > button {
+    border-style: none;
+    width: 24px;
+    height: 24px;
+    font: {
+      font-family: Pretendard;
+      font-weight: 600;
+      size: 14px;
+    }
+    @include button-color($closeButtonColor);
+  }
+}
