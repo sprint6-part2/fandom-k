@@ -1,4 +1,3 @@
-/* eslint-disable operator-linebreak */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useState, Children } from 'react';
@@ -36,8 +35,7 @@ const Carousel = ({ children, customSettings, isLongArrow = false }) => {
   };
 
   const isFirstSlide = currentIndex === 0;
-  const isLastSlide =
-    childCount === currentIndex + customSettings.slidesToShow - 1;
+  const isLastSlide = childCount === currentIndex + customSettings.slidesToShow;
 
   const settings = {
     prevArrow: <CarouselArrow longArrow={isLongArrow} hidden={isFirstSlide} />,

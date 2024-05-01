@@ -15,13 +15,6 @@ export const listPageSettings = {
   // 반응형
   responsive: [
     {
-      breakpoint: 1000, // 화면 사이즈
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-      },
-    },
-    {
       breakpoint: TABLET_WIDTH,
       settings: {
         slidesToShow: 2.3,
