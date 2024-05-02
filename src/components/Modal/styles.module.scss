@@ -34,10 +34,10 @@ $white: #fff;
 .ModalView {
   display: flex;
   align-items: center;
+  width: 538px;
+  height: 500px;
   flex-direction: column;
   border-radius: 8px;
-  width: 327px;
-  height: 509px;
   padding: 24px 32px 16px;
   background-color: #181d26;
 }
@@ -48,8 +48,21 @@ $white: #fff;
   justify-content: flex-end;
   > h2 {
     @include font-color($titleColor, 600, 18px, 21.48px);
+    &.fullActive {
+      display: flex;
+      flex-grow: 3;
+      justify-content: center;
+    }
+  }
+  > .HeaderBackButton {
+    flex-grow: 0;
+    justify-content: flex-start;
   }
   &.titleActive {
     justify-content: space-between;
+  }
+  &.fullActive {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
   }
 }
