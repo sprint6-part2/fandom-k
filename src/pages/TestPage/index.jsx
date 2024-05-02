@@ -1,8 +1,8 @@
 import Sample from '@/components/Sample/Sample';
 import useModal from '@/hooks/useModal';
 import Modal from '@/components/Modal';
-import ModalHeader from '@/components/ModalHeader';
-import ModalMobileHeader from '@/components/ModalMobileHeader';
+import ModalHeader from '@/components/Modal/components/ModalHeader';
+import ModalMobileHeader from '@/components/Modal/components/ModalMobileHeader';
 
 const TestPage = () => {
   const [isOpen, openModal, closeModal] = useModal();
