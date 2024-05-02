@@ -40,7 +40,10 @@ const Modal = ({ isOpen, title, onClose, children, isFull = false }) => {
                   onClick={onClose}
                 />
               ) : (
-                <ModalCloseButton onClick={onClose} />
+                <ModalCloseButton
+                  className={style.HeaderCloseButton}
+                  onClick={onClose}
+                />
               )}
             </div>
             {children}

@@ -34,15 +34,13 @@ $white: #fff;
 .ModalView {
   display: flex;
   align-items: center;
-  width: 538px;
-  height: 500px;
   flex-direction: column;
   border-radius: 8px;
   padding: 24px 32px 16px;
   background-color: #181d26;
   &.fullActive {
-    width: 100dvw;
-    height: 100dvh;
+    width: 96dvw;
+    height: 96dvh;
   }
 }
 
@@ -61,6 +59,10 @@ $white: #fff;
   > .HeaderBackButton {
     flex-grow: 0;
     justify-content: flex-start;
+    cursor: pointer;
+  }
+  > .HeaderCloseButton {
+    cursor: pointer;
   }
   &.titleActive {
     justify-content: space-between;
