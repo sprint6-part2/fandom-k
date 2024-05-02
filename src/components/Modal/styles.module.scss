@@ -1,19 +1,8 @@
 $closeButtonColor: #828282;
-$titleColor: #f7f7f8;
 $white: #fff;
 
 @mixin button-color($color) {
   background-color: transparent;
-  color: $color;
-}
-
-@mixin font-color($color, $weight, $size, $lineHeight) {
-  font: {
-    family: Pretendard;
-    weight: $weight;
-    size: $size;
-  }
-  line-height: $lineHeight;
   color: $color;
 }
 
@@ -38,37 +27,7 @@ $white: #fff;
   border-radius: 8px;
   padding: 24px 32px 16px;
   background-color: #181d26;
-  &.fullActive {
-    width: 96dvw;
-    height: 96dvh;
-  }
-}
-
-.ModalViewHeader {
-  display: flex;
-  width: 100%;
-  justify-content: flex-end;
-  > h2 {
-    @include font-color($titleColor, 600, 18px, 21.48px);
-    &.fullActive {
-      display: flex;
-      flex-grow: 3;
-      justify-content: center;
-    }
-  }
-  > .HeaderBackButton {
-    flex-grow: 0;
-    justify-content: flex-start;
-    cursor: pointer;
-  }
-  > .HeaderCloseButton {
-    cursor: pointer;
-  }
-  &.titleActive {
-    justify-content: space-between;
-  }
-  &.fullActive {
-    flex-direction: row-reverse;
-    justify-content: flex-start;
-  }
+  // 하기 두 값은 테스트 값이므로 삭제해도 무관
+  // width: 96dvw;
+  // height: 96dvh;
 }
