@@ -14,9 +14,8 @@ import ProfileXIcon from '@/assets/icons/ProfileX';
  * @param {boolean} selected 프로필 선택 유무 (상단 엑스)
  * @param {()=>{}} onClickProfile 프로필 클릭 함수
  * @param {()=>{}} onClickDelete 상단 엑스 클릭 함수
- * @returns
  */
-const ProFile = ({
+const Profile = ({
   imageUrl = 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg',
   size = 'lg',
   clicked = false,
@@ -51,4 +50,4 @@ const ProFile = ({
   );
 };
 
-export default ProFile;
+export default Profile;

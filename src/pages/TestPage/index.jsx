@@ -1,16 +1,16 @@
-import ProFile from '@/components/Profile';
+import Profile from '@/components/Profile';
 
 const TestPage = () => {
   return (
     <div style={{ display: 'flex', alignItems: 'center' }}>
-      <ProFile
+      <Profile
         clicked
         onClickProfile={() => {
           return console.log('프로필사진 누름');
         }}
         imageUrl="https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714493431544/rllze1.jpeg"
       />
-      <ProFile
+      <Profile
         size="bg"
         selected
         onClickDelete={() => {
@@ -18,7 +18,7 @@ const TestPage = () => {
         }}
         imageUrl="https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714493561949/theboyz1.jpeg"
       />
-      <ProFile
+      <Profile
         size="md"
         clicked
         onClickProfile={() => {
@@ -26,7 +26,7 @@ const TestPage = () => {
         }}
         imageUrl="https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714493201646/nct1271.jpeg"
       />
-      <ProFile
+      <Profile
         size="sm"
         selected
         onClickDelete={() => {
