@@ -13,7 +13,12 @@ const Modal = ({ isOpen, title, onClose, children, isFull = false }) => {
     <div>
       {isOpen && (
         <div className={style.ModalBackDrop} onClick={onClose}>
-          <div className={style.ModalView} onClick={(e) => e.stopPropagation()}>
+          <div
+            className={classNames(style.ModalView, {
+              [style.fullActive]: isFull,
+            })}
+            onClick={(e) => e.stopPropagation()}
+          >
             <div
               className={classNames(style.ModalViewHeader, {
                 [style.titleActive]: isTitle,

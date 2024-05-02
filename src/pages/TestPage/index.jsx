@@ -1,5 +1,5 @@
 import Sample from '@/components/Sample/Sample';
-import useModal from '../../hooks/useModal';
+import useModal from '@/hooks/useModal';
 import Modal from '@/Modal';
 
 const TestPage = () => {
@@ -11,7 +11,7 @@ const TestPage = () => {
       <Sample />
 
       <button onClick={openModal}>Open Modal</button>
-      <Modal isOpen={isOpen} title="모달" onClose={closeModal}>
+      <Modal isOpen={isOpen} title="모달" onClose={closeModal} isFull="true">
         <div style={{ color: '#fff' }}>바디입니다.</div>
       </Modal>
     </div>

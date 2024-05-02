@@ -40,6 +40,10 @@ $white: #fff;
   border-radius: 8px;
   padding: 24px 32px 16px;
   background-color: #181d26;
+  &.fullActive {
+    width: 100dvw;
+    height: 100dvh;
+  }
 }
 
 .ModalViewHeader {
