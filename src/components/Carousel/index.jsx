@@ -1,20 +1,19 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useState, Children } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import classNames from 'classnames';
-import styles from './style.module.scss';
+import styles from './styles.module.scss';
 import Arrow from '@/assets/icons/Arrow';
 
 const CarouselArrow = ({ onClick, longArrow, hidden }) => {
-  const prevArrowClasses = classNames(styles.arrow, {
+  const arrowClass = classNames(styles.arrow, {
     [styles.longArrow]: longArrow,
     [styles.hidden]: hidden && !longArrow,
   });
   return (
-    <div className={prevArrowClasses} onClick={onClick}>
+    <div className={arrowClass} onClick={onClick}>
       <Arrow />
     </div>
   );
