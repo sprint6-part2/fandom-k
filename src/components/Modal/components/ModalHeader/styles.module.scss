@@ -1,12 +1,9 @@
-$titleColor: #f7f7f8;
+@import '../../styles/';
 
-@mixin font-color($color, $weight, $size, $lineHeight) {
-  font: {
-    family: Pretendard;
-    weight: $weight;
-    size: $size;
-  }
-  line-height: $lineHeight;
+@mixin font-color($color, $weight, $size, $line-height) {
+  @include text-default;
+  @include font-weight-size($weight, $size);
+  @include font-line-height-letter_spacing($line-height);
   color: $color;
 }
 
@@ -15,7 +12,7 @@ $titleColor: #f7f7f8;
   width: 100%;
   justify-content: flex-end;
   > h2 {
-    @include font-color($titleColor, 600, 18px, 21.48px);
+    @include font-color($color-white, 600, 18px, 21.48px);
   }
   > .closeButton {
     cursor: pointer;
