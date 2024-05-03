@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './styles.module.scss';
 import { numberWithCommas } from '@/utils/numberWithCommas';
 import { getTimeLeft } from '@/utils/getTimeLeft';
@@ -40,6 +41,11 @@ const ProgressBar = ({
       </div>
     </div>
   );
+};
+ProgressBar.propTypes = {
+  receivedDonations: PropTypes.number,
+  targetDonation: PropTypes.number,
+  deadline: PropTypes.string,
 };
 
 export default ProgressBar;
