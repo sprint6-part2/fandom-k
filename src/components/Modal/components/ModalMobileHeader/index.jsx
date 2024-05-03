@@ -19,7 +19,7 @@ const ModalMobileHeader = ({ title, onClose }) => {
 
 ModalMobileHeader.propTypes = {
   title: PropTypes.string,
-  onClose: PropTypes.object.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 ModalMobileHeader.defaultProps = {

@@ -17,7 +17,7 @@ $titleColor: #f7f7f8;
   > h2 {
     @include font-color($titleColor, 600, 18px, 21.48px);
   }
-  > .headerCloseButton {
+  > .closeButton {
     cursor: pointer;
   }
   &.titleActive {
