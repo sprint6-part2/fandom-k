@@ -52,7 +52,7 @@ const Carousel = ({ children, customSettings, isLongArrow = false }) => {
 };
 
 Carousel.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
   customSettings: PropTypes.object,
   isLongArrow: PropTypes.bool,
 };
