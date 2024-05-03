@@ -1,8 +1,7 @@
-import Sample from '@/components/Sample/Sample';
 import useModal from '@/hooks/useModal';
 import Modal from '@/components/Modal';
 import ModalHeader from '@/components/Modal/components/ModalHeader';
-import ModalMobileHeader from '@/components/Modal/components/ModalMobileHeader';
+// import ModalMobileHeader from '@/components/Modal/components/ModalMobileHeader';
 import Profile from '@/components/Profile';
 
 const TestPage = () => {
@@ -44,7 +43,9 @@ const TestPage = () => {
         />
       </div>
       <div>
-        <button onClick={openModal}>Open Modal</button>
+        <button type="button" onClick={openModal}>
+          Open Modal
+        </button>
         <Modal isOpen={isOpen} title="모달" onClose={closeModal}>
           <ModalHeader title="모달" onClose={closeModal} />
           {/* <ModalMobileHeader title="모달" onClose={closeModal} /> */}
