@@ -1,0 +1,51 @@
+@import '../../../../../styles/';
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 588px;
+  height: 79px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #ffffff1a;
+
+  &.lastLineElement {
+    height: 70px;
+    padding-bottom: 0px;
+    border-bottom: 0px solid #ffffff1a;
+  }
+}
+
+.idolInfo {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.img {
+  width: 70px;
+  height: 70px;
+  background-color: cadetblue;
+}
+
+.ranking {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  color: $color-brand-orange;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  color:#FFFFFFDE;
+  ;
+}
+
+.totalVotes {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #ffffff99;
+}

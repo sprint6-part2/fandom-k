@@ -4,13 +4,15 @@ import Modal from '@/components/Modal';
 import ModalHeader from '@/components/Modal/components/ModalHeader';
 // import ModalMobileHeader from '@/components/Modal/components/ModalMobileHeader';
 import Profile from '@/components/Profile';
+import MonthlyChart from '@/pages/ListPage/MonthlyChart';
 
 const TestPage = () => {
   const [isOpen, openModal, closeModal] = useModal();
 
   return (
-    <div>
+    <div style={{ backgroundColor: 'black' }}>
       <Header />
+      <MonthlyChart />
       <div>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <Profile

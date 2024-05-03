@@ -1,0 +1,26 @@
+@import '../../../../../styles/';
+
+.tab {
+  display: flex;
+  height: 42px;
+
+  div {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.17px;
+    color: $color-gray-warm;
+
+    &.current {
+      background-color: #ffffff1a;
+      color: white;
+      border-bottom: 1px solid #ffffff;
+    }
+  }
+}
