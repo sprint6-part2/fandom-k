@@ -22,8 +22,4 @@ ModalMobileHeader.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-ModalMobileHeader.defaultProps = {
-  title: '모달',
-};
-
 export default ModalMobileHeader;

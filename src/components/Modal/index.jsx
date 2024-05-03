@@ -32,8 +32,4 @@ Modal.propTypes = {
   children: PropTypes.element.isRequired,
 };
 
-Modal.defaultProps = {
-  isOpen: false,
-};
-
 export default Modal;
