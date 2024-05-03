@@ -1,4 +1,4 @@
-import styles from './style.module.scss';
+import styles from './styles.module.scss';
 import Carousel from '@/components/Carousel';
 import { listPageSettings, myPageSetting } from '@/constants/carouselSetting';
 
