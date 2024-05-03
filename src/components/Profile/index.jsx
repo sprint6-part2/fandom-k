@@ -1,5 +1,4 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
@@ -18,9 +17,9 @@ import ProfileXIcon from '@/assets/icons/ProfileX';
  */
 const Profile = ({
   imageUrl,
-  size,
-  clicked,
-  selected,
+  size = 'lg',
+  clicked = false,
+  selected = false,
   onClickProfile,
   onClickDelete,
 }) => {
@@ -58,14 +57,6 @@ Profile.propTypes = {
   selected: PropTypes.bool,
   onClickProfile: PropTypes.func,
   onClickDelete: PropTypes.func,
-};
-
-Profile.defaultProps = {
-  size: 'lg',
-  clicked: false,
-  selected: false,
-  onClickProfile: () => {},
-  onClickDelete: () => {},
 };
 
 export default Profile;
