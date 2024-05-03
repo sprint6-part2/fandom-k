@@ -10,7 +10,7 @@ $titleColor: #f7f7f8;
   color: $color;
 }
 
-.Container {
+.container {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -21,7 +21,7 @@ $titleColor: #f7f7f8;
     flex-grow: 3;
     justify-content: center;
   }
-  > .BackButton {
+  > .backButton {
     flex-grow: 0;
     justify-content: flex-start;
     cursor: pointer;

@@ -8,8 +8,8 @@ const Modal = ({ isOpen, onClose, children }) => {
   return (
     <div>
       {isOpen && (
-        <div className={style.ModalBackDrop} onClick={onClose}>
-          <div className={style.ModalView} onClick={(e) => e.stopPropagation()}>
+        <div className={style.modalBackDrop} onClick={onClose}>
+          <div className={style.modalView} onClick={(e) => e.stopPropagation()}>
             {children}
           </div>
         </div>

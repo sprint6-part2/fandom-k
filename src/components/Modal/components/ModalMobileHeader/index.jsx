@@ -5,9 +5,9 @@ import classNames from 'classnames';
 
 const ModalMobileHeader = ({ title, onClose }) => {
   return (
-    <div className={style.Container}>
-      <h2 className={style.Title}>{title}</h2>
-      <BackButton className={style.BackButton} onClick={onClose} />
+    <div className={style.container}>
+      <h2 className={style.title}>{title}</h2>
+      <BackButton className={style.backButton} onClick={onClose} />
     </div>
   );
 };

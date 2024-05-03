@@ -6,7 +6,7 @@ $white: #fff;
   color: $color;
 }
 
-.ModalBackDrop {
+.modalBackDrop {
   z-index: 1; //위치지정 요소
   position: fixed;
   display: flex;
@@ -20,7 +20,7 @@ $white: #fff;
   bottom: 0;
 }
 
-.ModalView {
+.modalView {
   display: flex;
   align-items: center;
   flex-direction: column;

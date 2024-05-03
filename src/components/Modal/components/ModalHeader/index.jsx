@@ -6,12 +6,12 @@ import classNames from 'classnames';
 const ModalHeader = ({ onClose, title }) => {
   return (
     <div
-      className={classNames(style.Container, {
+      className={classNames(style.container, {
         [style.titleActive]: !!title,
       })}
     >
-      {title && <h2 className={style.Title}>{title}</h2>}
-      <ModalCloseButton className={style.CloseButton} onClick={onClose} />
+      {title && <h2 className={style.title}>{title}</h2>}
+      <ModalCloseButton className={style.closeButton} onClick={onClose} />
     </div>
   );
 };
