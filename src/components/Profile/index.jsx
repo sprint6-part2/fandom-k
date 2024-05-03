@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 import style from './styles.module.scss';
 import CheckIcon from '@/assets/icons/Check';
 import ProfileXIcon from '@/assets/icons/ProfileX';
@@ -16,12 +16,12 @@ import ProfileXIcon from '@/assets/icons/ProfileX';
  * @param {()=>{}} onClickDelete 상단 엑스 클릭 함수
  */
 const Profile = ({
-  imageUrl = 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg',
+  imageUrl,
   size = 'lg',
   clicked = false,
   selected = false,
-  onClickProfile = () => {},
-  onClickDelete = () => {},
+  onClickProfile,
+  onClickDelete,
 }) => {
   const profileClass = classNames(style.profile, style[size]);
   const imageClass = classNames(style.image, style[size]);
@@ -48,6 +48,15 @@ const Profile = ({
       <img className={imageClass} src={imageUrl} alt="프로필 사진" />
     </div>
   );
+};
+
+Profile.propTypes = {
+  imageUrl: PropTypes.string.isRequired,
+  size: PropTypes.oneOf(['lg', 'bg', 'md', 'sm']),
+  clicked: PropTypes.bool,
+  selected: PropTypes.bool,
+  onClickProfile: PropTypes.func,
+  onClickDelete: PropTypes.func,
 };
 
 export default Profile;
