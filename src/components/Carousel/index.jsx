@@ -1,5 +1,4 @@
 /* eslint-disable react/forbid-prop-types */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import { useState, Children } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';

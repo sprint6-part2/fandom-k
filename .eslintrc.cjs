@@ -20,6 +20,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'jsx-a11y/no-static-element-interactions': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
     'no-console': 'off',
     'arrow-body-style': ['error', 'always'],
