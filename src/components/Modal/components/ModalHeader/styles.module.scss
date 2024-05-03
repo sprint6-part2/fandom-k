@@ -1,11 +1,11 @@
-@import '../../styles/';
+@import '../../../../styles/';
 
 .container {
   display: flex;
   width: 100%;
   justify-content: flex-end;
   > h2 {
-    @include font-color($color-white, 600, 18px, 21.48px);
+    @include font-base($color-white, 600, 18px, 21.48px);
   }
   > .closeButton {
     cursor: pointer;

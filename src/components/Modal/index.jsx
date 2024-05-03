@@ -1,5 +1,5 @@
 import React from 'react';
-import style from 'styles.module.scss';
+import style from './styles.module.scss';
 import PropTypes from 'prop-types';
 
 /**

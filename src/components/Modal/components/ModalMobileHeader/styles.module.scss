@@ -1,4 +1,4 @@
-@import '../../styles/';
+@import '../../../../styles/';
 
 .container {
   display: flex;
@@ -6,7 +6,7 @@
   justify-content: space-between;
   flex-direction: row-reverse;
   > h2 {
-    @include font-color($color-white, 600, 18px, 21.48px);
+    @include font-base($color-white, 600, 18px, 21.48px);
     display: flex;
     flex-grow: 3;
     justify-content: center;

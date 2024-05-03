@@ -1,6 +1,6 @@
 import React from 'react';
 import BackButton from '@/assets/icons/BackButton';
-import style from 'styles.module.scss';
+import style from './styles.module.scss';
 import PropTypes from 'prop-types';
 
 /**
