@@ -1,3 +1,5 @@
+@import '../../styles/normalize.scss';
+
 $lg-size: 128px;
 $bg-size: 100px;
 $md-size: 98px;
@@ -5,7 +7,7 @@ $sm-size: 70px;
 
 .profile {
   border-radius: 50%;
-  border: 1.31px solid #f96868;
+  border: 1.31px solid $color-brand-orange;
 
   position: relative;
 
@@ -64,7 +66,11 @@ $sm-size: 70px;
 
 .clicked {
   z-index: 1;
-  background: linear-gradient(271.36deg, #f96e68 -9.84%, #fe578f 107.18%);
+  background: linear-gradient(
+    271.36deg,
+    $color-brand-orange -9.84%,
+    $color-brand-pick 107.18%
+  );
   opacity: 50%;
 }
 
