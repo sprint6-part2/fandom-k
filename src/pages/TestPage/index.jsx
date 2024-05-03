@@ -1,3 +1,6 @@
+import React from 'react';
+import ProgressBar from '@/pages/ListPage/components/ProgressBar';
+import Header from '@/components/Header';
 import styles from './styles.module.scss';
 import Carousel from '@/components/Carousel';
 import { listPageSettings, myPageSetting } from '@/constants/carouselSetting';
@@ -12,6 +15,7 @@ const TestPage = () => {
 
   return (
     <div>
+      <Header />
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <Profile
           clicked
@@ -46,14 +50,32 @@ const TestPage = () => {
         />
       </div>
       <div>
-        <button type="button" onClick={openModal}>
-          Open Modal
-        </button>
+        <button onClick={openModal}>Open Modal</button>
         <Modal isOpen={isOpen} title="모달" onClose={closeModal}>
           <ModalHeader title="모달" onClose={closeModal} />
           {/* <ModalMobileHeader title="모달" onClose={closeModal} /> */}
           <div style={{ color: '#fff' }}>바디입니다.</div>
         </Modal>
+      </div>
+      <div>
+        {/* 진행바 테스트 */}
+        <div style={{ backgroundColor: 'black', height: '300px' }}>
+          <div //진행바 부모 div
+            style={{
+              backgroundColor: 'black',
+              width: '300px', //진행바이 넓이는 부모 크기 100%로 설정 되어있어요
+              margin: '0 auto',
+              paddingTop: '50px',
+            }}
+          >
+            <ProgressBar // 진행바
+              receivedDonations={500000} // 받은 크레딧 양 그대로 정수로 넘겨주시면 됩니다.
+              deadline="2025-10-10T00:00:00.000Z" // 데드라인 그대로 문자열 넘겨주시면 됩니다.
+              targetDonation={1000000} // 목표 크레딧 양 그대로 정수로 넘겨주시면 됩니다.
+            />
+          </div>
+        </div>
+        {/* 진행바 테스트 끝 */}
       </div>
       <div>
         <p>리스트페이지에 들어갈 캐러셀 컴포넌트 테스트</p>
