@@ -1,9 +1,11 @@
+/* eslint-disable react/forbid-prop-types */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import { useState, Children } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 import styles from './styles.module.scss';
 import Arrow from '@/assets/icons/Arrow';
 
@@ -48,6 +50,17 @@ const Carousel = ({ children, customSettings, isLongArrow = false }) => {
       {children}
     </Slider>
   );
+};
+
+Carousel.propTypes = {
+  children: PropTypes.element.isRequired,
+  customSettings: PropTypes.object,
+  isLongArrow: PropTypes.bool,
+};
+
+Carousel.defaultProps = {
+  customSettings: {},
+  isLongArrow: false,
 };
 
 export default Carousel;
