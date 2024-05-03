@@ -1,5 +1,9 @@
-// eslint-disable-next-line object-curly-newline
-const ArrowIcon = ({ width = 13, height = 24, stroke = 'white', ...props }) => {
+const ArrowIcon = ({
+  width = 13,
+  height = 24,
+  stroke = 'white',
+  ...props
+}) => {
   return (
     <svg
       width={width}
