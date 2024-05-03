@@ -1,6 +1,7 @@
 import React from 'react';
 import ModalCloseButton from '@/assets/icons/ModalCloseButton';
-import style from '@/components/ModalHeader/styles.module.scss';
+import style from '@/components/Modal/components/ModalHeader/styles.module.scss';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 /**

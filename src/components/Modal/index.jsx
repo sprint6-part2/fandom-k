@@ -1,5 +1,6 @@
 import React from 'react';
 import style from '@/components/Modal/styles.module.scss';
+import PropTypes from 'prop-types';
 
 /**
  * 프로필 사진 컴포넌트

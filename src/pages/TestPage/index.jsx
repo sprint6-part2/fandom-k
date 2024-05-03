@@ -14,8 +14,8 @@ const TestPage = () => {
 
       <button onClick={openModal}>Open Modal</button>
       <Modal isOpen={isOpen} title="모달" onClose={closeModal}>
-        {/* <ModalHeader title="모달" onClose={closeModal} /> */}
-        <ModalMobileHeader title="모달" onClose={closeModal} />
+        <ModalHeader title="모달" onClose={closeModal} />
+        {/* <ModalMobileHeader title="모달" onClose={closeModal} /> */}
         <div style={{ color: '#fff' }}>바디입니다.</div>
       </Modal>
     </div>
