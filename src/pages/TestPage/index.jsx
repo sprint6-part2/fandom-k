@@ -1,39 +1,10 @@
-import Profile from '@/components/Profile';
+import Sample from '@/components/Sample/Sample';
 
 const TestPage = () => {
   return (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
-      <Profile
-        clicked
-        onClickProfile={() => {
-          return console.log('프로필사진 누름');
-        }}
-        imageUrl="https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714493431544/rllze1.jpeg"
-      />
-      <Profile
-        size="bg"
-        selected
-        onClickDelete={() => {
-          return console.log('삭제아이콘 누름');
-        }}
-        imageUrl="https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714493561949/theboyz1.jpeg"
-      />
-      <Profile
-        size="md"
-        clicked
-        onClickProfile={() => {
-          return console.log('프로필사진 누름');
-        }}
-        imageUrl="https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714493201646/nct1271.jpeg"
-      />
-      <Profile
-        size="sm"
-        selected
-        onClickDelete={() => {
-          return console.log('삭제아이콘 누름');
-        }}
-        imageUrl="https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714492902115/seven1.jpeg"
-      />
+    <div>
+      <p>공통 컴포넌트 만든거는 test 페이지에서 테스트합니다.</p>
+      <Sample />
     </div>
   );
 };
