@@ -57,9 +57,4 @@ Carousel.propTypes = {
   isLongArrow: PropTypes.bool,
 };
 
-Carousel.defaultProps = {
-  customSettings: {},
-  isLongArrow: false,
-};
-
 export default Carousel;
