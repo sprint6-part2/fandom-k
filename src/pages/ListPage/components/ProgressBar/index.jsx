@@ -4,10 +4,17 @@ import { numberWithCommas } from '@/utils/numberWithCommas';
 import { getTimeLeft } from '@/utils/getTimeLeft';
 import CreditIcon from '@/assets/icons/Credit';
 
+/**
+ * 진행바 컴포넌트
+ * @param {number} receivedDonations 받은 크레딧
+ * @param {number} targetDonation 크레딧 목표
+ * @param {string} deadline 마감기한
+ */
+
 const ProgressBar = ({
   receivedDonations = 0,
-  deadline = null,
   targetDonation = 0,
+  deadline = null,
 }) => {
   const progressed = (receivedDonations / targetDonation) * 100; // 현재 몇퍼센트 진행되었는지 계산
   const credit = numberWithCommas(receivedDonations); // 정수형을 콤마를 넣은 문자열로 변화 5000 -> '5,000'

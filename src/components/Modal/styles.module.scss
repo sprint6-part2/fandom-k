@@ -1,0 +1,33 @@
+$closeButtonColor: #828282;
+$white: #fff;
+
+@mixin button-color($color) {
+  background-color: transparent;
+  color: $color;
+}
+
+.modalBackDrop {
+  z-index: 1; //위치지정 요소
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modalView {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 8px;
+  padding: 24px 32px 16px;
+  background-color: #181d26;
+  // 하기 두 값은 테스트 값이므로 삭제해도 무관
+  // width: 96dvw;
+  // height: 96dvh;
+}

@@ -1,0 +1,18 @@
+@import './index.scss';
+
+html,
+body,
+#root {
+  height: 100%;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+
+  @include font-default;
+}
+
+body {
+  margin: 0;
+}
