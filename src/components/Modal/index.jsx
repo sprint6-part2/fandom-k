@@ -1,12 +1,12 @@
 import React from 'react';
-import style from './styles.module.scss';
 import PropTypes from 'prop-types';
+import style from './styles.module.scss';
 
 /**
  * 프로필 사진 컴포넌트
  * @param {boolean} isOpen 모달 활성화 여부
  * @param {Event} onClose 모달 닫기 함수
- * @param {object} children 부모 컴포넌트로부터 받은 내용
+ * @param {element} children 부모 컴포넌트로부터 받은 내용
  */
 
 const Modal = ({ isOpen, onClose, children }) => {
@@ -27,7 +27,7 @@ const Modal = ({ isOpen, onClose, children }) => {
 };
 
 Modal.propTypes = {
-  isOpen: PropTypes.bool,
+  isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   children: PropTypes.element.isRequired,
 };

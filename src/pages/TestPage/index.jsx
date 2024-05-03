@@ -2,7 +2,7 @@ import Sample from '@/components/Sample/Sample';
 import useModal from '@/hooks/useModal';
 import Modal from '@/components/Modal';
 import ModalHeader from '@/components/Modal/components/ModalHeader';
-import ModalMobileHeader from '@/components/Modal/components/ModalMobileHeader';
+// import ModalMobileHeader from '@/components/Modal/components/ModalMobileHeader';
 import Profile from '@/components/Profile';
 
 const TestPage = () => {

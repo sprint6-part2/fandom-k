@@ -1,8 +1,8 @@
 import React from 'react';
-import ModalCloseButton from '@/assets/icons/ModalCloseButton';
-import style from './styles.module.scss';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import style from './styles.module.scss';
+import ModalCloseButton from '@/assets/icons/ModalCloseButton';
 
 /**
  * 모달 헤더 컴포넌트
