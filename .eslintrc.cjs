@@ -20,6 +20,8 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'react/require-default-props': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
     'no-console': 'off',
     'arrow-body-style': ['error', 'always'],
     'react/prop-types': 'off',
