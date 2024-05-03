@@ -1,6 +1,6 @@
 import React from 'react';
-import style from '@/components/Modal/styles.module.scss';
 import PropTypes from 'prop-types';
+import style from '@/components/Modal/styles.module.scss';
 
 /**
  * 프로필 사진 컴포넌트
@@ -17,7 +17,12 @@ const Modal = ({ isOpen, onClose, children }) => {
     <div>
       {isOpen && (
         <div className={style.modalBackDrop} onClick={onClose}>
-          <div className={style.modalView} onClick={(e) => e.stopPropagation()}>
+          <div
+            className={style.modalView}
+            onClick={(e) => {
+              return e.stopPropagation();
+            }}
+          >
             {children}
           </div>
         </div>
@@ -29,7 +34,7 @@ const Modal = ({ isOpen, onClose, children }) => {
 Modal.propTypes = {
   isOpen: PropTypes.bool,
   onClose: PropTypes.object.isRequired,
-  children: PropTypes.object.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 Modal.defaultProps = {
