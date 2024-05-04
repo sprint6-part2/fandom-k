@@ -4,25 +4,12 @@ import styles from './styles.module.scss';
 import { numberWithCommas } from '@/utils/numberWithCommas';
 import Profile from '@/components/Profile';
 
-const ChartElement = ({ idol, ranking, lastLineElement = [9, 10] }) => {
+const ChartElement = ({ idol, ranking }) => {
   const name = idol.name;
   const totalVotes = numberWithCommas(idol.totalVotes);
 
-  const isLastLineElement = (arr) => {
-    return arr.some((element) => {
-      if (element === ranking) {
-        return true;
-      }
-      return false;
-    });
-  };
-
   return (
-    <div
-      className={classNames(styles.container, {
-        [styles.lastLineElement]: isLastLineElement(lastLineElement),
-      })}
-    >
+    <li className={styles.container}>
       <div className={styles.idolInfo}>
         <div className={styles.img}>
           <Profile
@@ -37,7 +24,7 @@ const ChartElement = ({ idol, ranking, lastLineElement = [9, 10] }) => {
         <div className={styles.name}>{name}</div>
       </div>
       <div className={styles.totalVotes}>{totalVotes}</div>
-    </div>
+    </li>
   );
 };
 

@@ -14,7 +14,7 @@
   margin-bottom: 24px;
 
   h1 {
-    @include font-weight-size(700,24px);
+    @include font-weight-size(700, 24px);
     line-height: 26px;
     color: white;
   }
@@ -30,6 +30,18 @@
   flex-wrap: wrap;
   margin-top: 24px;
   margin-bottom: 51px;
+  li:not(:last-child) {
+    border-bottom: 1px solid #ffffff1a;
+    height: 79px;
+    padding-bottom: 8px;
+  }
+  &.even {
+    li:nth-last-child(-n + 2) {
+      border-bottom: none;
+      height: 70px;
+      padding-bottom: 0px;
+    }
+  }
 }
 
 .moreButton {
