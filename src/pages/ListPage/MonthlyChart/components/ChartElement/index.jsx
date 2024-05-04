@@ -1,9 +1,11 @@
 import React from 'react';
 import classNames from 'classnames';
 import styles from './styles.module.scss';
+import { numberWithCommas } from '@/utils/numberWithCommas';
 
 const ChartElement = ({ idol, ranking, lastLineElement = [9, 10] }) => {
-  const { name, totalVotes } = idol;
+  const name = idol.name;
+  const totalVotes = numberWithCommas(idol.totalVotes);
 
   const isLastLineElement = (arr) => {
     return arr.some((element) => {
