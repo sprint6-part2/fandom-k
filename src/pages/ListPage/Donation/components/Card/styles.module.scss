@@ -6,7 +6,7 @@
   height: 293px;
 }
 
-@media (max-width: 375px) {
+@media (max-width: $width-mobile) {
   .topWrapper {
     height: 206px;
   }
@@ -63,7 +63,7 @@ button {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: $width-mobile) {
   .title {
     > span {
       @include font-base($color-white, 400, 12px, 18px);
