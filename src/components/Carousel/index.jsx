@@ -7,6 +7,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import styles from './styles.module.scss';
 import Arrow from '@/assets/icons/Arrow';
+import { debounce } from '@/utils/debounce';
 
 const CarouselArrow = ({ onClick, longArrow, hidden }) => {
   const arrowClass = classNames(styles.arrow, {
@@ -40,10 +41,10 @@ const Carousel = ({ children, customSettings, isLongArrow = false }) => {
   };
 
   useEffect(() => {
-    const debouncedHandleResize = debounce(handleResize, 200);
-    window.addEventListener('resize', debouncedHandleResize);
+    const debouncedResize = debounce(handleResize, 200);
+    window.addEventListener('resize', debouncedResize);
     return () => {
-      window.removeEventListener('resize', debouncedHandleResize);
+      window.removeEventListener('resize', debouncedResize);
     };
   }, []);
 
@@ -66,16 +67,6 @@ const Carousel = ({ children, customSettings, isLongArrow = false }) => {
       {children}
     </Slider>
   );
-};
-
-const debounce = (func, delay) => {
-  let timeoutId;
-  return (...args) => {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => {
-      func.apply(this, args);
-    }, delay);
-  };
 };
 
 Carousel.propTypes = {
