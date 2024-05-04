@@ -1,5 +1,5 @@
 /* eslint-disable react/forbid-prop-types */
-import { useState, Children } from 'react';
+import { useState, Children, useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -29,13 +29,30 @@ const CarouselArrow = ({ onClick, longArrow, hidden }) => {
 const Carousel = ({ children, customSettings, isLongArrow = false }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const childCount = Children.count(children);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const handleSlideChange = (index) => {
     setCurrentIndex(index);
   };
 
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    const debouncedHandleResize = debounce(handleResize, 200);
+    window.addEventListener('resize', debouncedHandleResize);
+    return () => {
+      window.removeEventListener('resize', debouncedHandleResize);
+    };
+  }, []);
+
   const isFirstSlide = currentIndex === 0;
-  const isLastSlide = childCount === currentIndex + customSettings.slidesToShow;
+  const isLastSlide =
+    windowWidth < 1000
+      ? childCount ===
+        currentIndex + customSettings.responsive[0].settings.slidesToShow
+      : childCount === currentIndex + customSettings.slidesToShow;
 
   const settings = {
     prevArrow: <CarouselArrow longArrow={isLongArrow} hidden={isFirstSlide} />,
@@ -49,6 +66,16 @@ const Carousel = ({ children, customSettings, isLongArrow = false }) => {
       {children}
     </Slider>
   );
+};
+
+const debounce = (func, delay) => {
+  let timeoutId;
+  return (...args) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
+  };
 };
 
 Carousel.propTypes = {
