@@ -65,6 +65,8 @@ button {
 
 @media (max-width: $width-mobile) {
   .title {
+    margin-top: 10px;
+
     > span {
       @include font-base($color-white, 400, 12px, 18px);
     }
