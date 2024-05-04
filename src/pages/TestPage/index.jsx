@@ -88,7 +88,7 @@ const TestPage = () => {
             );
           })}
         </Carousel>
-        <p>마이페이지에 들어갈 캐러셀 컴포넌트 테스트</p>
+        <p>my페이지에 들어갈 캐러셀 컴포넌트 테스트</p>
         <Carousel customSettings={myPageSetting} isLongArrow>
           {[1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17].map(
             (item) => {
