@@ -1,25 +1,26 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
-import style from './styles.module.scss';
+import style from '@/components/Modal/styles.module.scss';
 
 /**
  * 프로필 사진 컴포넌트
  * @param {boolean} isOpen 모달 활성화 여부
  * @param {Event} onClose 모달 닫기 함수
- * @param {element} children 부모 컴포넌트로부터 받은 내용
+ * @param {object} children 부모 컴포넌트로부터 받은 내용
  */
 
 const Modal = ({ isOpen, onClose, children }) => {
-  // isBig은 임시로 둔 변수입니다.
-  // 추후에 크기에 따른 값을 설정할 때, 사용할 예정입니다.
+  const Ref = useRef(null);
+
+  const handleBackDrop = (e) => {
+    return e.target === Ref.current && onClose();
+  };
 
   return (
     <div>
       {isOpen && (
-        <div className={style.modalBackDrop} onClick={onClose}>
-          <div className={style.modalView} onClick={(e) => e.stopPropagation()}>
-            {children}
-          </div>
+        <div className={style.modalBackDrop} ref={Ref} onClick={handleBackDrop}>
+          <div className={style.modalView}>{children}</div>
         </div>
       )}
     </div>
@@ -27,9 +28,13 @@ const Modal = ({ isOpen, onClose, children }) => {
 };
 
 Modal.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
-  children: PropTypes.element.isRequired,
+  isOpen: PropTypes.bool,
+  onClose: PropTypes.object.isRequired,
+  children: PropTypes.object.isRequired,
+};
+
+Modal.defaultProps = {
+  isOpen: false,
 };
 
 export default Modal;

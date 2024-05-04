@@ -9,7 +9,7 @@ import ModalCloseButton from '@/assets/icons/ModalCloseButton';
  * @param {string} title 헤더 타이틀 값
  * @param {Event} onClose 모달 닫기 함수
  */
-const ModalHeader = ({ title, onClose }) => {
+const ModalHeader = ({ title = '', onClose }) => {
   return (
     <div
       className={classNames(style.container, {
