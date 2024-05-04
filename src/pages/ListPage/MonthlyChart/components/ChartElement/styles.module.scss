@@ -5,6 +5,14 @@
   justify-content: space-between;
   align-items: center;
   width: 588px;
+  /* 태블릿 */
+  @media (min-width: ($width-mobile + 1)) and (max-width: $width-tablet) {
+    width: 100%;
+  }
+  /* 모바일 */
+  @media (max-width: $width-mobile) {
+    width: 100%;
+  }
 }
 
 .idolInfo {
@@ -19,22 +27,34 @@
 }
 
 .ranking {
-  font-size: 16px;
-  font-weight: 400;
+  @include font-weight-size(400, 16px);
   line-height: 19px;
   color: $color-brand-orange;
 }
 
 .name {
-  font-size: 16px;
-  font-weight: 500;
+  @include font-weight-size(500, 16px);
   line-height: 19px;
   color: #ffffffde;
+  /* 태블릿 */
+  @media (min-width: ($width-mobile + 1)) and (max-width: $width-tablet) {
+    @include font-weight-size(500, 14px);
+  }
+  /* 모바일 */
+  @media (max-width: $width-mobile) {
+    @include font-weight-size(500, 14px);
+  }
 }
 
 .totalVotes {
-  font-size: 16px;
-  font-weight: 400;
+  @include font-weight-size(400, 16px);
   line-height: 19px;
   color: #ffffff99;
+  @media (min-width: ($width-mobile + 1)) and (max-width: $width-tablet) {
+    @include font-weight-size(400, 14px);
+  }
+  /* 모바일 */
+  @media (max-width: $width-mobile) {
+    @include font-weight-size(400, 14px);
+  }
 }

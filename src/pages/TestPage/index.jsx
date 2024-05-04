@@ -17,7 +17,11 @@ const TestPage = () => {
   return (
     <div style={{ backgroundColor: 'black' }}>
       <Header />
-      <MonthlyChart />
+      <div
+        style={{ display: 'flex', justifyContent: 'center', padding: '24px' }}
+      >
+        <MonthlyChart />
+      </div>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <Profile
           clicked
