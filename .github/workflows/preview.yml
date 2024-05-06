@@ -1,0 +1,47 @@
+name: Preview
+
+on:
+  pull_request:
+    branches: ['main']
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Node.js 및 NPM 설치
+        uses: ./.github/actions/install
+
+      - run: npm run build
+
+  vercel-preview:
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Vercel CLI 설치
+        run: npm install --global vercel@latest
+
+      - name: Vercel 환경 변수 가져오기
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Project Artifacts 빌드하기
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Vercel에 Project Artifacts 배포하기
+        id: deploy
+        run: |
+          vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} > vercel-output.txt
+          echo "preview_url=$(cat vercel-output.txt)" >> $GITHUB_OUTPUT
+
+      - name: PR 코멘트로 Preview URL 남기기
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          comment_tag: ${{github.event.number}}-vercel
+          message: |
+            🎉 Pull Request 미리보기: ${{ steps.deploy.outputs.preview_url }}
