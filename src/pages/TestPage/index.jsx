@@ -78,7 +78,7 @@ const TestPage = () => {
         {/* 진행바 테스트 끝 */}
       </div>
       <div>
-        <p>list페이지에 들어갈 캐러셀 컴포넌트 테스트</p>
+        <p>listPage에 들어갈 캐러셀 컴포넌트 테스트</p>
         <Carousel customSettings={listPageSettings}>
           {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => {
             return (

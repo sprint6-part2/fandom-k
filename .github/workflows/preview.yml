@@ -61,4 +61,4 @@ jobs:
         uses: thollander/actions-comment-pull-request@v2
         with:
           message: |
-            🎮 React Preview 보러가기: ${{ steps.deploy.outputs.preview_url }}
+            🎉 구현한 기능 Preview: ${{ steps.deploy.outputs.preview_url }}
