@@ -46,6 +46,15 @@ jobs:
 
   vercel-preview:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pages: write
+      deployments: write
+      id-token: write
+      issues: write
+      pull-requests: write
+
     steps:
       - uses: actions/checkout@v4
 
@@ -75,6 +84,15 @@ jobs:
 
   github-bot:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pages: write
+      deployments: write
+      id-token: write
+      issues: write
+      pull-requests: write
+
     needs: [vercel-preview]
     steps:
       - name: PR 코멘트로 Preview URL 남기기
