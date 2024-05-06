@@ -15,6 +15,12 @@
   padding-inline: 64px;
 }
 
+@media (max-width: 1250px) {
+  .container {
+    margin-inline: 24px;
+  }
+}
+
 .credit {
   display: flex;
   flex-direction: column;
@@ -42,4 +48,29 @@
 
   @include font-base($color-brand-orange, 700, 16px, 26px);
   letter-spacing: 5%;
+}
+
+@media (max-width: $width-mobile) {
+  .container {
+    height: 87px;
+    padding-inline: 20px;
+  }
+
+  .credit {
+    gap: 8px;
+
+    span {
+      @include font-base(white, 400, 12px, 14.32px);
+    }
+  }
+
+  .creditInfo {
+    span {
+      font-size: 20px;
+    }
+  }
+
+  .charge {
+    font-size: 13px;
+  }
 }
