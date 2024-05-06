@@ -23,3 +23,10 @@ $font-style: normal !important;
     letter-spacing: $letter-spacing !important;
   }
 }
+
+@mixin font-base($color, $weight, $size, $line-height) {
+  @include font-default;
+  @include font-weight-size($weight, $size);
+  @include font-line-height-letter_spacing($line-height);
+  color: $color;
+}

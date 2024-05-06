@@ -1,0 +1,45 @@
+@import '../../../styles/';
+
+.container {
+  border-radius: 8px;
+  border: 1px solid #f1eef9cc;
+  opacity: 80%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 131px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: 64px;
+}
+
+.credit {
+  display: flex;
+  flex-direction: column;
+  gap: 14.13px;
+
+  span {
+    @include font-base(white, 400, 16px, 19.09px);
+    opacity: 60%;
+  }
+}
+
+.creditInfo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  span {
+    @include font-base(white, 700, 24px, 26px);
+    opacity: 87%;
+  }
+}
+
+.charge {
+  cursor: pointer;
+
+  @include font-base($color-brand-orange, 700, 16px, 26px);
+  letter-spacing: 5%;
+}
