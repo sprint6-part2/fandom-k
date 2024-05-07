@@ -9,6 +9,8 @@ import Modal from '@/components/Modal';
 import ModalHeader from '@/components/Modal/components/ModalHeader';
 // import ModalMobileHeader from '@/components/Modal/components/ModalMobileHeader';
 import Profile from '@/components/Profile';
+import Sample from '@/components/Sample/Sample';
+import CustomButton from '@/components/CustomButton';
 
 const TestPage = () => {
   const [isOpen, openModal, closeModal] = useModal();
@@ -78,7 +80,7 @@ const TestPage = () => {
         {/* 진행바 테스트 끝 */}
       </div>
       <div>
-        <p>list페이지에 들어갈 캐러셀 컴포넌트 테스트</p>
+        <p>리스트페이지에 들어갈 캐러셀 컴포넌트 테스트</p>
         <Carousel customSettings={listPageSettings}>
           {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => {
             return (
@@ -88,7 +90,7 @@ const TestPage = () => {
             );
           })}
         </Carousel>
-        <p>my페이지에 들어갈 캐러셀 컴포넌트 테스트</p>
+        <p>마이페이지에 들어갈 캐러셀 컴포넌트 테스트</p>
         <Carousel customSettings={myPageSetting} isLongArrow>
           {[1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17].map(
             (item) => {
