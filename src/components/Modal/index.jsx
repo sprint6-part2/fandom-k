@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import style from '@/components/Modal/styles.module.scss';
+import { motion, AnimatePresence } from 'framer-motion';
 
 /**
  * 프로필 사진 컴포넌트
@@ -14,9 +15,15 @@ const Modal = ({ isOpen, onClose, children }) => {
   // 추후에 크기에 따른 값을 설정할 때, 사용할 예정입니다.
 
   return (
-    <div>
+    <AnimatePresence>
       {isOpen && (
-        <div className={style.modalBackDrop} onClick={onClose}>
+        <motion.div
+          className={style.modalBackDrop}
+          onClick={onClose}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
           <div
             className={style.modalView}
             onClick={(e) => {
@@ -25,9 +32,9 @@ const Modal = ({ isOpen, onClose, children }) => {
           >
             {children}
           </div>
-        </div>
+        </motion.div>
       )}
-    </div>
+    </AnimatePresence>
   );
 };
 
