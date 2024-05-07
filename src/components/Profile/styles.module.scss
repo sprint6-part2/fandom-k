@@ -1,4 +1,4 @@
-@import '../../styles/normalize.scss';
+@import '../../styles/';
 
 $lg-size: 128px;
 $bg-size: 100px;
@@ -69,7 +69,7 @@ $sm-size: 70px;
   background: linear-gradient(
     271.36deg,
     $color-brand-orange -9.84%,
-    $color-brand-pick 107.18%
+    $color-brand-pink 107.18%
   );
   opacity: 50%;
 }

@@ -1,3 +1,4 @@
+
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import style from '@/components/Modal/styles.module.scss';
@@ -28,13 +29,9 @@ const Modal = ({ isOpen, onClose, children }) => {
 };
 
 Modal.propTypes = {
-  isOpen: PropTypes.bool,
+  isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.object.isRequired,
   children: PropTypes.object.isRequired,
-};
-
-Modal.defaultProps = {
-  isOpen: false,
 };
 
 export default Modal;
