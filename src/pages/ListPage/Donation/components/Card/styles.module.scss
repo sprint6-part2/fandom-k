@@ -14,12 +14,6 @@
   }
 }
 
-@media (max-width: $width-mobile) {
-  .topWrapper {
-    height: 206px;
-  }
-}
-
 .gradient {
   position: absolute;
 
@@ -40,6 +34,17 @@
   margin-inline: auto;
 }
 
+@media (max-width: $width-mobile) {
+  .topWrapper {
+    height: 206px;
+  }
+  .button {
+    > button {
+      height: 31px !important;
+    }
+  }
+}
+
 // 카드 하단 부분
 .title {
   display: flex;
@@ -55,7 +60,7 @@
   }
 
   > h3 {
-    @include font-base($color-white, 500, 18px, 21.48px);
+    @include font-base($color-white, 500, 18px, 21px);
 
     white-space: nowrap;
     overflow: hidden;
@@ -66,13 +71,14 @@
 @media (max-width: $width-mobile) {
   .title {
     margin-top: 10px;
+    margin-bottom: 20px;
 
     > span {
       @include font-base($color-white, 400, 12px, 18px);
     }
 
     > h3 {
-      @include font-base($color-white, 500, 14px, 16.71px);
+      @include font-base($color-white, 500, 14px, 17px);
     }
   }
 }
