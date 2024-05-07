@@ -1,0 +1,37 @@
+@import '../../styles/';
+
+.button {
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    $color-brand-orange 0%,
+    $color-brand-pink 100%
+  );
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+
+  color: $color-white;
+  @include font-weight-size(700);
+
+  &[data-rounded='true'] {
+    border-radius: 24px;
+  }
+
+  &:hover {
+    background: linear-gradient(
+      90deg,
+      $color-brand-pink 0%,
+      $color-brand-orange 100%
+    );
+  }
+  &:disabled {
+    background: $color-gray-warm;
+    cursor: not-allowed;
+  }
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
