@@ -20,6 +20,9 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'react/require-default-props': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
     'no-console': 'off',
     'arrow-body-style': ['error', 'always'],
     'react/prop-types': 'off',
@@ -50,6 +53,7 @@ module.exports = {
           },
         ],
         pathGroupsExcludedImportTypes: ['react*'],
+        'arrow-body-style': ['error', 'always'],
       },
     ],
   },

@@ -1,0 +1,44 @@
+@import '../../../../styles/';
+
+.container {
+  width: 100%;
+  height: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.infoContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.credit {
+  height: 18px;
+  display: grid;
+  grid-template-columns: 12px 1fr;
+  gap: 2px;
+
+  .creditCount {
+    @include font-weight-size(400, 12px);
+    @include font-line_height-letter_spacing(18px, -0.2px);
+    color: $color-brand-orange;
+  }
+}
+
+.countdown {
+  @include font-weight-size(400, 12px);
+  @include font-line_height-letter_spacing(18px, -0.2px);
+  color: white;
+}
+
+.progressBar {
+  width: 100%;
+  height: 1px;
+  background-color: white;
+}
+
+.progressed {
+  height: 100%;
+  background-color: $color-brand-orange;
+}
