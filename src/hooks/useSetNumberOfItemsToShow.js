@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { TABLET_WIDTH, MOBILE_WIDTH } from '@/constants/screenSizes';
 
 export default function useSetNumOfItemsToShow({ desktop, tablet, mobile }) {
   const numberOfItems = [desktop, tablet, mobile];
@@ -6,9 +7,9 @@ export default function useSetNumOfItemsToShow({ desktop, tablet, mobile }) {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 744) {
+      if (window.innerWidth > TABLET_WIDTH) {
         setsNumOfItemsToShow(numberOfItems[0]);
-      } else if (window.innerWidth > 375) {
+      } else if (window.innerWidth > MOBILE_WIDTH) {
         setsNumOfItemsToShow(numberOfItems[1]);
       } else {
         setsNumOfItemsToShow(numberOfItems[2]);

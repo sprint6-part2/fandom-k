@@ -5,7 +5,7 @@ import ChartElement from './components/ChartElement';
 import Tab from './components/Tab';
 import CustomButton from '@/components/CustomButton';
 import Chart from '@/assets/icons/Chart';
-import { boys, girls } from '@/utils/utils';
+import { boys, girls } from './mock';
 import useSetNumOfItemsToShow from '@/hooks/useSetNumberOfItemsToShow';
 
 const MonthlyChart = () => {
@@ -44,7 +44,7 @@ const MonthlyChart = () => {
         name: '추가 버튼 눌렀구나',
         totalVotes: 1000,
         profilePicture:
-          'https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714613892649/ive1.jpeg',
+        'https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714613892649/ive1.jpeg',
       },
     ];
     setIdolList(newArr);
@@ -57,7 +57,7 @@ const MonthlyChart = () => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <h1>이달의 차트</h1>
+        <h2>이달의 차트</h2>
         <CustomButton btnText="차트 투표하기" textSize={13} maxHeight={32}>
           <Chart />
         </CustomButton>

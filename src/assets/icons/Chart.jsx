@@ -1,5 +1,5 @@
-import * as React from "react";
-const Chart = ({ width = 24, height = 25, fill = 'white', ...props }) => (
+import * as React from 'react';
+const Chart = ({ width = 24, height = 25, stroke = 'white', ...props }) => (
   <svg
     width={width}
     height={height}
@@ -10,21 +10,21 @@ const Chart = ({ width = 24, height = 25, fill = 'white', ...props }) => (
   >
     <path
       d="M8 10.5L8 16.5"
-      stroke="white"
+      stroke={stroke}
       strokeWidth={2}
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M12 12.5V16.5"
-      stroke="white"
+      stroke={stroke}
       strokeWidth={2}
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M16 8.5V16.5"
-      stroke="white"
+      stroke={stroke}
       strokeWidth={2}
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -35,7 +35,7 @@ const Chart = ({ width = 24, height = 25, fill = 'white', ...props }) => (
       width={18}
       height={16}
       rx={2}
-      stroke="white"
+      stroke={stroke}
       strokeWidth={2}
     />
   </svg>
