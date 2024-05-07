@@ -7,7 +7,7 @@ import testData from './mock.json';
 
 const Donation = () => {
   return (
-    <section>
+    <section className={style.container}>
       <h2 className={style.title}>후원을 기다리는 조공</h2>
       <Carousel customSettings={carouselSettings}>
         {testData.list.map((item) => {
