@@ -1,5 +1,22 @@
+import Header from '@/components/Header';
+import MonthlyChart from './MonthlyChart';
+
 const ListPage = () => {
-  return <h1>리스트 페이지입니다.</h1>;
+  return (
+    <div>
+      <Header />
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          padding: '24px',
+          backgroundColor: 'black',
+        }}
+      >
+        <MonthlyChart />
+      </div>
+    </div>
+  );
 };
 
 export default ListPage;
