@@ -5,7 +5,7 @@ import CustomButton from '@/components/CustomButton';
 
 const Card = ({ item }) => {
   return (
-    <>
+    <article>
       <div className={style.topWrapper}>
         <div className={style.gradient} />
         <img src={item.idol.profilePicture} alt={item.idol.name} />
@@ -24,7 +24,7 @@ const Card = ({ item }) => {
           targetDonation={item.targetDonation}
         />
       </div>
-    </>
+    </article>
   );
 };
 
