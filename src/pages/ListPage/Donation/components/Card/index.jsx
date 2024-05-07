@@ -9,7 +9,9 @@ const Card = ({ item }) => {
       <div className={style.topWrapper}>
         <div className={style.gradient} />
         <img src={item.idol.profilePicture} alt={item.idol.name} />
-        <CustomButton btnText="후원하기" />
+        <div className={style.button}>
+          <CustomButton btnText="후원하기" />
+        </div>
       </div>
       <div>
         <div className={style.title}>
