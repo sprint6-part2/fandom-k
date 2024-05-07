@@ -5,12 +5,12 @@ import ChartElement from './components/ChartElement';
 import Tab from './components/Tab';
 import CustomButton from '@/components/CustomButton';
 import Chart from '@/assets/icons/Chart';
-import { boys, girls } from './mock';
 import useSetNumOfItemsToShow from '@/hooks/useSetNumberOfItemsToShow';
+import { getCharts } from '@/api/getCharts';
 
 const MonthlyChart = () => {
   const [idolList, setIdolList] = useState([]);
-  const [currentTab, setCurrentTab] = useState('girl');
+  const [currentTab, setCurrentTab] = useState('female');
   const chartClass = classNames(styles.chart, {
     [styles.even]: idolList.length % 2 === 0,
   });
@@ -19,35 +19,36 @@ const MonthlyChart = () => {
     tablet: 5,
     mobile: 5,
   });
+  const [nextCursor, setNextCursor] = useState();
 
   //데이터 가져오기
-  const handleLoad = () => {
-    if (currentTab === 'girl') {
-      setIdolList(girls.slice(0, numOfItemsToShow));
-    }
-    if (currentTab === 'boy') {
-      setIdolList(boys.slice(0, numOfItemsToShow));
-    }
+  const handleLoad = async () => {
+    const chart = await getCharts({
+      gender: currentTab,
+      pageSize: numOfItemsToShow,
+      cursor: nextCursor,
+    });
+    console.log(chart);
+    setIdolList(chart.idols);
+    setNextCursor(chart.nextCursor);
   };
 
   // 탭 선택 핸들러
   const handleTabChange = (tab) => {
     setCurrentTab(tab);
+    setNextCursor(null);
   };
 
   //더보기 버튼
-  const handleMoreBtn = () => {
-    const newArr = [
-      ...idolList,
-      {
-        id: idolList.length,
-        name: '추가 버튼 눌렀구나',
-        totalVotes: 1000,
-        profilePicture:
-        'https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714613892649/ive1.jpeg',
-      },
-    ];
+  const handleMoreBtn = async () => {
+    const chart = await getCharts({
+      gender: currentTab,
+      pageSize: numOfItemsToShow,
+      cursor: nextCursor,
+    });
+    const newArr = [...idolList, ...chart.idols];
     setIdolList(newArr);
+    setNextCursor(chart.nextCursor)
   };
 
   useEffect(() => {

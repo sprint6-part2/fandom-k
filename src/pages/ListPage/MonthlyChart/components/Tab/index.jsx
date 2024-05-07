@@ -5,16 +5,16 @@ import styles from './styles.module.scss';
 
 /**
  *
- * @param {string} currentTab 'girl' or 'boy'
+ * @param {string} currentTab 'female' or 'male'
  * @param {func}} handleTabChange 탭 바꿈 이벤트 핸들러
  */
 
 const Tab = ({ currentTab, handleTabChange }) => {
   const selectGirlTab = () => {
-    handleTabChange('girl');
+    handleTabChange('female');
   };
   const selectBoyTab = () => {
-    handleTabChange('boy');
+    handleTabChange('male');
   };
 
   return (
@@ -23,7 +23,7 @@ const Tab = ({ currentTab, handleTabChange }) => {
         role="button"
         tabIndex="0"
         className={classNames(styles.tab, {
-          [styles.current]: currentTab === 'girl',
+          [styles.current]: currentTab === 'female',
         })}
         onClick={selectGirlTab}
         onKeyDown={null}
@@ -34,7 +34,7 @@ const Tab = ({ currentTab, handleTabChange }) => {
         role="button"
         tabIndex="-1"
         className={classNames(styles.tab, {
-          [styles.current]: currentTab === 'boy',
+          [styles.current]: currentTab === 'male',
         })}
         onClick={selectBoyTab}
         onKeyDown={null}
