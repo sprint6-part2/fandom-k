@@ -9,6 +9,8 @@ import Modal from '@/components/Modal';
 import ModalHeader from '@/components/Modal/components/ModalHeader';
 // import ModalMobileHeader from '@/components/Modal/components/ModalMobileHeader';
 import Profile from '@/components/Profile';
+import Sample from '@/components/Sample/Sample';
+import CustomButton from '@/components/CustomButton';
 
 const TestPage = () => {
   const [isOpen, openModal, closeModal] = useModal();

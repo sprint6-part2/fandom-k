@@ -8,7 +8,7 @@ $font-style: normal !important;
   font-style: $font-style;
 }
 
-@mixin font-weight-size($weight, $size) {
+@mixin font-weight-size($weight, $size: null) {
   font-weight: $weight;
   font-size: $size;
 }
