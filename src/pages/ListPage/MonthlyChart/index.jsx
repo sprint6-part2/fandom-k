@@ -6,6 +6,7 @@ import Tab from './components/Tab';
 import CustomButton from '@/components/CustomButton';
 import Chart from '@/assets/icons/Chart';
 import { boys, girls } from '@/utils/utils';
+import useSetNumOfItemsToShow from '@/hooks/useSetNumberOfItemsToShow';
 
 const MonthlyChart = () => {
   const [idolList, setIdolList] = useState([]);
@@ -13,14 +14,19 @@ const MonthlyChart = () => {
   const chartClass = classNames(styles.chart, {
     [styles.even]: idolList.length % 2 === 0,
   });
+  const numOfItemsToShow = useSetNumOfItemsToShow({
+    desktop: 10,
+    tablet: 5,
+    mobile: 5,
+  });
 
   //데이터 가져오기
   const handleLoad = () => {
     if (currentTab === 'girl') {
-      setIdolList(girls);
+      setIdolList(girls.slice(0, numOfItemsToShow));
     }
     if (currentTab === 'boy') {
-      setIdolList(boys);
+      setIdolList(boys.slice(0, numOfItemsToShow));
     }
   };
 
@@ -33,14 +39,20 @@ const MonthlyChart = () => {
   const handleMoreBtn = () => {
     const newArr = [
       ...idolList,
-      { id: idolList.length, name: '추가 버튼 눌렀구나', totalVotes: 1000 },
+      {
+        id: idolList.length,
+        name: '추가 버튼 눌렀구나',
+        totalVotes: 1000,
+        profilePicture:
+          'https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714613892649/ive1.jpeg',
+      },
     ];
     setIdolList(newArr);
   };
 
   useEffect(() => {
     handleLoad();
-  }, [currentTab]);
+  }, [currentTab, numOfItemsToShow]);
 
   return (
     <div className={styles.container}>
