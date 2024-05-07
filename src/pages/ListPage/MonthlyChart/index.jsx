@@ -3,6 +3,8 @@ import classNames from 'classnames';
 import styles from './styles.module.scss';
 import ChartElement from './components/ChartElement';
 import Tab from './components/Tab';
+import CustomButton from '@/components/CustomButton';
+import Chart from '@/assets/icons/Chart';
 import { boys, girls } from '@/utils/utils';
 
 const MonthlyChart = () => {
@@ -44,7 +46,9 @@ const MonthlyChart = () => {
     <div className={styles.container}>
       <div className={styles.header}>
         <h1>이달의 차트</h1>
-        <button type="button">차트 투표하기</button>
+        <CustomButton btnText="차트 투표하기" textSize={13} maxHeight={32}>
+          <Chart />
+        </CustomButton>
       </div>
       <Tab currentTab={currentTab} handleTabChange={handleTabChange} />
       <ul className={chartClass}>
@@ -53,9 +57,7 @@ const MonthlyChart = () => {
         })}
       </ul>
       <div className={styles.moreButton}>
-        <button type="button" onClick={handleMoreBtn}>
-          더보기
-        </button>
+        <CustomButton btnText="더보기" onClick={handleMoreBtn} />
       </div>
     </div>
   );

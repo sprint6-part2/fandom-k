@@ -39,6 +39,9 @@
   }
   button {
     width: 128px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -105,5 +108,6 @@
   button {
     width: 326px;
     height: 42px;
+    background: #ffffff1a;
   }
 }
