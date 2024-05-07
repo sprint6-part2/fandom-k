@@ -1,8 +1,9 @@
 @import '../../../styles/';
+$color-credit-border: #f1eef9;
 
 .container {
   border-radius: 8px;
-  border: 1px solid #f1eef9cc;
+  border: 1px solid $color-credit-border;
   opacity: 80%;
 
   display: flex;
@@ -24,10 +25,10 @@
 .credit {
   display: flex;
   flex-direction: column;
-  gap: 14.13px;
+  gap: 14px;
 
   > span {
-    @include font-base(white, 400, 16px, 19.09px);
+    @include font-base(white, 400, 16px, 19px);
     opacity: 60%;
   }
 }
@@ -70,7 +71,7 @@
     gap: 8px;
 
     > span {
-      @include font-base(white, 400, 12px, 14.32px);
+      @include font-base(white, 400, 12px, 14px);
     }
   }
 
