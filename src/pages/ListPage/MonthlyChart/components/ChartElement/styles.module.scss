@@ -4,7 +4,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 588px;
   /* 태블릿 */
   @media (min-width: ($width-mobile + 1)) and (max-width: $width-tablet) {
     width: 100%;

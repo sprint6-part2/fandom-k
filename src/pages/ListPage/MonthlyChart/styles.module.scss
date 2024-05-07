@@ -3,7 +3,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  width: 1200px;
+  max-width: 1200px;
   min-height: 633px;
 
   /* 태블릿 */
@@ -48,7 +48,7 @@
   margin-bottom: 51px;
 
   display: grid;
-  grid-template-columns: repeat(2, 588px);
+  grid-template-columns: repeat(2, minmax(auto, 588px));
   grid-auto-rows: 79px;
   column-gap: 24px;
   row-gap: 8px;
