@@ -1,0 +1,47 @@
+@import '../../../../styles/';
+
+@mixin set-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin set-flex-column-gap($row-gap, $column-gap) {
+  @include set-flex-column;
+  gap: $row-gap $column-gap;
+}
+
+@mixin set-flex-column-center-gap($row-gap, $column-gap) {
+  @include set-flex-column-gap($row-gap, $column-gap);
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  // @include set-flex-column-gap(20px, 0);
+  > .title {
+    @include font-base($color-white-100, 700, 24px, 26px);
+  }
+
+  .idolList {
+    display: grid !important;
+    grid-template: repeat(2, 1fr) / repeat(8, 1fr);
+    gap: 20px 10px;
+    padding-block-end: 20px;
+  }
+}
+
+.idolInfo {
+  // @include set-flex-column-center-gap(0, 0);
+  > h2 {
+    @include font-base($color-white-200, 700, 16px, 26px);
+  }
+  > h3 {
+    @include font-base($color-white, 400, 14px, 16.71px);
+    opacity: 0.6;
+  }
+}
+
+.idolItem {
+  display: flex;
+  flex-direction: column;
+}

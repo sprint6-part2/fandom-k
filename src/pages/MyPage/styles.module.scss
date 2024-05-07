@@ -1,0 +1,19 @@
+@import '../../styles/';
+
+@mixin set-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin set-flex-column-center {
+  @include set-flex-column;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  background-color: $color-black-200;
+}
+.container {
+  @include set-flex-column;
+  row-gap: 20px;
+}

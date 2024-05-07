@@ -48,6 +48,10 @@
     margin: 0 24px;
   }
 
+  .slick-track {
+    width: 100% !important;
+  }
+
   @media (max-width: 1200px) {
     .slick-slide > div {
       margin: 0 18px;
