@@ -1,5 +1,5 @@
 import React from 'react';
-import ProgressBar from '@/pages/ListPage/components/ProgressBar';
+import ProgressBar from '@/pages/ListPage/Donation/components/ProgressBar';
 import Header from '@/components/Header';
 import styles from './styles.module.scss';
 import Carousel from '@/components/Carousel';

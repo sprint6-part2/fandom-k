@@ -1,6 +1,7 @@
+import Donation from './Donation';
 import Header from '@/components/Header';
-import Credit from './Credit';
 import style from './styles.module.scss';
+import Credit from './Credit';
 
 const ListPage = () => {
   return (
@@ -8,6 +9,7 @@ const ListPage = () => {
       <Header />
       <main className={style.main}>
         <Credit />
+        <Donation />
       </main>
     </div>
   );
