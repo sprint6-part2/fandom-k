@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './styles.module.scss';
 import ProgressBar from '../ProgressBar';
+import CustomButton from '@/components/CustomButton';
 
 const Card = ({ item }) => {
   return (
@@ -8,7 +9,7 @@ const Card = ({ item }) => {
       <div className={style.topWrapper}>
         <div className={style.gradient} />
         <img src={item.idol.profilePicture} alt={item.idol.name} />
-        <button>후원하기</button>
+        <CustomButton btnText="후원하기" />
       </div>
       <div>
         <div className={style.title}>
