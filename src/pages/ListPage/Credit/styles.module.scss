@@ -26,7 +26,7 @@
   flex-direction: column;
   gap: 14.13px;
 
-  span {
+  > span {
     @include font-base(white, 400, 16px, 19.09px);
     opacity: 60%;
   }
@@ -37,7 +37,7 @@
   align-items: center;
   gap: 4px;
 
-  span {
+  > span {
     @include font-base(white, 700, 24px, 26px);
     opacity: 87%;
   }
@@ -48,6 +48,15 @@
 
   @include font-base($color-brand-orange, 700, 16px, 26px);
   letter-spacing: 5%;
+
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+
+  &:hover {
+    color: #e35852;
+  }
 }
 
 @media (max-width: $width-mobile) {
@@ -59,13 +68,13 @@
   .credit {
     gap: 8px;
 
-    span {
+    > span {
       @include font-base(white, 400, 12px, 14.32px);
     }
   }
 
   .creditInfo {
-    span {
+    > span {
       font-size: 20px;
     }
   }

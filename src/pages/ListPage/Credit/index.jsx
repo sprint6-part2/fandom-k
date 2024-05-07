@@ -13,7 +13,7 @@ const Credit = () => {
         </div>
       </div>
       <div>
-        <span className={styles.charge}>충전하기</span>
+        <button className={styles.charge}>충전하기</button>
       </div>
     </section>
   );
