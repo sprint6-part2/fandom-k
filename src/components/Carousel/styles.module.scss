@@ -5,7 +5,7 @@
 
   width: 40px;
   height: 78.33px;
-  margin-inline: 20px;
+  margin-inline: 15px;
   border-radius: 6.67px;
 
   background-color: #1b1b1b;
@@ -37,7 +37,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 
 :global {
@@ -45,24 +44,12 @@
     width: 95%;
   }
   .slick-slide > div {
-    margin: 0 24px;
+    margin: 0 12px;
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1000px) {
     .slick-slide > div {
-      margin: 0 18px;
-    }
-  }
-
-  @media (max-width: 900px) {
-    .slick-slide > div {
-      margin: 0 15px;
-    }
-  }
-
-  @media (max-width: 500px) {
-    .slick-slide > div {
-      margin: 0 12px;
+      margin: 0 8px;
     }
   }
 }
