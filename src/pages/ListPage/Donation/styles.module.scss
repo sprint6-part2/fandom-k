@@ -19,17 +19,20 @@
 }
 
 .error {
-  margin-top: 30px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 
+  text-align: center;
   white-space: pre-wrap;
 
   h3 {
-    @include font-base($color-brand-orange, 600, 20px, 26px);
+    margin-top: 40px;
+    @include font-base($color-brand-orange, 600, 18px, 26px);
   }
 
   p {
-    margin-top: 4px;
     @include font-base($color-white, 600, 16px, 26px);
   }
 }
