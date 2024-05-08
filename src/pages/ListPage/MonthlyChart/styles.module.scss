@@ -1,0 +1,121 @@
+@import '../../../styles/';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  min-height: 633px;
+  margin: 80px auto 0;
+
+  /* 태블릿 */
+  @media (min-width: ($width-mobile + 1)) and (max-width: $width-tablet) {
+    max-width: 700px;
+    min-height: 609px;
+    margin: 60px auto 0;
+  }
+  /* 모바일 */
+  @media (max-width: $width-mobile) {
+    max-width: 327px;
+    min-height: 599px;
+    margin: 40px auto 0;
+  }
+}
+@media (max-width: 1250px) {
+  .container {
+    margin-inline: 24px;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 32px;
+  margin-bottom: 24px;
+
+  h2 {
+    @include font-weight-size(700, 24px);
+    line-height: 26px;
+    color: white;
+    /* 태블릿 */
+    @media (min-width: ($width-mobile + 1)) and (max-width: $width-tablet) {
+      @include font-weight-size(700, 20px);
+    }
+    /* 모바일 */
+    @media (max-width: $width-mobile) {
+      @include font-weight-size(700, 16px);
+    }
+  }
+  button {
+    width: 128px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.chart {
+  min-height: 418px;
+  margin-top: 24px;
+  margin-bottom: 51px;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(auto, 588px));
+  grid-auto-rows: 79px;
+  column-gap: 24px;
+  row-gap: 8px;
+
+  li:not(:last-child) {
+    border-bottom: 1px solid #ffffff1a;
+    height: 79px;
+    padding-bottom: 8px;
+  }
+  &.even {
+    li:nth-last-child(-n + 2) {
+      border-bottom: none;
+      height: 70px;
+      padding-bottom: 0px;
+    }
+  }
+
+  /* 태블릿 */
+  @media (min-width: ($width-mobile + 1)) and (max-width: $width-tablet) {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-bottom: 27px;
+    gap: 8px;
+    &.even {
+      li:nth-last-child(2) {
+        border-bottom: 1px solid #ffffff1a;
+        height: 79px;
+        padding-bottom: 8px;
+      }
+    }
+  }
+  /* 모바일 */
+  @media (max-width: $width-mobile) {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-top: 16px;
+    margin-bottom: 33px;
+    gap: 8px;
+
+    &.even {
+      li:nth-last-child(2) {
+        border-bottom: 1px solid #ffffff1a;
+        height: 79px;
+        padding-bottom: 8px;
+      }
+    }
+  }
+}
+
+.moreButton {
+  text-align: center;
+  button {
+    width: 326px;
+    height: 42px;
+    background: #ffffff1a;
+  }
+}

@@ -12,7 +12,7 @@ $color-credit-border: #f1eef9;
 
   height: 131px;
   max-width: 1200px;
-  margin: 0 auto 48px;
+  margin: 0 auto 50px;
   padding-inline: 64px;
 }
 
@@ -60,11 +60,17 @@ $color-credit-border: #f1eef9;
   }
 }
 
+@media (max-width: $width-tablet) {
+  .container {
+    margin: 0 auto 64px;
+  }
+}
+
 @media (max-width: $width-mobile) {
   .container {
     height: 87px;
     padding-inline: 20px;
-    margin-top: 8px;
+    margin: 16px auto 40px;
   }
 
   .credit {

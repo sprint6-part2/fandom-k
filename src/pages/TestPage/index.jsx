@@ -14,8 +14,12 @@ const TestPage = () => {
   const [isOpen, openModal, closeModal] = useModal();
 
   return (
-    <div>
+    <div style={{ backgroundColor: 'black' }}>
       <Header />
+      <div
+        style={{ display: 'flex', justifyContent: 'center', padding: '24px' }}
+      >
+      </div>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <Profile
           clicked
