@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import style from '@/components/Modal/styles.module.scss';
+import { motion, AnimatePresence } from 'framer-motion';
 
 /**
  * 프로필 사진 컴포넌트
@@ -10,13 +11,22 @@ import style from '@/components/Modal/styles.module.scss';
  */
 
 const Modal = ({ isOpen, onClose, children }) => {
-  // isBig은 임시로 둔 변수입니다.
-  // 추후에 크기에 따른 값을 설정할 때, 사용할 예정입니다.
+  const Ref = useRef(null);
+
+  const handleBackDrop = (e) => {
+    return e.target === Ref.current && onClose();
+  };
 
   return (
-    <div>
+    <AnimatePresence>
       {isOpen && (
-        <div className={style.modalBackDrop} onClick={onClose}>
+        <motion.div
+          className={style.modalBackDrop}
+          onClick={onClose}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
           <div
             className={style.modalView}
             onClick={(e) => {
@@ -25,20 +35,16 @@ const Modal = ({ isOpen, onClose, children }) => {
           >
             {children}
           </div>
-        </div>
+        </motion.div>
       )}
-    </div>
+    </AnimatePresence>
   );
 };
 
 Modal.propTypes = {
-  isOpen: PropTypes.bool,
+  isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.object.isRequired,
   children: PropTypes.object.isRequired,
-};
-
-Modal.defaultProps = {
-  isOpen: false,
 };
 
 export default Modal;

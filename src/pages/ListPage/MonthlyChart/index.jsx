@@ -6,11 +6,13 @@ import Tab from './components/Tab';
 import CustomButton from '@/components/CustomButton';
 import Chart from '@/assets/icons/Chart';
 import useSetNumOfItemsToShow from '@/hooks/useSetNumberOfItemsToShow';
+import useLoad from '@/hooks/useLoad';
 import { getCharts } from '@/api/getCharts';
 import { FEMALE } from '@/constants/tabTypes';
 
 const MonthlyChart = () => {
   const [idolList, setIdolList] = useState([]);
+  const [isLoading, loadingError, handleLoad] = useLoad(getCharts);
   const [currentTab, setCurrentTab] = useState(FEMALE);
   const numOfItemsToShow = useSetNumOfItemsToShow({
     desktop: 10,
@@ -23,35 +25,40 @@ const MonthlyChart = () => {
   });
 
   //데이터 가져오기
-  const handleLoad = async () => {
-    const chart = await getCharts({
+  const handleChartLoad = async () => {
+    const chart = await handleLoad({
       gender: currentTab,
       pageSize: numOfItemsToShow,
     });
-    setIdolList(chart.idols);
-    setNextCursor(chart.nextCursor);
+    if (chart) {
+      setIdolList(chart.idols);
+      setNextCursor(chart.nextCursor);
+    }
   };
 
   // 탭 선택 핸들러
   const handleTabChange = (tab) => {
     setCurrentTab(tab);
     setNextCursor(null);
+    setIdolList([]);
   };
 
   //더보기 버튼
   const handleMoreBtn = async () => {
-    const chart = await getCharts({
+    const chart = await handleLoad({
       gender: currentTab,
       pageSize: numOfItemsToShow,
       cursor: nextCursor,
     });
-    const newArr = [...idolList, ...chart.idols];
-    setIdolList(newArr);
-    setNextCursor(chart.nextCursor);
+    if (chart) {
+      const newArr = [...idolList, ...chart.idols];
+      setIdolList(newArr);
+      setNextCursor(chart.nextCursor);
+    }
   };
 
   useEffect(() => {
-    handleLoad();
+    handleChartLoad();
   }, [currentTab, numOfItemsToShow]);
 
   return (
@@ -63,11 +70,18 @@ const MonthlyChart = () => {
         </CustomButton>
       </div>
       <Tab currentTab={currentTab} handleTabChange={handleTabChange} />
-      <ul className={chartClass}>
-        {idolList.map((idol, index) => {
-          return <ChartElement key={idol.id} idol={idol} ranking={index + 1} />;
-        })}
-      </ul>
+      {loadingError && <h2 style={{ color: 'white' }}>에러가 발생했습니다</h2>}
+      {idolList && (
+        <ul className={chartClass}>
+          {idolList.map((idol, index) => {
+            return (
+              <ChartElement key={idol.id} idol={idol} ranking={index + 1} />
+            );
+          })}
+        </ul>
+      )}
+      {isLoading && <h2 style={{ color: 'white' }}>로딩 중입니다</h2>}
+
       <div className={styles.moreButton}>
         {nextCursor && (
           <CustomButton btnText="더보기" onClick={handleMoreBtn} />

@@ -1,5 +1,5 @@
 import React from 'react';
-import ProgressBar from '@/pages/ListPage/components/ProgressBar';
+import ProgressBar from '@/pages/ListPage/Donation/components/ProgressBar';
 import Header from '@/components/Header';
 import styles from './styles.module.scss';
 import Carousel from '@/components/Carousel';
@@ -10,13 +10,16 @@ import ModalHeader from '@/components/Modal/components/ModalHeader';
 // import ModalMobileHeader from '@/components/Modal/components/ModalMobileHeader';
 import Profile from '@/components/Profile';
 
-
 const TestPage = () => {
   const [isOpen, openModal, closeModal] = useModal();
 
   return (
     <div style={{ backgroundColor: 'black' }}>
       <Header />
+      <div
+        style={{ display: 'flex', justifyContent: 'center', padding: '24px' }}
+      >
+      </div>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <Profile
           clicked
