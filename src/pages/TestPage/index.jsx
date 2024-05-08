@@ -9,9 +9,7 @@ import Modal from '@/components/Modal';
 import ModalHeader from '@/components/Modal/components/ModalHeader';
 // import ModalMobileHeader from '@/components/Modal/components/ModalMobileHeader';
 import Profile from '@/components/Profile';
-import MonthlyChart from '@/pages/ListPage/MonthlyChart';
-import Sample from '@/components/Sample/Sample';
-import CustomButton from '@/components/CustomButton';
+
 
 const TestPage = () => {
   const [isOpen, openModal, closeModal] = useModal();
@@ -19,11 +17,6 @@ const TestPage = () => {
   return (
     <div style={{ backgroundColor: 'black' }}>
       <Header />
-      <div
-        style={{ display: 'flex', justifyContent: 'center', padding: '24px' }}
-      >
-        <MonthlyChart />
-      </div>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <Profile
           clicked
