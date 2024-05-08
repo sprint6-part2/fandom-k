@@ -11,6 +11,29 @@
   @include font-base($color-white, 700, 24px, 26px);
 }
 
+.loading {
+  margin-top: 30px;
+  text-align: center;
+
+  @include font-base($color-white, 600, 20px, 26px);
+}
+
+.error {
+  margin-top: 30px;
+  text-align: center;
+
+  white-space: pre-wrap;
+
+  h3 {
+    @include font-base($color-brand-orange, 600, 20px, 26px);
+  }
+
+  p {
+    margin-top: 4px;
+    @include font-base($color-white, 600, 16px, 26px);
+  }
+}
+
 @media (max-width: $width-tablet) {
   .container {
     margin-inline: 24px;
