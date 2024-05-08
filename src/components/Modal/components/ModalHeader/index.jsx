@@ -1,8 +1,8 @@
 import React from 'react';
-import ModalCloseButton from '@/assets/icons/ModalCloseButton';
-import style from '@/components/Modal/components/ModalHeader/styles.module.scss';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import style from './styles.module.scss';
+import ModalCloseButton from '@/assets/icons/ModalCloseButton';
 
 /**
  * 모달 헤더 컴포넌트
@@ -24,11 +24,7 @@ const ModalHeader = ({ title, onClose }) => {
 
 ModalHeader.propTypes = {
   title: PropTypes.string,
-  onClose: PropTypes.object.isRequired,
-};
-
-ModalHeader.defaultProps = {
-  title: '모달',
+  onClose: PropTypes.func.isRequired,
 };
 
 export default ModalHeader;

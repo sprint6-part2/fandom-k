@@ -1,5 +1,18 @@
+import Donation from './Donation';
+import Header from '@/components/Header';
+import style from './styles.module.scss';
+import Credit from './Credit';
+
 const ListPage = () => {
-  return <h1>리스트 페이지입니다.</h1>;
+  return (
+    <div className={style.container}>
+      <Header />
+      <main className={style.main}>
+        <Credit />
+        <Donation />
+      </main>
+    </div>
+  );
 };
 
 export default ListPage;

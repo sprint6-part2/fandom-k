@@ -1,5 +1,5 @@
 import React from 'react';
-import ProgressBar from '@/pages/ListPage/components/ProgressBar';
+import ProgressBar from '@/pages/ListPage/Donation/components/ProgressBar';
 import Header from '@/components/Header';
 import styles from './styles.module.scss';
 import Carousel from '@/components/Carousel';
@@ -9,8 +9,6 @@ import Modal from '@/components/Modal';
 import ModalHeader from '@/components/Modal/components/ModalHeader';
 // import ModalMobileHeader from '@/components/Modal/components/ModalMobileHeader';
 import Profile from '@/components/Profile';
-import Sample from '@/components/Sample/Sample';
-import CustomButton from '@/components/CustomButton';
 
 const TestPage = () => {
   const [isOpen, openModal, closeModal] = useModal();

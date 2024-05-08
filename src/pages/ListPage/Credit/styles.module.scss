@@ -1,0 +1,87 @@
+@import '../../../styles/';
+$color-credit-border: #f1eef9;
+
+.container {
+  border-radius: 8px;
+  border: 1px solid $color-credit-border;
+  opacity: 80%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 131px;
+  max-width: 1200px;
+  margin: 0 auto 48px;
+  padding-inline: 64px;
+}
+
+@media (max-width: 1250px) {
+  .container {
+    margin-inline: 24px;
+  }
+}
+
+.credit {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  > span {
+    @include font-base(white, 400, 16px, 19px);
+    opacity: 60%;
+  }
+}
+
+.creditInfo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  > span {
+    @include font-base(white, 700, 24px, 26px);
+    opacity: 87%;
+  }
+}
+
+.charge {
+  cursor: pointer;
+
+  @include font-base($color-brand-orange, 700, 16px, 26px);
+  letter-spacing: 5%;
+
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+
+  &:hover {
+    color: #e35852;
+  }
+}
+
+@media (max-width: $width-mobile) {
+  .container {
+    height: 87px;
+    padding-inline: 20px;
+    margin-top: 8px;
+  }
+
+  .credit {
+    gap: 8px;
+
+    > span {
+      @include font-base(white, 400, 12px, 14px);
+    }
+  }
+
+  .creditInfo {
+    > span {
+      font-size: 20px;
+    }
+  }
+
+  .charge {
+    font-size: 13px;
+  }
+}
