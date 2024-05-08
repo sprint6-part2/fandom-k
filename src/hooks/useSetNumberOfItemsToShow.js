@@ -1,9 +1,21 @@
 import { useEffect, useState } from 'react';
 import { TABLET_WIDTH, MOBILE_WIDTH } from '@/constants/screenSizes';
 
+const firstWindowSize = () => {
+  if (window.innerWidth > TABLET_WIDTH) {
+    return 0;
+  } else if (window.innerWidth > MOBILE_WIDTH) {
+    return 1;
+  } else {
+    return 2;
+  }
+};
+
 export default function useSetNumOfItemsToShow({ desktop, tablet, mobile }) {
   const numberOfItems = [desktop, tablet, mobile];
-  const [numOfItemsToShow, setsNumOfItemsToShow] = useState(numberOfItems[0]);
+  const [numOfItemsToShow, setsNumOfItemsToShow] = useState(
+    numberOfItems[firstWindowSize()],
+  );
 
   useEffect(() => {
     const handleResize = () => {
@@ -17,7 +29,6 @@ export default function useSetNumOfItemsToShow({ desktop, tablet, mobile }) {
     };
 
     window.addEventListener('resize', handleResize);
-    handleResize();
     return () => {
       window.removeEventListener('resize', handleResize);
     };

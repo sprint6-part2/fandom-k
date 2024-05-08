@@ -69,10 +69,8 @@ const MonthlyChart = () => {
         })}
       </ul>
       <div className={styles.moreButton}>
-        {nextCursor ? (
+        {nextCursor && (
           <CustomButton btnText="더보기" onClick={handleMoreBtn} />
-        ) : (
-          <></>
         )}
       </div>
     </div>
