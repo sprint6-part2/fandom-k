@@ -11,24 +11,22 @@ import { getCharts } from '@/api/getCharts';
 const MonthlyChart = () => {
   const [idolList, setIdolList] = useState([]);
   const [currentTab, setCurrentTab] = useState('female');
-  const chartClass = classNames(styles.chart, {
-    [styles.even]: idolList.length % 2 === 0,
-  });
   const numOfItemsToShow = useSetNumOfItemsToShow({
     desktop: 10,
     tablet: 5,
     mobile: 5,
   });
   const [nextCursor, setNextCursor] = useState();
+  const chartClass = classNames(styles.chart, {
+    [styles.even]: idolList.length % 2 === 0,
+  });
 
   //데이터 가져오기
   const handleLoad = async () => {
     const chart = await getCharts({
       gender: currentTab,
       pageSize: numOfItemsToShow,
-      cursor: nextCursor,
     });
-    console.log(chart);
     setIdolList(chart.idols);
     setNextCursor(chart.nextCursor);
   };
@@ -48,7 +46,7 @@ const MonthlyChart = () => {
     });
     const newArr = [...idolList, ...chart.idols];
     setIdolList(newArr);
-    setNextCursor(chart.nextCursor)
+    setNextCursor(chart.nextCursor);
   };
 
   useEffect(() => {
@@ -70,7 +68,11 @@ const MonthlyChart = () => {
         })}
       </ul>
       <div className={styles.moreButton}>
-        <CustomButton btnText="더보기" onClick={handleMoreBtn} />
+        {nextCursor ? (
+          <CustomButton btnText="더보기" onClick={handleMoreBtn} />
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );
