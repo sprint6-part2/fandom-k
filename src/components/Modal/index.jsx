@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import style from '@/components/Modal/styles.module.scss';
 
@@ -10,21 +11,17 @@ import style from '@/components/Modal/styles.module.scss';
  */
 
 const Modal = ({ isOpen, onClose, children }) => {
-  // isBig은 임시로 둔 변수입니다.
-  // 추후에 크기에 따른 값을 설정할 때, 사용할 예정입니다.
+  const Ref = useRef(null);
+
+  const handleBackDrop = (e) => {
+    return e.target === Ref.current && onClose();
+  };
 
   return (
     <div>
       {isOpen && (
-        <div className={style.modalBackDrop} onClick={onClose}>
-          <div
-            className={style.modalView}
-            onClick={(e) => {
-              return e.stopPropagation();
-            }}
-          >
-            {children}
-          </div>
+        <div className={style.modalBackDrop} ref={Ref} onClick={handleBackDrop}>
+          <div className={style.modalView}>{children}</div>
         </div>
       )}
     </div>
@@ -32,13 +29,9 @@ const Modal = ({ isOpen, onClose, children }) => {
 };
 
 Modal.propTypes = {
-  isOpen: PropTypes.bool,
+  isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.object.isRequired,
   children: PropTypes.object.isRequired,
-};
-
-Modal.defaultProps = {
-  isOpen: false,
 };
 
 export default Modal;
