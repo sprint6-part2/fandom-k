@@ -17,9 +17,9 @@ const Donation = () => {
         setError(null);
         setIsLoading(false);
       })
-      .catch((err) => {
+      .catch((error) => {
         setDonationList(null);
-        setError(err.message);
+        setError(error.message);
         setIsLoading(false);
       });
   }, []);
