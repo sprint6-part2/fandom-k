@@ -1,4 +1,4 @@
-const fandom_k_backend_api = 'https://fandom-k-api.vercel.app/';
+const fandom_k_api = import.meta.env.VITE_FANDOM_K_API;
 
 const getCharts = async ({
   gender = 'female',
@@ -7,7 +7,7 @@ const getCharts = async ({
 }) => {
   const query = `&pageSize=${pageSize}${cursor ? `&cursor=${cursor}` : ''}`;
   const response = await fetch(
-    fandom_k_backend_api + `6-2/charts/{gender}?gender=${gender}${query}`,
+    fandom_k_api + `/6-2/charts/{gender}?gender=${gender}${query}`,
   );
 
   if (400 <= response.status && response.status < 600) {

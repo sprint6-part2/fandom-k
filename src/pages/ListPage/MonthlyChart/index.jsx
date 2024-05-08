@@ -7,10 +7,11 @@ import CustomButton from '@/components/CustomButton';
 import Chart from '@/assets/icons/Chart';
 import useSetNumOfItemsToShow from '@/hooks/useSetNumberOfItemsToShow';
 import { getCharts } from '@/api/getCharts';
+import { FEMALE } from '@/constants/tabTypes';
 
 const MonthlyChart = () => {
   const [idolList, setIdolList] = useState([]);
-  const [currentTab, setCurrentTab] = useState('female');
+  const [currentTab, setCurrentTab] = useState(FEMALE);
   const numOfItemsToShow = useSetNumOfItemsToShow({
     desktop: 10,
     tablet: 5,

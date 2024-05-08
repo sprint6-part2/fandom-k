@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { FEMALE, MALE } from '@/constants/tabTypes';
 import styles from './styles.module.scss';
 
 /**
@@ -11,10 +12,10 @@ import styles from './styles.module.scss';
 
 const Tab = ({ currentTab, handleTabChange }) => {
   const selectGirlTab = () => {
-    handleTabChange('female');
+    handleTabChange(FEMALE);
   };
   const selectBoyTab = () => {
-    handleTabChange('male');
+    handleTabChange(MALE);
   };
 
   return (
@@ -23,7 +24,7 @@ const Tab = ({ currentTab, handleTabChange }) => {
         role="button"
         tabIndex="0"
         className={classNames(styles.tab, {
-          [styles.current]: currentTab === 'female',
+          [styles.current]: currentTab === FEMALE,
         })}
         onClick={selectGirlTab}
         onKeyDown={null}
@@ -34,7 +35,7 @@ const Tab = ({ currentTab, handleTabChange }) => {
         role="button"
         tabIndex="-1"
         className={classNames(styles.tab, {
-          [styles.current]: currentTab === 'male',
+          [styles.current]: currentTab === MALE,
         })}
         onClick={selectBoyTab}
         onKeyDown={null}
