@@ -1,20 +1,18 @@
+import Donation from './Donation';
 import Header from '@/components/Header';
+import style from './styles.module.scss';
+import Credit from './Credit';
 import MonthlyChart from './MonthlyChart';
 
 const ListPage = () => {
   return (
-    <div>
+    <div className={style.container}>
       <Header />
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          padding: '24px',
-          backgroundColor: 'black',
-        }}
-      >
+      <main className={style.main}>
+        <Credit />
+        <Donation />
         <MonthlyChart />
-      </div>
+      </main>
     </div>
   );
 };

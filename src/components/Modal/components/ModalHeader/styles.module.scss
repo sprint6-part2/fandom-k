@@ -1,23 +1,13 @@
-$titleColor: #f7f7f8;
-
-@mixin font-color($color, $weight, $size, $lineHeight) {
-  font: {
-    family: Pretendard;
-    weight: $weight;
-    size: $size;
-  }
-  line-height: $lineHeight;
-  color: $color;
-}
+@import '../../../../styles/';
 
 .container {
   display: flex;
   width: 100%;
   justify-content: flex-end;
   > h2 {
-    @include font-color($titleColor, 600, 18px, 21.48px);
+    @include font-base($color-white, 600, 18px, 21.48px);
   }
-  > .headerCloseButton {
+  > .closeButton {
     cursor: pointer;
   }
   &.titleActive {

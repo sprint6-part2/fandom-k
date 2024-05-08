@@ -1,7 +1,7 @@
 import React from 'react';
-import BackButton from '@/assets/icons/BackButton';
-import style from '@/components/Modal/components/ModalMobileHeader/styles.module.scss';
 import PropTypes from 'prop-types';
+import style from './styles.module.scss';
+import BackButton from '@/assets/icons/BackButton';
 
 /**
  * 모달 헤더 컴포넌트 (특정 페이지용)
@@ -18,12 +18,8 @@ const ModalMobileHeader = ({ title, onClose }) => {
 };
 
 ModalMobileHeader.propTypes = {
-  title: PropTypes.string,
-  onClose: PropTypes.object.isRequired,
-};
-
-ModalMobileHeader.defaultProps = {
-  title: '모달',
+  title: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default ModalMobileHeader;

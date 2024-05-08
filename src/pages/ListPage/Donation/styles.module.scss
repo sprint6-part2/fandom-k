@@ -1,0 +1,33 @@
+@import '../../../styles/';
+
+.container {
+  margin-inline: 9px;
+}
+
+.title {
+  margin-block: 32px;
+  margin-left: 80px;
+
+  @include font-base($color-white, 700, 24px, 26px);
+}
+
+@media (max-width: $width-tablet) {
+  .container {
+    margin-inline: 24px;
+  }
+  .title {
+    margin-block: 24px;
+    margin-left: 12px;
+
+    @include font-base($color-white, 700, 20px, 26px);
+  }
+}
+
+@media (max-width: $width-mobile) {
+  .title {
+    margin-block: 16px;
+    margin-left: 8px;
+
+    @include font-base($color-white, 700, 16px, 26px);
+  }
+}
