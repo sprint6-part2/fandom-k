@@ -20,10 +20,6 @@ const Modal = ({ isOpen, onClose, children }) => {
   return (
     <AnimatePresence>
       {isOpen && (
-
-        <div className={style.modalBackDrop} ref={Ref} onClick={handleBackDrop}>
-          <div className={style.modalView}>{children}</div>
-        </div>
         <motion.div
           className={style.modalBackDrop}
           onClick={onClose}
