@@ -24,8 +24,4 @@ dist-ssr
 *.sw?
 
 .env 
-<<<<<<< Updated upstream
 .vercel
-=======
-.vercel
->>>>>>> Stashed changes

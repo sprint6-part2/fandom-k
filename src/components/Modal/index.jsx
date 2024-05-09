@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import style from '@/components/Modal/styles.module.scss';
+import { motion, AnimatePresence } from 'framer-motion';
 
 /**
  * 프로필 사진 컴포넌트
@@ -17,24 +18,37 @@ const Modal = ({ isOpen, onClose, children }) => {
   };
 
   return (
-    <div>
+    <AnimatePresence>
       {isOpen && (
+
         <div className={style.modalBackDrop} ref={Ref} onClick={handleBackDrop}>
           <div className={style.modalView}>{children}</div>
         </div>
+        <motion.div
+          className={style.modalBackDrop}
+          onClick={onClose}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <div
+            className={style.modalView}
+            onClick={(e) => {
+              return e.stopPropagation();
+            }}
+          >
+            {children}
+          </div>
+        </motion.div>
       )}
-    </div>
+    </AnimatePresence>
   );
 };
 
 Modal.propTypes = {
-  isOpen: PropTypes.bool,
+  isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.object.isRequired,
   children: PropTypes.object.isRequired,
-};
-
-Modal.defaultProps = {
-  isOpen: false,
 };
 
 export default Modal;
