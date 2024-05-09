@@ -3,43 +3,77 @@ import Profile from '@/components/Profile';
 
 import { splitItems } from '@/utils/splitItems';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import style from './styles.module.scss';
+import { debounce } from '@/utils/debounce';
+import { MOBILE_WIDTH } from '@/constants/screenSizes';
 import { carouselSettings } from './carouselSettings';
 
-const Idol = ({ idol, onClick }) => {
-  const [clicked, setClicked] = useState(idol.selected);
+const Idol = ({ idol, onClick, checked }) => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    const debouncedResize = debounce(handleResize, 200);
+    window.addEventListener('resize', debouncedResize);
+    return () => {
+      window.removeEventListener('resize', debouncedResize);
+    };
+  }, [windowWidth]);
 
   return (
-    <div>
-      <Profile
-        imageUrl={idol.profilePicture}
-        clicked={clicked}
-        onClickProfile={() => {
-          setClicked(!clicked);
-          onClick(idol, !clicked);
-        }}
-      />
-      <div className={style.idolInfo}>
-        <h2>{idol.name}</h2>
-        <h3>{idol.group}</h3>
+    <>
+      <div className={style.idolItem}>
+        {windowWidth > MOBILE_WIDTH ? (
+          <Profile
+            imageUrl={idol.profilePicture}
+            size="lg"
+            clicked={checked}
+            onClickProfile={() => {
+              onClick(idol, !checked);
+            }}
+          />
+        ) : (
+          <Profile
+            imageUrl={idol.profilePicture}
+            size="md"
+            clicked={checked}
+            onClickProfile={() => {
+              onClick(idol, !checked);
+            }}
+          />
+        )}
+        <div className={style.idolInfo}>
+          <h2>{idol.name}</h2>
+          <h3>{idol.group}</h3>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
-const IdolSelectList = ({ list, onClick, onNextData, showItemCounts = 16 }) => {
+const IdolSelectList = ({ list, favoriteList, onClick }) => {
   return (
     <div className={style.container}>
       <h2 className={style.title}>관심 있는 아이돌을 추가해보세요.</h2>
-
-      <Carousel customSettings={carouselSettings} isLongArrow>
-        <div className={style.idolList}>
+      <div className={style.list_box}>
+        <Carousel customSettings={carouselSettings} isLongArrow>
           {list.map((idol) => {
-            return <Idol idol={idol} onClick={onClick} key={idol.id} />;
+            const checked = favoriteList.map((v) => v.id).includes(idol.id);
+            return (
+              <Idol
+                idol={idol}
+                onClick={onClick}
+                key={idol.id}
+                checked={checked}
+              />
+            );
           })}
-        </div>
-      </Carousel>
+        </Carousel>
+      </div>
     </div>
   );
 };

@@ -1,19 +1,32 @@
 @import '../../styles/';
 
-@mixin set-flex-column {
+@mixin flex_center {
   display: flex;
-  flex-direction: column;
-}
-
-@mixin set-flex-column-center {
-  @include set-flex-column;
   justify-content: center;
   align-items: center;
 }
-body {
-  background-color: $color-black-200;
-}
+
 .container {
-  @include set-flex-column;
-  row-gap: 20px;
+  background-color: $color-black-200;
+  padding-block-end: 20px;
+}
+
+.main {
+  max-width: 1360px;
+  margin: 0 auto;
+  > button {
+    @include flex_center;
+    width: 255px;
+    height: 48px;
+
+    margin: 20px auto;
+  }
+}
+
+.line {
+  border-bottom: 1px solid $color-white;
+  width: 1200px;
+  margin-inline: auto;
+  margin-block: 50px;
+  opacity: 0.1;
 }

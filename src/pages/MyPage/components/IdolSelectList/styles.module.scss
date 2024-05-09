@@ -16,22 +16,18 @@
   align-items: center;
 }
 
-.container {
-  // @include set-flex-column-gap(20px, 0);
-  > .title {
-    @include font-base($color-white-100, 700, 24px, 26px);
-  }
+.title {
+  margin-block: 32px;
+  margin-left: 80px;
 
-  .idolList {
-    display: grid !important;
-    grid-template: repeat(2, 1fr) / repeat(8, 1fr);
-    gap: 20px 10px;
-    padding-block-end: 20px;
-  }
+  @include font-base($color-white, 700, 24px, 26px);
+}
+.idolItem {
+  @include set-flex-column-center-gap(0, 0);
 }
 
 .idolInfo {
-  // @include set-flex-column-center-gap(0, 0);
+  @include set-flex-column-center-gap(0, 0);
   > h2 {
     @include font-base($color-white-200, 700, 16px, 26px);
   }
@@ -44,4 +40,30 @@
 .idolItem {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding-block: 10px;
+}
+
+@media (max-width: $width-tablet) {
+  .title {
+    margin-block: 24px;
+    margin-left: 24px;
+
+    @include font-base($color-white, 700, 20px, 26px);
+  }
+  .idolItem {
+  }
+}
+
+@media (max-width: $width-mobile) {
+  .title {
+    margin-block: 16px;
+    margin-left: 16px;
+
+    @include font-base($color-white, 700, 16px, 26px);
+  }
+
+  .idolItem {
+    max-width: 98px;
+  }
 }
