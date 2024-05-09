@@ -4,27 +4,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 
   background-color: black;
   color: white;
 
   height: 100vh;
-
-  h3 {
-    @include font-base($color-white, 700, 26px, 26px);
-  }
-
-  p {
-    @include font-base($color-gray-cool-100, 400, 16px, 26px);
-
-    margin-top: 10px;
-    margin-bottom: 40px;
-  }
+  padding-block: 10vh;
 
   button {
     width: 300px;
-    margin-bottom: 40px;
   }
 }
 
@@ -35,7 +24,7 @@
 
   position: relative;
 
-  margin-bottom: 120px;
+  margin-top: 5px;
 
   img {
     width: 350px;
@@ -63,5 +52,18 @@
     position: absolute;
     top: 5px;
     opacity: 80%;
+  }
+}
+
+.text {
+  text-align: center;
+
+  h3 {
+    @include font-base($color-white, 700, 26px, 26px);
+    margin-block: 10px;
+  }
+
+  p {
+    @include font-base($color-gray-cool-100, 400, 16px, 26px);
   }
 }

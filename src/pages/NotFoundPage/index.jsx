@@ -26,8 +26,10 @@ const NotFoundPage = () => {
         <div />
         <Logo width={240} height={50} />
       </div>
-      <h3>잘못된 경로</h3>
-      <p>존재하지 않는 페이지입니다.</p>
+      <div className={style.text}>
+        <h3>잘못된 경로</h3>
+        <p>존재하지 않는 페이지입니다.</p>
+      </div>
       <CustomButton
         rounded
         btnText="랜딩 페이지로"
