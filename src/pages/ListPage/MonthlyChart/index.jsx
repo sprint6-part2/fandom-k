@@ -44,7 +44,7 @@ const MonthlyChart = () => {
         name: '추가 버튼 눌렀구나',
         totalVotes: 1000,
         profilePicture:
-        'https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714613892649/ive1.jpeg',
+          'https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714613892649/ive1.jpeg',
       },
     ];
     setIdolList(newArr);

@@ -9,7 +9,6 @@ const Donation = () => {
   return (
     <section className={style.container}>
       <h2 className={style.title}>후원을 기다리는 조공</h2>
-      {/* <LoadingError errorMessage="후원 목록을 가져오지 못했습니다. 다시 시도해주세요" /> */}
       <Carousel customSettings={carouselSettings}>
         {testData.list.map((item) => {
           return <Card item={item} key={item.id} />;
