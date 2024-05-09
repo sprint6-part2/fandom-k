@@ -1,14 +1,26 @@
 import React from 'react';
 import CustomButton from '@/components/CustomButton';
 import Logo from '@/assets/icons/Logo';
-import BackgroundImg from '@/assets/images/background1.jpg';
+import Idol1 from '@/assets/images/nctdream.jpg';
+import Idol2 from '@/assets/images/newjeans.jpg';
+import Idol3 from '@/assets/images/seventeen.jpg';
+import Idol4 from '@/assets/images/aespa.jpg';
 import style from './styles.module.scss';
 
 const NotFoundPage = () => {
+  const idolList = [Idol1, Idol2, Idol3, Idol4];
+
+  const getRandomImage = () => {
+    const randomIndex = Math.floor(Math.random() * idolList.length);
+    return idolList[randomIndex];
+  };
+
+  const randomImage = getRandomImage();
+
   return (
     <div className={style.container}>
       <div className={style.logo}>
-        <img src={BackgroundImg} alt="아이돌 이미지" />
+        <img src={randomImage} alt="아이돌 이미지" />
         <div />
         <Logo width={240} height={50} />
       </div>
