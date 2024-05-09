@@ -6,7 +6,7 @@ import { useState } from 'react';
  * @param {func} getData api 요청 함수
  * 
  */
-export default function useLoad(getData) {
+const useLoad = (getData) => {
   const [isLoading, setIsLoading] = useState(false);
   const [loadingError, setLoadingError] = useState(null);
 
@@ -27,3 +27,5 @@ export default function useLoad(getData) {
 
   return [isLoading, loadingError, handleLoad];
 }
+
+export default useLoad;

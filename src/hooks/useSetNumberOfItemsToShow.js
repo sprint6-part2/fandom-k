@@ -11,7 +11,7 @@ const firstWindowSize = () => {
   }
 };
 
-export default function useSetNumOfItemsToShow({ desktop, tablet, mobile }) {
+const useSetNumOfItemsToShow = ({ desktop, tablet, mobile }) => {
   const numberOfItems = [desktop, tablet, mobile];
   const [numOfItemsToShow, setsNumOfItemsToShow] = useState(
     numberOfItems[firstWindowSize()],
@@ -35,4 +35,6 @@ export default function useSetNumOfItemsToShow({ desktop, tablet, mobile }) {
   }, []);
 
   return numOfItemsToShow;
-}
+};
+
+export default useSetNumOfItemsToShow

@@ -20,28 +20,22 @@ const Tab = ({ currentTab, handleTabChange }) => {
 
   return (
     <div className={styles.tab}>
-      <div
-        role="button"
-        tabIndex="0"
+      <button
         className={classNames(styles.tab, {
           [styles.current]: currentTab === FEMALE,
         })}
         onClick={selectGirlTab}
-        onKeyDown={null}
       >
         이달의 여자 아이돌
-      </div>
-      <div
-        role="button"
-        tabIndex="-1"
+      </button>
+      <button
         className={classNames(styles.tab, {
           [styles.current]: currentTab === MALE,
         })}
         onClick={selectBoyTab}
-        onKeyDown={null}
       >
         이달의 남자 아이돌
-      </div>
+      </button>
     </div>
   );
 };

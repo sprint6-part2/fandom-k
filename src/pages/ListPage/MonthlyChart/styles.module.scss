@@ -65,7 +65,7 @@
   row-gap: 8px;
 
   li:not(:last-child) {
-    border-bottom: 1px solid #ffffff1a;
+    border-bottom: 1px solid $color-white-10-percent;
     height: 79px;
     padding-bottom: 8px;
   }
@@ -86,7 +86,7 @@
     gap: 8px;
     &.even {
       li:nth-last-child(2) {
-        border-bottom: 1px solid #ffffff1a;
+        border-bottom: 1px solid $color-white-10-percent;
         height: 79px;
         padding-bottom: 8px;
       }
@@ -103,7 +103,7 @@
 
     &.even {
       li:nth-last-child(2) {
-        border-bottom: 1px solid #ffffff1a;
+        border-bottom: 1px solid $color-white-10-percent;
         height: 79px;
         padding-bottom: 8px;
       }
@@ -116,6 +116,6 @@
   button {
     width: 326px;
     height: 42px;
-    background: #ffffff1a;
+    background: $color-white-10-percent;
   }
 }
