@@ -1,4 +1,4 @@
-import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import CustomButton from '@/components/CustomButton';
 import Logo from '@/assets/icons/Logo';
 import Idol1 from '@/assets/images/nctdream.jpg';
@@ -8,6 +8,8 @@ import Idol4 from '@/assets/images/aespa.jpg';
 import style from './styles.module.scss';
 
 const NotFoundPage = () => {
+  const navigate = useNavigate();
+
   const idolList = [Idol1, Idol2, Idol3, Idol4];
 
   const getRandomImage = () => {
@@ -26,7 +28,11 @@ const NotFoundPage = () => {
       </div>
       <h3>잘못된 경로</h3>
       <p>존재하지 않는 페이지입니다.</p>
-      <CustomButton rounded btnText="랜딩 페이지로" />
+      <CustomButton
+        rounded
+        btnText="랜딩 페이지로"
+        onClick={() => navigate('/')}
+      />
     </div>
   );
 };
