@@ -1,0 +1,11 @@
+@import '../../styles/';
+
+.container {
+  background-color: $color-black-200;
+  height: 100vh;
+}
+
+.main {
+  max-width: 1360px;
+  margin: 0 auto;
+}

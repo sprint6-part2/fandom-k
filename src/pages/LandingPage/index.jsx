@@ -1,8 +1,13 @@
+import style from './styles.module.scss';
+import Main from './Main';
+import Landing from './Landing';
+
 const LadingPage = () => {
   return (
-    <div>
-      <h1>랜딩 페이지입니다.</h1>
-    </div>
+  <div className={style.container}>
+    <Main />
+    <Landing />
+  </div>
   );
 };
 
