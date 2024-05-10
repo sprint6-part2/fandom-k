@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import style from './styles.module.scss';
 import Carousel from '@/components/Carousel';
+import LoadingError from '@/components/LoadingError';
 import { carouselSettings } from './carouselSetting';
 import Card from './components/Card';
 import Logo from '@/assets/icons/Logo';
@@ -27,11 +28,12 @@ const Donation = () => {
       <h2 className={style.title}>후원을 기다리는 조공</h2>
       {isLoading && <p className={style.loading}>데이터 가져오는 중...</p>}
       {loadingError && (
-        <div className={style.error}>
-          <Logo />
-          <h3>문제가 발생했습니다</h3>
-          <p>{loadingError}</p>
-        </div>
+        // <div className={style.error}>
+        //   <Logo />
+        //   <h3>문제가 발생했습니다</h3>
+        //   <p>{loadingError}</p>
+        // </div>
+        <LoadingError errorMessage={loadingError.message} />
       )}
       {donationList && (
         <Carousel customSettings={carouselSettings}>
