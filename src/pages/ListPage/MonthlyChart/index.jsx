@@ -64,17 +64,20 @@ const MonthlyChart = () => {
         </CustomButton>
       </div>
       <Tab currentTab={currentTab} handleTabChange={handleTabChange} />
-      {/* <ul className={chartClass}>
+      <ul className={chartClass}>
         {idolList.map((idol, index) => {
           return <ChartElement key={idol.id} idol={idol} ranking={index + 1} />;
         })}
-      </ul> */}
-      <div className={styles.loading_spinner}>
+      </ul>
+      <div className={styles.moreButton}>
+        <CustomButton btnText="더보기" onClick={handleMoreBtn} />
+      </div>
+      {/* <div className={styles.loading_spinner}>
         <LoadingSpinner />
       </div>
       <div className={styles.moreButton}>
         <CustomButton btnText={<LoadingSpinner />} disabled={true} />
-      </div>
+      </div> */}
     </div>
   );
 };
