@@ -9,13 +9,17 @@ import Modal from '@/components/Modal';
 import ModalHeader from '@/components/Modal/components/ModalHeader';
 // import ModalMobileHeader from '@/components/Modal/components/ModalMobileHeader';
 import Profile from '@/components/Profile';
+import LoadingError from '@/components/LoadingError';
 
 const TestPage = () => {
   const [isOpen, openModal, closeModal] = useModal();
 
   return (
-    <div>
+    <div style={{ backgroundColor: 'black' }}>
       <Header />
+      <div
+        style={{ display: 'flex', justifyContent: 'center', padding: '24px' }}
+      ></div>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <Profile
           clicked
@@ -100,6 +104,12 @@ const TestPage = () => {
             },
           )}
         </Carousel>
+      </div>
+      <div>
+        <LoadingError errorMessage="후원 목록을 가져오지 못했습니다. 다시 시도해주세요" />
+        <LoadingError
+          errorMessage={`이렇게 작성하면 줄바꿈이 됩니다.\n다시 시도해주세요`}
+        />
       </div>
     </div>
   );

@@ -2,10 +2,19 @@
 
 .container {
   background-color: $color-black-200;
-  height: 100vh;
 }
 
 .main {
   max-width: 1360px;
   margin: 0 auto;
+  padding-bottom: 243px;
+
+  
+  @media (max-width: $width-tablet) {
+    padding-bottom: 330px;
+  }
+
+  @media (max-width: $width-mobile) {
+    padding-bottom: 59px;
+  }
 }
