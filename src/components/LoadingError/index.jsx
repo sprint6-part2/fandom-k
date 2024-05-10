@@ -14,7 +14,7 @@ const LoadingError = ({ errorMessage }) => {
 
   return (
     <div className={style.error}>
-      {/* <Logo /> */}
+      <Logo />
       <h3>문제가 발생했습니다</h3>
       <p>{errorMessage}</p>
       <CustomButton rounded btnText="페이지 새로고침" onClick={handleRefresh} />

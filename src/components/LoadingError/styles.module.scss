@@ -9,7 +9,7 @@
   white-space: pre-wrap;
 
   h3 {
-    // margin-top: 45px;
+    margin-top: 45px;
     @include font-base($color-brand-orange, 600, 18px, 26px);
   }
 
