@@ -9,6 +9,7 @@ import Modal from '@/components/Modal';
 import ModalHeader from '@/components/Modal/components/ModalHeader';
 // import ModalMobileHeader from '@/components/Modal/components/ModalMobileHeader';
 import Profile from '@/components/Profile';
+import LoadingSpinner from '@/components/LoadingSpinner';
 
 const TestPage = () => {
   const [isOpen, openModal, closeModal] = useModal();
@@ -16,10 +17,10 @@ const TestPage = () => {
   return (
     <div style={{ backgroundColor: 'black' }}>
       <Header />
+      <LoadingSpinner />
       <div
         style={{ display: 'flex', justifyContent: 'center', padding: '24px' }}
-      >
-      </div>
+      ></div>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <Profile
           clicked

@@ -1,11 +1,8 @@
 import React from 'react';
+import spinner from '@/assets/images/spinner.gif';
 
 const LoadingSpinner = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  return <img src={spinner} style={{ height: '100%' }} />;
 };
 
-export default index;
+export default LoadingSpinner;
