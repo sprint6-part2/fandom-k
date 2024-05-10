@@ -4,10 +4,10 @@ import Landing from './Landing';
 
 const LadingPage = () => {
   return (
-  <div className={style.container}>
-    <Main />
-    <Landing />
-  </div>
+    <div className={style.container}>
+      <Main />
+      <Landing />
+    </div>
   );
 };
 
