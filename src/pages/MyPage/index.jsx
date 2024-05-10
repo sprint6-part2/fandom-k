@@ -1,6 +1,5 @@
 import classNames from 'classnames';
 import style from './styles.module.scss';
-import { getData } from '@/api';
 
 import { useEffect, useState } from 'react';
 

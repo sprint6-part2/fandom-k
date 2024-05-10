@@ -1,6 +1,7 @@
 @import '../../../../styles/';
 
 .container {
+  min-height: 144px;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -11,6 +11,7 @@ import { carouselSettings } from './carouselSettings';
 
 const Idol = ({ idol, onClick, checked }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [size, setSize] = useState('lg');
 
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
@@ -21,31 +22,21 @@ const Idol = ({ idol, onClick, checked }) => {
     window.addEventListener('resize', debouncedResize);
     return () => {
       window.removeEventListener('resize', debouncedResize);
+      setSize(windowWidth > MOBILE_WIDTH ? 'lg' : 'md');
     };
   }, [windowWidth]);
 
   return (
     <>
       <div className={style.idolItem}>
-        {windowWidth > MOBILE_WIDTH ? (
-          <Profile
-            imageUrl={idol.profilePicture}
-            size="lg"
-            clicked={checked}
-            onClickProfile={() => {
-              onClick(idol, !checked);
-            }}
-          />
-        ) : (
-          <Profile
-            imageUrl={idol.profilePicture}
-            size="md"
-            clicked={checked}
-            onClickProfile={() => {
-              onClick(idol, !checked);
-            }}
-          />
-        )}
+        <Profile
+          imageUrl={idol.profilePicture}
+          size={size}
+          clicked={checked}
+          onClickProfile={() => {
+            onClick(idol, !checked);
+          }}
+        />
         <div className={style.idolInfo}>
           <h2>{idol.name}</h2>
           <h3>{idol.group}</h3>

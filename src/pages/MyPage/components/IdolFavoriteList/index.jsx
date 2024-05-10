@@ -10,6 +10,7 @@ import { Nothing } from '../Nothing';
 
 const FavoriteIdol = ({ idol, onDelete }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [size, setSize] = useState('md');
 
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
@@ -20,36 +21,23 @@ const FavoriteIdol = ({ idol, onDelete }) => {
     window.addEventListener('resize', debouncedResize);
     return () => {
       window.removeEventListener('resize', debouncedResize);
+      setSize(windowWidth > MOBILE_WIDTH ? 'md' : 'sm');
     };
   }, []);
 
   return (
     <div className={style.idolItem}>
-      {windowWidth > MOBILE_WIDTH ? (
-        <Profile
-          imageUrl={idol.profilePicture}
-          size="md"
-          selected={true}
-          onClickProfile={() => {
-            setSelected(!selected);
-          }}
-          onClickDelete={() => {
-            onDelete(idol.id);
-          }}
-        />
-      ) : (
-        <Profile
-          imageUrl={idol.profilePicture}
-          size="sm"
-          selected={true}
-          onClickProfile={() => {
-            setSelected(!selected);
-          }}
-          onClickDelete={() => {
-            onDelete(idol.id);
-          }}
-        />
-      )}
+      <Profile
+        imageUrl={idol.profilePicture}
+        size={size}
+        selected={true}
+        onClickProfile={() => {
+          setSelected(!selected);
+        }}
+        onClickDelete={() => {
+          onDelete(idol.id);
+        }}
+      />
       <div className={style.idolInfo}>
         <h2>{idol.name}</h2>
         <h3>{idol.group}</h3>
