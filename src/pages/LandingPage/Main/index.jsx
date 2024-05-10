@@ -10,8 +10,8 @@ const Main = () => {
         <div>
           <h1 className={styles.Title}>
             내가 좋아하는 아이돌을 <br />
-            가장
             <div>
+              <span>가장 </span>
               <span className={styles.Highlight}>쉽게 덕질 </span>
               <span>하는 방법</span>
             </div>
