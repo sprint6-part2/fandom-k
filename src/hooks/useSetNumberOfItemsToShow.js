@@ -37,4 +37,4 @@ const useSetNumOfItemsToShow = ({ desktop, tablet, mobile }) => {
   return numOfItemsToShow;
 };
 
-export default useSetNumOfItemsToShow
+export default useSetNumOfItemsToShow;
