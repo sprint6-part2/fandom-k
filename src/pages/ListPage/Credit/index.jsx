@@ -1,21 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styles from './styles.module.scss';
 import CreditIcon from '@/assets/icons/Credit';
 import { motion } from 'framer-motion';
 import useModal from '@/hooks/useModal';
 import CreditModal from './CreditModal';
-import { getStorage } from '@/utils/localStorage';
+import { getCredit } from '@/contexts/CreditContext';
 
 const Credit = () => {
   const [isOpen, openModal, closeModal] = useModal();
-  const [credit, setCredit] = useState(0);
-
-  useEffect(() => {
-    const storedCredit = getStorage('credit');
-    if (storedCredit) {
-      setCredit(parseInt(storedCredit));
-    }
-  }, [isOpen]);
 
   return (
     <section className={styles.container}>
@@ -23,7 +15,7 @@ const Credit = () => {
         <span>내 크레딧</span>
         <div className={styles.creditInfo}>
           <CreditIcon />
-          <span>{credit.toLocaleString('ko-KR')}</span>
+          <span>{getCredit().toLocaleString('ko-KR')}</span>
         </div>
       </div>
       <div>

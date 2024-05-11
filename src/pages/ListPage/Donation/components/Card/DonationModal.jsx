@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Modal from '@/components/Modal';
 import ModalHeader from '@/components/Modal/components/ModalHeader';
 import CustomButton from '@/components/CustomButton';
-import { getStorage, setStorage } from '@/utils/localStorage';
 import { inputToNumber } from '@/utils/input';
+import { getCredit, getUpdateCredit } from '@/contexts/CreditContext';
 
 const DonationModal = ({ isOpen, closeModal, item }) => {
   const [creditInput, setCreditInput] = useState('');
-  const [credit, setCredit] = useState(0);
+
+  const credit = getCredit();
+  const setCredit = getUpdateCredit();
 
   const handleInputChange = (event) => {
     setCreditInput(event.target.value);
@@ -15,22 +17,19 @@ const DonationModal = ({ isOpen, closeModal, item }) => {
 
   const handleDonateClick = () => {
     if (parseInt(creditInput) && creditInput <= credit) {
-      setStorage('credit', parseInt(credit - creditInput));
-      setCreditInput('');
-      closeModal();
+      setCredit(parseInt(credit - creditInput));
+      handleCloseModal();
     }
   };
 
-  useEffect(() => {
-    const storedCredit = getStorage('credit');
-    if (storedCredit) {
-      setCredit(parseInt(storedCredit));
-    }
-  }, [isOpen]);
+  const handleCloseModal = () => {
+    setCreditInput('');
+    closeModal();
+  };
 
   return (
-    <Modal isOpen={isOpen} title="모달" onClose={closeModal}>
-      <ModalHeader title="후원하기" onClose={closeModal} />
+    <Modal isOpen={isOpen} title="모달" onClose={handleCloseModal}>
+      <ModalHeader title="후원하기" onClose={handleCloseModal} />
       <div
         style={{
           color: '#fff',
