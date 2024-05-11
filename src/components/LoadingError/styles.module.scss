@@ -1,0 +1,24 @@
+@import '../../styles/';
+
+.error {
+  text-align: center;
+
+  margin: 0 auto;
+  padding-block: 10px;
+
+  white-space: pre-wrap;
+
+  h3 {
+    margin-top: 45px;
+    @include font-base($color-brand-orange, 600, 18px, 26px);
+  }
+
+  p {
+    margin-bottom: 15px;
+    @include font-base($color-white, 600, 14px, 26px);
+  }
+
+  button {
+    width: 120px;
+  }
+}

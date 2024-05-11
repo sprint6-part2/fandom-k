@@ -72,15 +72,6 @@ const MonthlyChart = () => {
       <div className={styles.moreButton}>
         <CustomButton btnText="더보기" onClick={handleMoreBtn} />
       </div>
-      {/* <div className={styles.loading_spinner}>
-        <Spinner />
-      </div>
-      <div className={styles.moreButton}>
-        <CustomButton
-          btnText={<Spinner width={'100%'} height={'100%'} fill="white" />}
-          disabled
-        />
-      </div> */}
     </div>
   );
 };
