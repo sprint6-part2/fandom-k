@@ -19,9 +19,12 @@ const FavoriteIdol = ({ idol, onDelete }) => {
   useEffect(() => {
     const debouncedResize = debounce(handleResize, 200);
     window.addEventListener('resize', debouncedResize);
+    window.addEventListener('beforeunload', debouncedResize);
+
     return () => {
       window.removeEventListener('resize', debouncedResize);
-      setSize(windowWidth > MOBILE_WIDTH + 165 ? 'md' : 'sm');
+      window.removeEventListener('beforeunload', debouncedResize);
+      setSize(windowWidth > 540 ? 'md' : 'sm');
     };
   }, [windowWidth]);
 

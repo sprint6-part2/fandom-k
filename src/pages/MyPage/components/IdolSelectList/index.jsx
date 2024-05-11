@@ -20,9 +20,11 @@ const Idol = ({ idol, onClick, checked }) => {
   useEffect(() => {
     const debouncedResize = debounce(handleResize, 200);
     window.addEventListener('resize', debouncedResize);
+    window.addEventListener('beforeunload', debouncedResize);
     return () => {
       window.removeEventListener('resize', debouncedResize);
-      setSize(windowWidth > MOBILE_WIDTH + 165 ? 'lg' : 'md');
+      window.removeEventListener('beforeunload', debouncedResize);
+      setSize(windowWidth > 540 ? 'lg' : 'md');
     };
   }, [windowWidth]);
 
