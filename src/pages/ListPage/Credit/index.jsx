@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './styles.module.scss';
 import CreditIcon from '@/assets/icons/Credit';
+import { motion } from 'framer-motion';
 
 const Credit = () => {
   return (
@@ -13,7 +14,13 @@ const Credit = () => {
         </div>
       </div>
       <div>
-        <button className={styles.charge}>충전하기</button>
+        <motion.button
+          initial={{ scale: 1 }}
+          whileTap={{ scale: 0.9 }}
+          className={styles.charge}
+        >
+          충전하기
+        </motion.button>
       </div>
     </section>
   );
