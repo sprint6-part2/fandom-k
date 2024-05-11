@@ -8,6 +8,7 @@ const DESKTOP_WIDTH_1250 = DESKTOP_WIDTH - 670;
 const DESKTOP_WIDTH_1075 = DESKTOP_WIDTH_1250 - 175;
 const DESKTOP_WIDTH_900 = DESKTOP_WIDTH_1075 - 175;
 const TABLET_WIDTH_660 = TABLET_WIDTH - 84;
+const TABLET_WIDTH_540 = TABLET_WIDTH_660 - 120;
 
 export const carouselSettings = {
   infinite: false,
@@ -61,6 +62,14 @@ export const carouselSettings = {
       settings: {
         slidesToShow: 3,
         slidesToScroll: 3,
+      },
+    },
+    {
+      breakpoint: TABLET_WIDTH_540,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        arrows: false,
       },
     },
     {

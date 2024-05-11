@@ -22,7 +22,7 @@ const Idol = ({ idol, onClick, checked }) => {
     window.addEventListener('resize', debouncedResize);
     return () => {
       window.removeEventListener('resize', debouncedResize);
-      setSize(windowWidth > MOBILE_WIDTH ? 'lg' : 'md');
+      setSize(windowWidth > MOBILE_WIDTH + 165 ? 'lg' : 'md');
     };
   }, [windowWidth]);
 

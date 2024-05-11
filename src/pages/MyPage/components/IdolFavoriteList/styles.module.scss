@@ -17,7 +17,7 @@
 }
 
 .list_box {
-  padding-inline: 80px;
+  padding-inline: 50px;
 }
 
 .title {
@@ -28,16 +28,24 @@
 }
 
 .idolItem {
+  width: 100px;
   @include set-flex-column-center-gap(0, 0);
 }
 
 .idolInfo {
+  max-width: 84px;
   @include set-flex-column-center-gap(0, 0);
   > h2 {
     @include font-base($color-white-200, 700, 16px, 26px);
   }
   > h3 {
-    @include font-base($color-white, 400, 14px, 16.71px);
+    max-width: fit-content;
+
+    @include font-base($color-white, 400, 13px, 16.71px);
+
+    text-align: center;
+    word-wrap: break-word;
+
     opacity: 0.6;
   }
 }
@@ -48,6 +56,9 @@
     margin-left: 24px;
 
     @include font-base($color-white, 700, 20px, 26px);
+  }
+  .list_box {
+    padding-inline: 20px;
   }
 }
 

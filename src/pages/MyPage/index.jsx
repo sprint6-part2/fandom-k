@@ -26,7 +26,7 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
     if (clicked) {
       setIdolList({
         ...idolList,
-        favoriteList: [...idolList.favoriteList, { ...selectedItem }],
+        favoriteList: [{ ...selectedItem }, ...idolList.favoriteList],
       });
     } else {
       setIdolList({
@@ -52,7 +52,7 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
       ...idolList,
       favoriteIdolList: [
         ...new Set(
-          [...idolList.favoriteIdolList, ...idolList.favoriteList].map((idol) =>
+          [...idolList.favoriteList, ...idolList.favoriteIdolList].map((idol) =>
             JSON.stringify(idol),
           ),
         ),

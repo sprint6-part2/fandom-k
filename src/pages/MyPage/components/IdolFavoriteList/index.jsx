@@ -21,9 +21,9 @@ const FavoriteIdol = ({ idol, onDelete }) => {
     window.addEventListener('resize', debouncedResize);
     return () => {
       window.removeEventListener('resize', debouncedResize);
-      setSize(windowWidth > MOBILE_WIDTH ? 'md' : 'sm');
+      setSize(windowWidth > MOBILE_WIDTH + 165 ? 'md' : 'sm');
     };
-  }, []);
+  }, [windowWidth]);
 
   return (
     <div className={style.idolItem}>
@@ -31,9 +31,6 @@ const FavoriteIdol = ({ idol, onDelete }) => {
         imageUrl={idol.profilePicture}
         size={size}
         selected={true}
-        onClickProfile={() => {
-          setSelected(!selected);
-        }}
         onClickDelete={() => {
           onDelete(idol.id);
         }}
