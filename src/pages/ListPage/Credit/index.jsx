@@ -4,13 +4,14 @@ import CreditIcon from '@/assets/icons/Credit';
 import { motion } from 'framer-motion';
 import useModal from '@/hooks/useModal';
 import CreditModal from './CreditModal';
+import { getStorage } from '@/utils/localStorage';
 
 const Credit = () => {
   const [isOpen, openModal, closeModal] = useModal();
-  const [credit, setCredit] = useState('가져오는 중...');
+  const [credit, setCredit] = useState(0);
 
   useEffect(() => {
-    const storedCredit = localStorage.getItem('credit');
+    const storedCredit = getStorage('credit');
     if (storedCredit) {
       setCredit(parseInt(storedCredit));
     }

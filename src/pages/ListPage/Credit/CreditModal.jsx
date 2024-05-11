@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Modal from '@/components/Modal';
 import ModalHeader from '@/components/Modal/components/ModalHeader';
 import CustomButton from '@/components/CustomButton';
+import { getStorage, setStorage } from '@/utils/localStorage';
 
 const CreditModal = ({ isOpen, closeModal }) => {
   const [selectedValue, setSelectedValue] = useState(null);
@@ -12,9 +13,9 @@ const CreditModal = ({ isOpen, closeModal }) => {
 
   const handleCharge = () => {
     if (selectedValue) {
-      const currentCredit = localStorage.getItem('credit') || 0;
+      const currentCredit = getStorage('credit') || 0;
       const newCredit = parseInt(currentCredit) + selectedValue;
-      localStorage.setItem('credit', newCredit);
+      setStorage('credit', newCredit);
       handleCloseModal();
     }
   };
@@ -27,7 +28,7 @@ const CreditModal = ({ isOpen, closeModal }) => {
   return (
     <Modal isOpen={isOpen} title="모달" onClose={closeModal}>
       <ModalHeader title="크레딧 충전하기" onClose={handleCloseModal} />
-      <div style={{ color: '#fff', width: '327px', height: '372px' }}>
+      <div style={{ color: '#fff', width: '263px', height: '332px' }}>
         <div>
           <label>
             <input
