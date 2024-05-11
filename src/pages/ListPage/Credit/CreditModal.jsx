@@ -17,8 +17,7 @@ const CreditModal = ({ isOpen, closeModal }) => {
   const handleCharge = () => {
     if (selectedValue) {
       const currentCredit = credit || 0;
-      const newCredit = parseInt(currentCredit) + selectedValue;
-      setCredit(newCredit);
+      setCredit(parseInt(currentCredit + selectedValue));
       handleCloseModal();
     }
   };

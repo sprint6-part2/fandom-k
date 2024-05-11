@@ -33,8 +33,8 @@ const DonationModal = ({ isOpen, closeModal, item }) => {
       <div
         style={{
           color: '#fff',
-          width: '327px',
-          height: '509px',
+          width: '263px',
+          height: '469px',
           textAlign: 'center',
         }}
       >
