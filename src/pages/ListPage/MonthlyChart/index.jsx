@@ -23,6 +23,7 @@ const MonthlyChart = () => {
   const chartClass = classNames(styles.chart, {
     [styles.even]: idolList.length % 2 === 0,
   });
+  console.log(loadingError);
 
   //데이터 가져오기
   const handleChartLoad = async () => {
@@ -70,7 +71,9 @@ const MonthlyChart = () => {
         </CustomButton>
       </div>
       <Tab currentTab={currentTab} handleTabChange={handleTabChange} />
-      {loadingError && <h2 style={{ color: 'white' }}>에러가 발생했습니다</h2>}
+      {loadingError && (
+        <h2 style={{ color: 'white' }}>{loadingError.message}</h2>
+      )}
       {idolList && (
         <ul className={chartClass}>
           {idolList.map((idol, index) => {
