@@ -9,13 +9,13 @@ import Modal from '@/components/Modal';
 import ModalHeader from '@/components/Modal/components/ModalHeader';
 // import ModalMobileHeader from '@/components/Modal/components/ModalMobileHeader';
 import Profile from '@/components/Profile';
-import { GradientWrapper } from '@/components/GradientWrapper';
+import { Background } from '@/components/Background';
 
 const TestPage = () => {
   const [isOpen, openModal, closeModal] = useModal();
 
   return (
-    <GradientWrapper>
+    <Background>
       <div style={{ backgroundColor: 'black' }}>
         <Header />
         <div
@@ -107,7 +107,7 @@ const TestPage = () => {
           </Carousel>
         </div>
       </div>
-    </GradientWrapper>
+    </Background>
   );
 };
 
