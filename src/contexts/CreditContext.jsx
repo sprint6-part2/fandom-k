@@ -41,7 +41,7 @@ export const getUpdateCredit = () => {
   const context = useContext(CreditContext);
 
   if (!context) {
-    throw new Error('반드시 ImgUrlProvider 안에서 사용2');
+    throw new Error('반드시 CreditProvider 안에서 사용2');
   }
 
   return context.updateCredit;
