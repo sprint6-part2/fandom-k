@@ -3,31 +3,12 @@ import Profile from '@/components/Profile';
 
 import { useEffect, useState } from 'react';
 import style from './styles.module.scss';
-import { debounce } from '@/utils/debounce';
 import { MOBILE_WIDTH } from '@/constants/screenSizes';
 import { carouselSettings } from './carouselSettings';
 
 const MOBILE_WIDTH_540 = MOBILE_WIDTH + 165;
 
-const Idol = ({ idol, onClick, checked }) => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [size, setSize] = useState('lg');
-
-  const handleResize = () => {
-    setWindowWidth(window.innerWidth);
-  };
-
-  useEffect(() => {
-    const debouncedResize = debounce(handleResize, 200);
-    window.addEventListener('resize', debouncedResize);
-    window.addEventListener('beforeunload', debouncedResize);
-    return () => {
-      window.removeEventListener('resize', debouncedResize);
-      window.removeEventListener('beforeunload', debouncedResize);
-      setSize(windowWidth > MOBILE_WIDTH_540 ? 'lg' : 'md');
-    };
-  }, [windowWidth]);
-
+const Idol = ({ idol, onClick, checked, size }) => {
   return (
     <>
       <div className={style.idolItem}>
@@ -48,7 +29,13 @@ const Idol = ({ idol, onClick, checked }) => {
   );
 };
 
-const IdolSelectList = ({ list, favoriteList, onClick }) => {
+const IdolSelectList = ({ list, favoriteList, windowWidth, onClick }) => {
+  const [size, setSize] = useState('lg');
+
+  useEffect(() => {
+    setSize(windowWidth > MOBILE_WIDTH_540  ? 'lg' : 'md');
+  }, [windowWidth])
+
   return (
     <div className={style.container}>
       <h2 className={style.title}>관심 있는 아이돌을 추가해보세요.</h2>
@@ -62,6 +49,7 @@ const IdolSelectList = ({ list, favoriteList, onClick }) => {
                 onClick={onClick}
                 key={idol.id}
                 checked={checked}
+                size={size}
               />
             );
           })}

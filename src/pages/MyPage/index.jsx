@@ -9,6 +9,8 @@ import Header from '@/components/Header';
 import testData from './mock.json';
 import CustomButton from '@/components/CustomButton';
 import Plus from '@/assets/icons/Plus';
+
+import { debounce } from '@/utils/debounce';
 import { sortByItems } from '@/utils/sortItems';
 import { getStorage, setStorage } from '@/utils/localStorage';
 
@@ -21,6 +23,7 @@ const INITIAL_VALUE = {
 
 const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
   const [idolList, setIdolList] = useState(INITIAL_VALUE);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [cursor, setCursor] = useState();
 
   const addFavorite = (selectedItem, clicked) => {
@@ -79,6 +82,21 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
     setIdolList({ ...idolList, allList: testData.list });
   };
 
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    const debouncedResize = debounce(handleResize, 200);
+    window.addEventListener('resize', debouncedResize);
+    window.addEventListener('beforeunload', debouncedResize);
+
+    return () => {
+      window.removeEventListener('resize', debouncedResize);
+      window.removeEventListener('beforeunload', debouncedResize);
+    };
+  }, [windowWidth]);
+
   // const getIdolList = async (options) => {
   //   let result;
   //   result = await getData(options);
@@ -108,12 +126,14 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
       <main className={style.main}>
         <IdolFavoriteList
           onDelete={deleteFavorite}
+          windowWidth={windowWidth}
         />
         <div className={style.line}></div>
         <IdolSelectList
           list={idolList.allList}
           favoriteList={idolList.favoriteList}
           onClick={addFavorite}
+          windowWidth={windowWidth}
           // onNextData={getMoreIdolList}
         />
         <CustomButton

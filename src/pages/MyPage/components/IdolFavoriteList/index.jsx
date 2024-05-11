@@ -4,7 +4,6 @@ import Profile from '@/components/Profile';
 import { carouselSettings } from './carouselSettings';
 import { MOBILE_WIDTH } from '@/constants/screenSizes';
 import { useEffect, useState } from 'react';
-import { debounce } from '@/utils/debounce';
 import style from './styles.module.scss';
 import { Nothing } from '../Nothing';
 import { getStorage, setStorage } from '@/utils/localStorage';
@@ -13,26 +12,7 @@ const MOBILE_WIDTH_540 = MOBILE_WIDTH + 165;
 
 setStorage("favoriteIdolList",  JSON.stringify([]));
 
-const FavoriteIdol = ({ idol, onDelete }) => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [size, setSize] = useState('md');
-
-  const handleResize = () => {
-    setWindowWidth(window.innerWidth);
-  };
-
-  useEffect(() => {
-    const debouncedResize = debounce(handleResize, 200);
-    window.addEventListener('resize', debouncedResize);
-    window.addEventListener('beforeunload', debouncedResize);
-
-    return () => {
-      window.removeEventListener('resize', debouncedResize);
-      window.removeEventListener('beforeunload', debouncedResize);
-      setSize(windowWidth > MOBILE_WIDTH_540 ? 'md' : 'sm');
-    };
-  }, [windowWidth]);
-
+const FavoriteIdol = ({ idol, onDelete, size }) => {
   return (
     <div className={style.idolItem}>
       <Profile
@@ -51,9 +31,13 @@ const FavoriteIdol = ({ idol, onDelete }) => {
   );
 };
 
-const IdolFavoriteList = ({ onDelete }) => {
-
+const IdolFavoriteList = ({ onDelete, windowWidth }) => {
+  const [size, setSize] = useState('md');
   const list = JSON.parse(getStorage("favoriteIdolList"));
+
+  useEffect(() => {
+    setSize(windowWidth > MOBILE_WIDTH_540  ? 'md' : 'sm');
+  }, [windowWidth])
 
   return (
     <div className={style.container}>
@@ -66,7 +50,7 @@ const IdolFavoriteList = ({ onDelete }) => {
           >
             {list.map((idol) => {
               return (
-                <FavoriteIdol idol={idol} onDelete={onDelete} key={idol.id} />
+                <FavoriteIdol idol={idol} onDelete={onDelete} key={idol.id} size={size} />
               );
             })}
           </Carousel>
