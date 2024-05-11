@@ -8,6 +8,8 @@ import { debounce } from '@/utils/debounce';
 import style from './styles.module.scss';
 import { Nothing } from '../Nothing';
 
+const MOBILE_WIDTH_540 = MOBILE_WIDTH + 165;
+
 const FavoriteIdol = ({ idol, onDelete }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [size, setSize] = useState('md');
@@ -24,7 +26,7 @@ const FavoriteIdol = ({ idol, onDelete }) => {
     return () => {
       window.removeEventListener('resize', debouncedResize);
       window.removeEventListener('beforeunload', debouncedResize);
-      setSize(windowWidth > 540 ? 'md' : 'sm');
+      setSize(windowWidth > MOBILE_WIDTH_540 ? 'md' : 'sm');
     };
   }, [windowWidth]);
 
@@ -35,7 +37,7 @@ const FavoriteIdol = ({ idol, onDelete }) => {
         size={size}
         selected={true}
         onClickDelete={() => {
-          onDelete(idol.id);
+          onDelete(idol);
         }}
       />
       <div className={style.idolInfo}>

@@ -1,13 +1,13 @@
 import Carousel from '@/components/Carousel';
 import Profile from '@/components/Profile';
 
-import { splitItems } from '@/utils/splitItems';
-
 import { useEffect, useState } from 'react';
 import style from './styles.module.scss';
 import { debounce } from '@/utils/debounce';
 import { MOBILE_WIDTH } from '@/constants/screenSizes';
 import { carouselSettings } from './carouselSettings';
+
+const MOBILE_WIDTH_540 = MOBILE_WIDTH + 165;
 
 const Idol = ({ idol, onClick, checked }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -24,7 +24,7 @@ const Idol = ({ idol, onClick, checked }) => {
     return () => {
       window.removeEventListener('resize', debouncedResize);
       window.removeEventListener('beforeunload', debouncedResize);
-      setSize(windowWidth > 540 ? 'lg' : 'md');
+      setSize(windowWidth > MOBILE_WIDTH_540 ? 'lg' : 'md');
     };
   }, [windowWidth]);
 

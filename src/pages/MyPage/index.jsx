@@ -9,6 +9,7 @@ import Header from '@/components/Header';
 import testData from './mock.json';
 import CustomButton from '@/components/CustomButton';
 import Plus from '@/assets/icons/Plus';
+import { sortByItems } from '@/utils/sortItems';
 
 const ITEM_COUNTS = 100;
 
@@ -38,27 +39,32 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
     }
   };
 
-  const deleteFavorite = (id) => {
+  const deleteFavorite = (selectedItem) => {
     setIdolList({
       ...idolList,
+      allList: sortByItems([...idolList.allList, selectedItem], 'id'),
       favoriteIdolList: idolList.favoriteIdolList.filter(
-        (idol) => idol.id !== id,
+        (idol) => idol.id !== selectedItem.id,
       ),
     });
   };
 
-  const submitIdolList = (e) => {
+  const submitIdolList = () => {
     setIdolList({
       ...idolList,
       favoriteIdolList: [
-        ...new Set(
-          [...idolList.favoriteList, ...idolList.favoriteIdolList].map((idol) =>
-            JSON.stringify(idol),
-          ),
-        ),
-      ].map((idol) => JSON.parse(idol)),
+        ...idolList.favoriteList,
+        ...idolList.favoriteIdolList,
+      ],
+      allList: idolList.allList.filter(
+        (item) =>
+          !(idolList.favoriteList.filter((i) => item.id === i.id).length > 0),
+      ),
       favoriteList: [],
     });
+    console.log(idolList.allList);
+    console.log(idolList.favoriteList);
+    console.log(_(idolList.allList).difference(idolList.favoriteList));
   };
 
   // UI용 데이터 호출 함수 제작
