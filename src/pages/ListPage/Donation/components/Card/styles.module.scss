@@ -34,14 +34,26 @@
   margin-inline: auto;
 }
 
-@media (max-width: $width-mobile) {
+@media (max-width: 550px) {
   .topWrapper {
-    height: 206px;
+    height: 246px;
+  }
+}
+
+@media (max-width: 460px) {
+  .topWrapper {
+    height: 226px;
   }
   .button {
     button {
       height: 31px !important;
     }
+  }
+}
+
+@media (max-width: $width-mobile) {
+  .topWrapper {
+    height: 206px;
   }
 }
 
