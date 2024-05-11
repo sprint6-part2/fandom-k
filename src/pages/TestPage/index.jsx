@@ -10,6 +10,7 @@ import ModalHeader from '@/components/Modal/components/ModalHeader';
 // import ModalMobileHeader from '@/components/Modal/components/ModalMobileHeader';
 import Profile from '@/components/Profile';
 import LoadingError from '@/components/LoadingError';
+import Spinner from '@/assets/icons/Spinner';
 
 const TestPage = () => {
   const [isOpen, openModal, closeModal] = useModal();
@@ -17,6 +18,7 @@ const TestPage = () => {
   return (
     <div style={{ backgroundColor: 'black' }}>
       <Header />
+      <Spinner />
       <div
         style={{ display: 'flex', justifyContent: 'center', padding: '24px' }}
       ></div>

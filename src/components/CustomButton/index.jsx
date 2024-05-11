@@ -2,7 +2,7 @@
 /* eslint-disable react/require-default-props */
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { motion } from 'framer-motion';
 import s from './styles.module.scss';
 
 /**
@@ -27,7 +27,9 @@ const CustomButton = ({
   children,
 }) => {
   return (
-    <button
+    <motion.button
+      initial={{ scale: 1 }}
+      whileTap={{ scale: 0.9 }}
       className={s.button}
       type="button"
       onClick={onClick}
@@ -41,7 +43,7 @@ const CustomButton = ({
         </div>
       )}
       {btnText}
-    </button>
+    </motion.button>
   );
 };
 
