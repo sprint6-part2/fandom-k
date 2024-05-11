@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './styles.module.scss';
 import CreditIcon from '@/assets/icons/Credit';
 import { motion } from 'framer-motion';
+import useModal from '@/hooks/useModal';
+import CreditModal from './CreditModal';
 
 const Credit = () => {
+  const [isOpen, openModal, closeModal] = useModal();
+  const [credit, setCredit] = useState('가져오는 중...');
+
+  useEffect(() => {
+    const storedCredit = localStorage.getItem('credit');
+    if (storedCredit) {
+      setCredit(parseInt(storedCredit));
+    }
+  }, [isOpen]);
+
   return (
     <section className={styles.container}>
       <div className={styles.credit}>
         <span>내 크래딧</span>
         <div className={styles.creditInfo}>
           <CreditIcon />
-          <span>36,000</span>
+          <span>{credit}</span>
         </div>
       </div>
       <div>
@@ -18,10 +30,12 @@ const Credit = () => {
           initial={{ scale: 1 }}
           whileTap={{ scale: 0.9 }}
           className={styles.charge}
+          onClick={openModal}
         >
           충전하기
         </motion.button>
       </div>
+      <CreditModal isOpen={isOpen} closeModal={closeModal} />
     </section>
   );
 };
