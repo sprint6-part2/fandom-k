@@ -9,6 +9,7 @@ import { boys, girls } from './mock';
 import useSetNumOfItemsToShow from '@/hooks/useSetNumberOfItemsToShow';
 import ChartModal from './ChartModal';
 import useModal from '@/hooks/useModal';
+import Spinner from '@/assets/icons/Spinner';
 
 const MonthlyChart = () => {
   const [isOpen, openModal, closeModal] = useModal();
