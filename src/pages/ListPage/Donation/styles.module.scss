@@ -13,10 +13,10 @@
 }
 
 .loading {
-  margin-top: 30px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 
-  @include font-base($color-white, 600, 20px, 26px);
+  height: 401px;
 }
 
 .error {
@@ -40,7 +40,13 @@
 
 @media (max-width: 1250px) {
   .title {
-    margin-inline: 24px;
+    margin-inline: 15px;
+  }
+}
+
+@media (max-width: 550px) {
+  .loading {
+    height: 355px;
   }
 }
 
@@ -61,5 +67,8 @@
     margin-block: 16px;
 
     @include font-base($color-white, 700, 16px, 26px);
+  }
+  .loading {
+    height: 305px;
   }
 }
