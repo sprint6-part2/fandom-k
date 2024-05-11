@@ -7,7 +7,7 @@ import CustomButton from '@/components/CustomButton';
 import Chart from '@/assets/icons/Chart';
 import { boys, girls } from './mock';
 import useSetNumOfItemsToShow from '@/hooks/useSetNumberOfItemsToShow';
-import LoadingSpinner from '@/components/LoadingSpinner';
+import Spinner from '@/assets/icons/Spinner';
 
 const MonthlyChart = () => {
   const [idolList, setIdolList] = useState([]);
@@ -73,10 +73,13 @@ const MonthlyChart = () => {
         <CustomButton btnText="더보기" onClick={handleMoreBtn} />
       </div>
       {/* <div className={styles.loading_spinner}>
-        <LoadingSpinner />
+        <Spinner />
       </div>
       <div className={styles.moreButton}>
-        <CustomButton btnText={<LoadingSpinner />} disabled={true} />
+        <CustomButton
+          btnText={<Spinner width={'100%'} height={'100%'} fill="white" />}
+          disabled
+        />
       </div> */}
     </div>
   );
