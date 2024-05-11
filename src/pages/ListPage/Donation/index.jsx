@@ -4,12 +4,12 @@ import Carousel from '@/components/Carousel';
 import LoadingError from '@/components/LoadingError';
 import { carouselSettings } from './carouselSetting';
 import Card from './components/Card';
-import { useLoad } from '@/hooks/useLoad';
+import useLoad from '@/hooks/useLoad';
 import { getDonations } from '@/apis/getDonations';
 import Spinner from '@/assets/icons/Spinner';
 
 const Donation = () => {
-  const { isLoading, loadingError, handleLoad } = useLoad(getDonations);
+  const [isLoading, loadingError, handleLoad] = useLoad(getDonations);
   const [donationList, setDonationList] = useState(null);
 
   const handleDonationLoad = async () => {
