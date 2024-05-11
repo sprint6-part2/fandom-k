@@ -7,8 +7,11 @@ import { useEffect, useState } from 'react';
 import { debounce } from '@/utils/debounce';
 import style from './styles.module.scss';
 import { Nothing } from '../Nothing';
+import { getStorage, setStorage } from '@/utils/localStorage';
 
 const MOBILE_WIDTH_540 = MOBILE_WIDTH + 165;
+
+setStorage("favoriteIdolList",  JSON.stringify([]));
 
 const FavoriteIdol = ({ idol, onDelete }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -48,7 +51,10 @@ const FavoriteIdol = ({ idol, onDelete }) => {
   );
 };
 
-const IdolFavoriteList = ({ list, onDelete }) => {
+const IdolFavoriteList = ({ onDelete }) => {
+
+  const list = JSON.parse(getStorage("favoriteIdolList"));
+
   return (
     <div className={style.container}>
       <h2 className={style.title}>내가 관심있는 아이돌</h2>

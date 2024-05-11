@@ -10,13 +10,13 @@ import testData from './mock.json';
 import CustomButton from '@/components/CustomButton';
 import Plus from '@/assets/icons/Plus';
 import { sortByItems } from '@/utils/sortItems';
+import { getStorage, setStorage } from '@/utils/localStorage';
 
 const ITEM_COUNTS = 100;
 
 const INITIAL_VALUE = {
   allList: [],
   favoriteList: [],
-  favoriteIdolList: [],
 };
 
 const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
@@ -40,31 +40,38 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
   };
 
   const deleteFavorite = (selectedItem) => {
+    let favoriteIdolList = JSON.parse(getStorage("favoriteIdolList"));
+
+    favoriteIdolList = favoriteIdolList.filter(
+      (idol) => idol.id !== selectedItem.id,
+    );
+
+    setStorage("favoriteIdolList", JSON.stringify(favoriteIdolList));
+
     setIdolList({
       ...idolList,
       allList: sortByItems([...idolList.allList, selectedItem], 'id'),
-      favoriteIdolList: idolList.favoriteIdolList.filter(
-        (idol) => idol.id !== selectedItem.id,
-      ),
     });
   };
 
   const submitIdolList = () => {
+    let favoriteIdolList = JSON.parse(getStorage("favoriteIdolList"));
+
+    favoriteIdolList =  [
+      ...idolList.favoriteList,
+      ...favoriteIdolList,
+    ];
+    
+    setStorage("favoriteIdolList", JSON.stringify(favoriteIdolList));
+
     setIdolList({
       ...idolList,
-      favoriteIdolList: [
-        ...idolList.favoriteList,
-        ...idolList.favoriteIdolList,
-      ],
       allList: idolList.allList.filter(
         (item) =>
           !(idolList.favoriteList.filter((i) => item.id === i.id).length > 0),
       ),
       favoriteList: [],
     });
-    console.log(idolList.allList);
-    console.log(idolList.favoriteList);
-    console.log(_(idolList.allList).difference(idolList.favoriteList));
   };
 
   // UI용 데이터 호출 함수 제작
@@ -100,7 +107,6 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
       <Header />
       <main className={style.main}>
         <IdolFavoriteList
-          list={idolList.favoriteIdolList}
           onDelete={deleteFavorite}
         />
         <div className={style.line}></div>
