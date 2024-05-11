@@ -7,6 +7,7 @@ import CustomButton from '@/components/CustomButton';
 import Chart from '@/assets/icons/Chart';
 import { boys, girls } from './mock';
 import useSetNumOfItemsToShow from '@/hooks/useSetNumberOfItemsToShow';
+import Spinner from '@/assets/icons/Spinner';
 
 const MonthlyChart = () => {
   const [idolList, setIdolList] = useState([]);
