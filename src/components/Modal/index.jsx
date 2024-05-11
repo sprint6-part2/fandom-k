@@ -11,14 +11,11 @@ import { createPortal } from 'react-dom';
  * @param {object} children 부모 컴포넌트로부터 받은 내용
  */
 const Modal = ({ isOpen, onClose, children }) => {
-  const Ref = useRef(null);
-
   return createPortal(
     <AnimatePresence>
       {isOpen && (
         <motion.aside
           className={style.modalBackDrop}
-          ref={Ref}
           onClick={onClose}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -26,7 +23,9 @@ const Modal = ({ isOpen, onClose, children }) => {
         >
           <div
             className={style.modalView}
-            onClick={(e) => e.target === Ref.current && onClose()}
+            onClick={(e) => {
+              return e.stopPropagation();
+            }}
           >
             {children}
           </div>
