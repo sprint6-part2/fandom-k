@@ -10,11 +10,13 @@ const CreditModal = ({ isOpen, closeModal }) => {
   const credit = getCredit();
   const setCredit = getUpdateCredit();
 
+  // 크레딧 선택
   const handleSelectValue = (value) => {
     setSelectedValue(value);
   };
 
-  const handleCharge = () => {
+  // 크레딧 충전 클릭
+  const handleChargeClick = () => {
     if (selectedValue) {
       const currentCredit = credit || 0;
       setCredit(parseInt(currentCredit + selectedValue));
@@ -22,6 +24,7 @@ const CreditModal = ({ isOpen, closeModal }) => {
     }
   };
 
+  // 모달 닫기
   const handleCloseModal = () => {
     setSelectedValue(null);
     closeModal();
@@ -62,7 +65,7 @@ const CreditModal = ({ isOpen, closeModal }) => {
         </div>
         <CustomButton
           btnText="충전하기"
-          onClick={handleCharge}
+          onClick={handleChargeClick}
           disabled={!selectedValue}
         />
       </div>

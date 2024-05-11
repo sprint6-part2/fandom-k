@@ -11,14 +11,15 @@ const ChartModal = ({ isOpen, closeModal, idolList, currentTab }) => {
   const credit = getCredit();
   const setCredit = getUpdateCredit();
 
-  const handleIdolClick = (idol) => {
+  // 투표할 아이돌 선택
+  const handleSelectIdol = (idol) => {
     setSelectedIdol(idol);
   };
 
-  const handleChart = () => {
+  // 투표하기 클릭
+  const handleChartClick = () => {
     if (selectedIdol) {
-      console.log(selectedIdol);
-      const newCredit = credit - 1000;
+      const newCredit = parseInt(credit - 1000);
       if (newCredit >= 0) {
         setCredit(newCredit);
       } else {
@@ -52,7 +53,7 @@ const ChartModal = ({ isOpen, closeModal, idolList, currentTab }) => {
                 <input
                   type="radio"
                   name="idol"
-                  onClick={() => handleIdolClick(idol)}
+                  onClick={() => handleSelectIdol(idol)}
                 />
               </div>
             );
@@ -61,7 +62,7 @@ const ChartModal = ({ isOpen, closeModal, idolList, currentTab }) => {
         <CustomButton
           btnText="투표하기"
           disabled={!selectedIdol}
-          onClick={handleChart}
+          onClick={handleChartClick}
         />
         <p>투표하는 데 1000 크레딧이 소모됩니다.</p>
       </div>

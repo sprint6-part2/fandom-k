@@ -11,10 +11,12 @@ const DonationModal = ({ isOpen, closeModal, item }) => {
   const credit = getCredit();
   const setCredit = getUpdateCredit();
 
+  // 후원할 값 입력
   const handleInputChange = (event) => {
     setCreditInput(event.target.value);
   };
 
+  // 후원하기 버튼 클릭
   const handleDonateClick = () => {
     if (parseInt(creditInput) && creditInput <= credit) {
       setCredit(parseInt(credit - creditInput));
@@ -22,6 +24,7 @@ const DonationModal = ({ isOpen, closeModal, item }) => {
     }
   };
 
+  // 모달 닫기
   const handleCloseModal = () => {
     setCreditInput('');
     closeModal();
