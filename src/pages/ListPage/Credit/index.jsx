@@ -20,10 +20,10 @@ const Credit = () => {
   return (
     <section className={styles.container}>
       <div className={styles.credit}>
-        <span>내 크래딧</span>
+        <span>내 크레딧</span>
         <div className={styles.creditInfo}>
           <CreditIcon />
-          <span>{credit}</span>
+          <span>{credit.toLocaleString('ko-KR')}</span>
         </div>
       </div>
       <div>
