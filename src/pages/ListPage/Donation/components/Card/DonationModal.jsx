@@ -6,6 +6,7 @@ import CustomButton from '@/components/CustomButton';
 import { inputToNumber } from '@/utils/input';
 import { getCredit, getUpdateCredit } from '@/contexts/CreditContext';
 import style from './modal.module.scss';
+import { toast } from 'react-toastify';
 
 const DonationModal = ({ isOpen, closeModal, item }) => {
   const [creditInput, setCreditInput] = useState('');
@@ -22,6 +23,7 @@ const DonationModal = ({ isOpen, closeModal, item }) => {
   const handleDonateClick = () => {
     if (parseInt(creditInput) && creditInput <= credit) {
       setCredit(parseInt(credit - creditInput));
+      toast(`🎉  ${creditInput} 크레딧 후원 성공!`);
       handleCloseModal();
     }
   };

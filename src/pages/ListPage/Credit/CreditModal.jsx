@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
+import { toast } from 'react-toastify';
 import Modal from '@/components/Modal';
 import ModalHeader from '@/components/Modal/components/ModalHeader';
 import CustomButton from '@/components/CustomButton';
@@ -24,6 +25,7 @@ const CreditModal = ({ isOpen, closeModal }) => {
     if (selectedValue) {
       const currentCredit = credit || 0;
       setCredit(parseInt(currentCredit + selectedValue));
+      toast('🎉  크레딧 충전 완료!');
       handleCloseModal();
     }
   };

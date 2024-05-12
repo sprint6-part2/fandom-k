@@ -7,6 +7,7 @@ import CustomButton from '@/components/CustomButton';
 import Profile from '@/components/Profile';
 import { getCredit, getUpdateCredit } from '@/contexts/CreditContext';
 import style from './modal.module.scss';
+import { toast } from 'react-toastify';
 
 const ChartModal = ({ isOpen, closeModal, idolList, currentTab }) => {
   const [selectedIdol, setSelectedIdol] = useState(null);
@@ -30,8 +31,9 @@ const ChartModal = ({ isOpen, closeModal, idolList, currentTab }) => {
       const newCredit = parseInt(credit - 1000);
       if (newCredit >= 0) {
         setCredit(newCredit);
+        toast(`🎉  ${selectedIdol.group} ${selectedIdol.name} 투표 완료!`);
       } else {
-        alert('크레딧 부족');
+        toast.error('투표하기 위한 크레딧 부족!');
       }
       closeModal();
     }
