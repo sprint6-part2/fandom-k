@@ -7,10 +7,15 @@
   color: white;
 }
 
+.expand {
+  width: 94vw;
+  height: 92vh;
+}
+
 .chart {
-  height: 477px;
+  height: 78%;
   margin-top: 20px;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 
   overflow-y: auto;
 }

@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import classNames from 'classnames';
 import Modal from '@/components/Modal';
 import ModalHeader from '@/components/Modal/components/ModalHeader';
+import ModalMobileHeader from '@/components/Modal/components/ModalMobileHeader';
 import CustomButton from '@/components/CustomButton';
 import Profile from '@/components/Profile';
 import { getCredit, getUpdateCredit } from '@/contexts/CreditContext';
@@ -8,9 +10,14 @@ import style from './modal.module.scss';
 
 const ChartModal = ({ isOpen, closeModal, idolList, currentTab }) => {
   const [selectedIdol, setSelectedIdol] = useState(null);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const expandSize = 550;
 
   const credit = getCredit();
   const setCredit = getUpdateCredit();
+
+  const title =
+    currentTab === 'girl' ? '이달의 여자 아이돌' : '이달의 남자 아이돌';
 
   // 투표할 아이돌 선택
   const handleSelectIdol = (idol) => {
@@ -30,20 +37,35 @@ const ChartModal = ({ isOpen, closeModal, idolList, currentTab }) => {
     }
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <Modal isOpen={isOpen} title="모달" onClose={closeModal}>
-      <ModalHeader
-        title={
-          currentTab === 'girl' ? '이달의 여자 아이돌' : '이달의 남자 아이돌'
-        }
-        onClose={closeModal}
-      />
-      <div className={style.modal}>
+      {windowWidth <= expandSize ? (
+        <ModalMobileHeader title={title} onClose={closeModal} />
+      ) : (
+        <ModalHeader title={title} onClose={closeModal} />
+      )}
+      <div
+        className={classNames(style.modal, {
+          [style.expand]: windowWidth <= expandSize,
+        })}
+      >
         <div className={style.chart}>
           {idolList.map((idol, index) => {
             return (
-              <>
-                <label key={idol.id} className={style.idol}>
+              <div key={idol.id}>
+                <label className={style.idol}>
                   <div className={style.info}>
                     <Profile
                       size="sm"
@@ -70,7 +92,7 @@ const ChartModal = ({ isOpen, closeModal, idolList, currentTab }) => {
                 {index !== idolList.length - 1 && (
                   <div className={style.division} />
                 )}
-              </>
+              </div>
             );
           })}
         </div>
