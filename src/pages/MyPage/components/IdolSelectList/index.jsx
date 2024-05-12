@@ -1,7 +1,7 @@
 import Carousel from '@/components/Carousel';
 import Profile from '@/components/Profile';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import style from './styles.module.scss';
 import { MOBILE_WIDTH } from '@/constants/screenSizes';
 import { carouselSettings } from './carouselSettings';
@@ -33,11 +33,14 @@ const IdolSelectList = ({ list, favoriteList, windowWidth, onClick }) => {
   const [size, setSize] = useState('lg');
 
   useEffect(() => {
-    setSize(windowWidth > MOBILE_WIDTH_540  ? 'lg' : 'md');
-  }, [windowWidth])
+    setSize(windowWidth > MOBILE_WIDTH_540 ? 'lg' : 'md');
+  }, [windowWidth]);
 
   return (
     <div className={style.container}>
+      <div
+        style={{ color: 'white' }}
+      >{`Header inside viewport ${inView}.`}</div>
       <h2 className={style.title}>관심 있는 아이돌을 추가해보세요.</h2>
       <div className={style.list_box}>
         <Carousel customSettings={carouselSettings} isLongArrow>

@@ -11,7 +11,7 @@ const TABLET_WIDTH_660 = TABLET_WIDTH - 84;
 const TABLET_WIDTH_540 = TABLET_WIDTH_660 - 120;
 
 export const carouselSettings = {
-  infinite: false,
+  infinite: true,
   speed: 500,
   slidesToShow: 8,
   slidesToScroll: 8,
@@ -20,6 +20,7 @@ export const carouselSettings = {
   autoplay: false,
   autoplaySpeed: 5000,
   initialSlide: -0.01,
+  asNavFor: null,
 
   responsive: [
     {
