@@ -43,18 +43,38 @@ export const listPageSettings = {
 };
 
 export const myPageSetting = {
-  infinite: true,
   speed: 500,
   arrows: true,
-  rows: 2, // rows 개수
-  slidesToShow: 5,
-  slidesToScroll: 2,
+  rows: 2,
+  slidesToShow: 6,
+  slidesToScroll: 6,
 
   responsive: [
     {
-      breakpoint: MOBILE_WIDTH,
+      breakpoint: 1000,
       settings: {
+        arrows: true,
+        rows: 2,
+        slidesToShow: 5,
+        slidesToScroll: 5,
+      },
+    },
+    {
+      breakpoint: 800,
+      settings: {
+        arrows: true,
+        rows: 2,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+      },
+    },
+    {
+      breakpoint: TABLET_WIDTH,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 4,
         arrows: false,
+        autoplay: false,
       },
     },
   ],
