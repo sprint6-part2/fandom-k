@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import classNames from 'classnames';
 import Modal from '@/components/Modal';
 import ModalHeader from '@/components/Modal/components/ModalHeader';
 import CustomButton from '@/components/CustomButton';
 import { inputToNumber } from '@/utils/input';
 import { getCredit, getUpdateCredit } from '@/contexts/CreditContext';
+import style from './modal.module.scss';
 
 const DonationModal = ({ isOpen, closeModal, item }) => {
   const [creditInput, setCreditInput] = useState('');
@@ -33,26 +35,18 @@ const DonationModal = ({ isOpen, closeModal, item }) => {
   return (
     <Modal isOpen={isOpen} title="모달" onClose={handleCloseModal}>
       <ModalHeader title="후원하기" onClose={handleCloseModal} />
-      <div
-        style={{
-          color: '#fff',
-          width: '263px',
-          height: '469px',
-          textAlign: 'center',
-        }}
-      >
-        <div>
-          <img
-            src={item.idol.profilePicture}
-            alt="후원할 아이돌"
-            style={{ width: '158px', height: '206px', borderRadius: '8px' }}
-          />
-          <br />
-          <span>{item.subtitle}</span>
-          <br />
-          <span>{item.title}</span>
+      <div className={style.modal}>
+        <div className={style.info}>
+          <img src={item.idol.profilePicture} alt="후원할 아이돌" />
+          <div className={style.text}>
+            <span>{item.subtitle}</span>
+            <span>{item.title}</span>
+          </div>
         </div>
         <input
+          className={classNames(style.input, {
+            [style.error]: creditInput > credit,
+          })}
           type="text"
           inputMode="numeric"
           placeholder="크레딧 입력"
@@ -62,9 +56,12 @@ const DonationModal = ({ isOpen, closeModal, item }) => {
             handleInputChange(e);
           }}
         />
-        {creditInput > credit && (
-          <p>갖고 있는 크레딧보다 더 많이 후원할 수 없어요</p>
-        )}
+
+        <div className={style.message}>
+          {creditInput > credit && (
+            <p>갖고 있는 크레딧보다 더 많이 후원할 수 없어요</p>
+          )}
+        </div>
         <CustomButton
           btnText="후원하기"
           disabled={

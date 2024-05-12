@@ -1,0 +1,79 @@
+@import '../../../../../styles/';
+
+$color-error: #ff2626;
+
+.modal {
+  width: 295px;
+  height: 440px;
+
+  color: white;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    width: 158px;
+    height: 206px;
+    border-radius: 8px;
+
+    margin-top: 24px;
+    margin-bottom: 10px;
+
+    object-fit: cover;
+  }
+}
+
+.text {
+  width: 158px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  span:nth-child(1) {
+    @include font-base(white, 400, 12px, 18px);
+    opacity: 40%;
+  }
+
+  span:nth-child(2) {
+    @include font-base($color-white, 500, 14px, 17px);
+  }
+}
+
+.input {
+  display: flex;
+
+  width: 100%;
+  height: 58px;
+  border: 1px solid $color-white;
+  border-radius: 8px;
+
+  background-color: #272f3d;
+  color: $color-white;
+
+  padding-inline: 16px;
+  margin: 24px auto 0;
+
+  @include font-base($color-white, 700, 18px, 26px);
+}
+
+.error {
+  border-color: $color-error;
+
+  &:focus {
+    outline: none !important;
+    border-color: $color-error;
+  }
+}
+
+.message {
+  height: 26px;
+
+  p {
+    padding-top: 6px;
+    @include font-base($color-error, 500, 12px, 14px);
+  }
+}
