@@ -4,6 +4,7 @@ import ModalHeader from '@/components/Modal/components/ModalHeader';
 import CustomButton from '@/components/CustomButton';
 import Profile from '@/components/Profile';
 import { getCredit, getUpdateCredit } from '@/contexts/CreditContext';
+import style from './modal.module.scss';
 
 const ChartModal = ({ isOpen, closeModal, idolList, currentTab }) => {
   const [selectedIdol, setSelectedIdol] = useState(null);
@@ -37,25 +38,39 @@ const ChartModal = ({ isOpen, closeModal, idolList, currentTab }) => {
         }
         onClose={closeModal}
       />
-      <div style={{ color: '#fff', width: '461px', height: '653px' }}>
-        <div>
-          {idolList.slice(0, 5).map((idol) => {
+      <div className={style.modal}>
+        <div className={style.chart}>
+          {idolList.map((idol, index) => {
             return (
-              <div
-                key={idol.id}
-                style={{ display: 'flex', alignItems: 'center' }}
-              >
-                <Profile size="sm" imageUrl={idol.profilePicture} />
-                <div>
-                  <span>{idol.group} </span>
-                  <span>{idol.name}</span>
-                </div>
-                <input
-                  type="radio"
-                  name="idol"
-                  onClick={() => handleSelectIdol(idol)}
-                />
-              </div>
+              <>
+                <label key={idol.id} className={style.idol}>
+                  <div className={style.info}>
+                    <Profile
+                      size="sm"
+                      imageUrl={idol.profilePicture}
+                      clicked={selectedIdol === idol}
+                    />
+                    <div className={style.text}>
+                      <span>{idol.rank}</span>
+                      <div className={style.name}>
+                        <span>
+                          {idol.group} {idol.name}
+                        </span>
+                        <span>{idol.totalVotes.toLocaleString('ko-KR')}표</span>
+                      </div>
+                    </div>
+                  </div>
+                  <input
+                    className={style.radio}
+                    type="radio"
+                    name="idol"
+                    onClick={() => handleSelectIdol(idol)}
+                  />
+                </label>
+                {index !== idolList.length - 1 && (
+                  <div className={style.division} />
+                )}
+              </>
             );
           })}
         </div>
@@ -64,7 +79,9 @@ const ChartModal = ({ isOpen, closeModal, idolList, currentTab }) => {
           disabled={!selectedIdol}
           onClick={handleChartClick}
         />
-        <p>투표하는 데 1000 크레딧이 소모됩니다.</p>
+        <p className={style.bottom}>
+          투표하는 데 <span>1000</span> 크레딧이 소모됩니다.
+        </p>
       </div>
     </Modal>
   );

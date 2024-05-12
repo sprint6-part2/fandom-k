@@ -124,7 +124,7 @@ export const girls = [
     group: '에스파',
     profilePicture:
       'https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714613612846/aespa1.jpeg',
-    totalVotes: 0,
+    totalVotes: 10000,
     teamId: 12,
     rank: 1,
   },
