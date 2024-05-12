@@ -38,9 +38,6 @@ const IdolSelectList = ({ list, favoriteList, windowWidth, onClick }) => {
 
   return (
     <div className={style.container}>
-      <div
-        style={{ color: 'white' }}
-      >{`Header inside viewport ${inView}.`}</div>
       <h2 className={style.title}>관심 있는 아이돌을 추가해보세요.</h2>
       <div className={style.list_box}>
         <Carousel customSettings={carouselSettings} isLongArrow>
