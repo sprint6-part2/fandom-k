@@ -10,7 +10,7 @@ import { getStorage, setStorage } from '@/utils/localStorage';
 
 const MOBILE_WIDTH_540 = MOBILE_WIDTH + 165;
 
-setStorage("favoriteIdolList",  JSON.stringify([]));
+setStorage('favoriteIdolList', JSON.stringify([]));
 
 const FavoriteIdol = ({ idol, onDelete, size }) => {
   return (
@@ -33,11 +33,11 @@ const FavoriteIdol = ({ idol, onDelete, size }) => {
 
 const IdolFavoriteList = ({ onDelete, windowWidth }) => {
   const [size, setSize] = useState('md');
-  const list = JSON.parse(getStorage("favoriteIdolList"));
+  const list = JSON.parse(getStorage('favoriteIdolList'));
 
   useEffect(() => {
-    setSize(windowWidth > MOBILE_WIDTH_540  ? 'md' : 'sm');
-  }, [windowWidth])
+    setSize(windowWidth > MOBILE_WIDTH_540 ? 'md' : 'sm');
+  }, [windowWidth]);
 
   return (
     <div className={style.container}>
@@ -46,11 +46,19 @@ const IdolFavoriteList = ({ onDelete, windowWidth }) => {
         {list.length > 0 ? (
           <Carousel
             className={style.idolList}
-            customSettings={carouselSettings}
+            customSettings={{
+              ...carouselSettings,
+              infinite: list.length > carouselSettings.slidesToShow,
+            }}
           >
             {list.map((idol) => {
               return (
-                <FavoriteIdol idol={idol} onDelete={onDelete} key={idol.id} size={size} />
+                <FavoriteIdol
+                  idol={idol}
+                  onDelete={onDelete}
+                  key={idol.id}
+                  size={size}
+                />
               );
             })}
           </Carousel>
