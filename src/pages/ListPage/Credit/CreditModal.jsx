@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
+import classnames from 'classnames';
 import Modal from '@/components/Modal';
 import ModalHeader from '@/components/Modal/components/ModalHeader';
 import CustomButton from '@/components/CustomButton';
 import { getCredit, getUpdateCredit } from '@/contexts/CreditContext';
+import style from './modal.module.scss';
+import CreditIcon from '@/assets/icons/Credit';
+import { creditOptions } from '@/constants/credit';
 
 const CreditModal = ({ isOpen, closeModal }) => {
   const [selectedValue, setSelectedValue] = useState(null);
@@ -33,40 +37,38 @@ const CreditModal = ({ isOpen, closeModal }) => {
   return (
     <Modal isOpen={isOpen} title="모달" onClose={handleCloseModal}>
       <ModalHeader title="크레딧 충전하기" onClose={handleCloseModal} />
-      <div style={{ color: '#fff', width: '263px', height: '332px' }}>
+      <div className={style.modal}>
         <div>
-          <label>
-            <input
-              type="radio"
-              value={100}
-              checked={selectedValue === 100}
-              onChange={() => handleSelectValue(100)}
-            />
-            100
-          </label>
-          <label>
-            <input
-              type="radio"
-              value={500}
-              checked={selectedValue === 500}
-              onChange={() => handleSelectValue(500)}
-            />
-            500
-          </label>
-          <label>
-            <input
-              type="radio"
-              value={1000}
-              checked={selectedValue === 1000}
-              onChange={() => handleSelectValue(1000)}
-            />
-            1000
-          </label>
+          {creditOptions.map((option) => (
+            <label
+              key={option}
+              className={classnames(style.box, {
+                [style.select_box]: selectedValue === option,
+              })}
+            >
+              <div
+                className={classnames(style.credit, {
+                  [style.select_credit]: selectedValue === option,
+                })}
+              >
+                <CreditIcon width={20} height={25} />
+                <span>{option}</span>
+              </div>
+              <input
+                className={style.radio}
+                type="radio"
+                value={option}
+                checked={selectedValue === option}
+                onChange={() => handleSelectValue(option)}
+              />
+            </label>
+          ))}
         </div>
         <CustomButton
           btnText="충전하기"
           onClick={handleChargeClick}
           disabled={!selectedValue}
+          maxHeight={42}
         />
       </div>
     </Modal>
