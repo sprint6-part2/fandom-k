@@ -1,0 +1,66 @@
+@import '../../../styles/';
+
+.modal {
+  width: 295px;
+  height: 332px;
+
+  div {
+    margin-block: 28px;
+  }
+}
+
+.box {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 295px;
+  height: 62px;
+  margin-block: 12px;
+
+  border-radius: 8px;
+  border: 1px solid $color-white;
+  background-color: $color-black-200;
+}
+
+.select_box {
+  border: 1px solid $color-brand-orange;
+}
+
+.credit {
+  display: flex;
+  align-items: center;
+  margin-left: 22px;
+
+  span {
+    @include font-base($color-gray-warm, 700, 20px, 26px);
+  }
+}
+
+.select_credit {
+  span {
+    @include font-base(white, 700, 20px, 26px);
+  }
+}
+
+.radio {
+  appearance: none;
+
+  width: 16px;
+  height: 16px;
+
+  background-color: $color-gray-warm;
+  border: 3px solid white;
+  box-shadow: 0 0 0 1.6px $color-gray-warm;
+  border-radius: 50%;
+
+  margin-right: 22px;
+
+  &:checked {
+    background-color: $color-brand-orange;
+    border: 3px solid white;
+    box-shadow: 0 0 0 1.6px $color-brand-orange;
+  }
+}

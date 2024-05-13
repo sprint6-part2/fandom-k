@@ -7,9 +7,12 @@ import CustomButton from '@/components/CustomButton';
 import Chart from '@/assets/icons/Chart';
 import { boys, girls } from './mock';
 import useSetNumOfItemsToShow from '@/hooks/useSetNumberOfItemsToShow';
+import ChartModal from './ChartModal';
+import useModal from '@/hooks/useModal';
 import Spinner from '@/assets/icons/Spinner';
 
 const MonthlyChart = () => {
+  const [isOpen, openModal, closeModal] = useModal();
   const [idolList, setIdolList] = useState([]);
   const [currentTab, setCurrentTab] = useState('girl');
   const chartClass = classNames(styles.chart, {
@@ -59,7 +62,12 @@ const MonthlyChart = () => {
     <div className={styles.container}>
       <div className={styles.header}>
         <h2>이달의 차트</h2>
-        <CustomButton btnText="차트 투표하기" textSize={13} maxHeight={32}>
+        <CustomButton
+          btnText="차트 투표하기"
+          textSize={13}
+          maxHeight={32}
+          onClick={openModal}
+        >
           <Chart />
         </CustomButton>
       </div>
@@ -72,6 +80,14 @@ const MonthlyChart = () => {
       <div className={styles.moreButton}>
         <CustomButton btnText="더보기" onClick={handleMoreBtn} />
       </div>
+      {isOpen && (
+        <ChartModal
+          isOpen={isOpen}
+          closeModal={closeModal}
+          idolList={idolList}
+          currentTab={currentTab}
+        />
+      )}
     </div>
   );
 };
