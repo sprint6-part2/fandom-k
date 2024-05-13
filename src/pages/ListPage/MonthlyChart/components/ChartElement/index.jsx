@@ -10,8 +10,8 @@ import { motion } from 'framer-motion';
  * @param {object} idol 아이돌 객체
  * @param {number} ranking 아이돌 순위
  */
-const ChartElement = ({ idol, ranking }) => {
-  const { name, profilePicture } = idol;
+const ChartElement = ({ idol }) => {
+  const { name, profilePicture, rank } = idol;
   const totalVotes = numberWithCommas(idol.totalVotes);
 
   return (
@@ -26,7 +26,7 @@ const ChartElement = ({ idol, ranking }) => {
         <div className={styles.img}>
           <Profile size="sm" imageUrl={profilePicture} />
         </div>
-        <span className={styles.ranking}>{ranking}</span>
+        <span className={styles.ranking}>{rank}</span>
         <div className={styles.name}>{name}</div>
       </div>
       <div className={styles.totalVotes}>{totalVotes}</div>

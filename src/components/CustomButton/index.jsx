@@ -53,7 +53,7 @@ CustomButton.propTypes = {
   iconTextGap: PropTypes.oneOf([4, 8]),
   disabled: PropTypes.bool,
   rounded: PropTypes.bool,
-  btnText: PropTypes.string.isRequired,
+  btnText: PropTypes.node.isRequired,
   children: PropTypes.node,
   onClick: PropTypes.func,
 };
