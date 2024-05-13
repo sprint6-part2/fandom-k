@@ -47,6 +47,10 @@
     margin: 0 12px;
   }
 
+  .slick-track {
+    float: left;
+  }
+
   @media (max-width: 1000px) {
     .slick-slide > div {
       margin: 0 8px;

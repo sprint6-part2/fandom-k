@@ -16,10 +16,17 @@ import { getIdolData } from '@/apis/getIdolData';
 
 const ITEM_COUNTS = 100;
 
+const INITIAL_VALUE = {
+  allList: [],
+  favoriteIdolList: [],
+  favoriteList: [],
+};
+
 const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
-  const [idolList, setIdolList] = useState(JSON.parse(getStorage('IdolList')));
+  const [idolList, setIdolList] = useState(INITIAL_VALUE);
   const [isLoading, loadingError, handleLoad] = useLoad(getIdolData);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [init, setInit] = useState(false);
   const [cursor, setCursor] = useState(null);
 
   const addFavorite = (selectedItem, clicked) => {
@@ -36,6 +43,7 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
         ),
       });
     }
+    // setStorage('IdolList', JSON.stringify(idolList));
   };
 
   const deleteFavorite = (selectedItem) => {
@@ -46,6 +54,7 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
       ),
       allList: sortByItems([...idolList.allList, selectedItem], 'id'),
     });
+    // setStorage('IdolList', JSON.stringify(idolList));
   };
 
   const submitIdolList = () => {
@@ -61,6 +70,7 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
       ),
       favoriteList: [],
     });
+    // setStorage('IdolList', JSON.stringify(idolList));
   };
 
   const handleResize = () => {
@@ -90,6 +100,7 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
       });
     }
     setCursor(nextCursor);
+    // setStorage('IdolList', JSON.stringify(idolList));
   };
 
   // 100개 이상의 데이터가 존재하는 경우, 더 불러오기 위한 함수
@@ -98,10 +109,17 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
   };
 
   useEffect(() => {
-    if (idolList.allList.length > 0) {
-      setStorage('IdolList', JSON.stringify(idolList));
+    if (!init) {
+      const IdolData = JSON.parse(getStorage('IdolList'));
+
+      if (IdolData) {
+        setIdolList(IdolData);
+      } else {
+        getIdolList({ pageSize, keyword });
+      }
+      setInit(true);
     } else {
-      getIdolList({ pageSize, keyword });
+      setStorage('IdolList', JSON.stringify(idolList));
     }
   }, [idolList]);
 
