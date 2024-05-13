@@ -105,6 +105,7 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
       });
     }
     setCursor(nextCursor);
+    setInit(true);
     // setStorage('IdolList', JSON.stringify(idolList));
   };
 
@@ -117,12 +118,12 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
     if (!init) {
       const IdolData = JSON.parse(getStorage('IdolList'));
 
-      if (IdolData && idolList.allList.length > 0) {
+      if (IdolData) {
         setIdolList(IdolData);
+        setInit(true);
       } else {
         getIdolList({ pageSize, keyword });
       }
-      setInit(true);
     } else {
       setStorage('IdolList', JSON.stringify(idolList));
     }
