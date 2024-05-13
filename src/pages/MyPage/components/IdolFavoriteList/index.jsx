@@ -42,9 +42,13 @@ const IdolFavoriteList = ({ onDelete, list, windowWidth }) => {
       <div className={style.list_box}>
         {list.length > 0 ? (
           <Carousel
-            className={style.idolList}
             customSettings={{
               ...carouselSettings,
+              touchMove: list.length > carouselSettings.slidesToShow,
+              slidesToScroll:
+                list.length > carouselSettings.slidesToShow
+                  ? carouselSettings.slidesToShow
+                  : 1,
               infinite: list.length > carouselSettings.slidesToShow,
             }}
           >

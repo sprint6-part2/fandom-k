@@ -11,9 +11,11 @@ const TABLET_WIDTH_660 = TABLET_WIDTH - 84;
 const TABLET_WIDTH_580 = TABLET_WIDTH_660 - 80;
 
 export const carouselSettings = {
+  infinite: false,
   speed: 500,
   slidesToShow: 8,
-  slidesToScroll: 8,
+  slidesToScroll: 1,
+  touchMove: false,
   arrows: false,
   autoplay: false,
   autoplaySpeed: 5000,
@@ -24,49 +26,49 @@ export const carouselSettings = {
       breakpoint: DESKTOP_WIDTH_1250,
       settings: {
         slidesToShow: 7,
-        slidesToScroll: 7,
+        slidesToScroll: 1,
       },
     },
     {
       breakpoint: DESKTOP_WIDTH_1075,
       settings: {
         slidesToShow: 6,
-        slidesToScroll: 6,
+        slidesToScroll: 1,
       },
     },
     {
       breakpoint: DESKTOP_WIDTH_900,
       settings: {
         slidesToShow: 5,
-        slidesToScroll: 5,
+        slidesToScroll: 1,
       },
     },
     {
       breakpoint: TABLET_WIDTH,
       settings: {
         slidesToShow: 4,
-        slidesToScroll: 4,
+        slidesToScroll: 1,
       },
     },
     {
       breakpoint: TABLET_WIDTH_660,
       settings: {
         slidesToShow: 3.5,
-        slidesToScroll: 3.5,
+        slidesToScroll: 1,
       },
     },
     {
       breakpoint: TABLET_WIDTH_580,
       settings: {
         slidesToShow: 3.2,
-        slidesToScroll: 3.2,
+        slidesToScroll: 1,
       },
     },
     {
       breakpoint: MOBILE_WIDTH,
       settings: {
         slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToScroll: 1,
         arrows: false,
       },
     },
