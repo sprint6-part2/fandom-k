@@ -5,7 +5,7 @@ import ModalHeader from '@/components/Modal/components/ModalHeader';
 import CustomButton from '@/components/CustomButton';
 import { inputToNumber } from '@/utils/input';
 import { getCredit, getUpdateCredit } from '@/contexts/CreditContext';
-import style from './modal.module.scss';
+import style from './styles.module.scss';
 import { toast } from 'react-toastify';
 
 const DonationModal = ({ isOpen, closeModal, item }) => {

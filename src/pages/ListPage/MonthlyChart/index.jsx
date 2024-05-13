@@ -1,61 +1,64 @@
 import React, { useEffect, useState } from 'react';
-import classNames from 'classnames';
 import styles from './styles.module.scss';
-import ChartElement from './components/ChartElement';
 import Tab from './components/Tab';
 import CustomButton from '@/components/CustomButton';
 import Chart from '@/assets/icons/Chart';
-import { boys, girls } from './mock';
 import useSetNumOfItemsToShow from '@/hooks/useSetNumberOfItemsToShow';
-import ChartModal from './ChartModal';
+import useLoad from '@/hooks/useLoad';
+import { getCharts } from '@/apis/getCharts';
+import { FEMALE } from '@/constants/tabTypes';
 import useModal from '@/hooks/useModal';
-import Spinner from '@/assets/icons/Spinner';
+import MoreButton from './components/MoreButton';
+import IdolChart from './components/IdolChart';
+import ChartModal from './components/ChartModal';
 
 const MonthlyChart = () => {
   const [isOpen, openModal, closeModal] = useModal();
   const [idolList, setIdolList] = useState([]);
-  const [currentTab, setCurrentTab] = useState('girl');
-  const chartClass = classNames(styles.chart, {
-    [styles.even]: idolList.length % 2 === 0,
-  });
+  const [isLoading, loadingError, handleLoad] = useLoad(getCharts);
+  const [currentTab, setCurrentTab] = useState(FEMALE);
   const numOfItemsToShow = useSetNumOfItemsToShow({
     desktop: 10,
     tablet: 5,
     mobile: 5,
   });
+  const [nextCursor, setNextCursor] = useState();
 
   //데이터 가져오기
-  const handleLoad = () => {
-    if (currentTab === 'girl') {
-      setIdolList(girls.slice(0, numOfItemsToShow));
-    }
-    if (currentTab === 'boy') {
-      setIdolList(boys.slice(0, numOfItemsToShow));
+  const handleChartLoad = async () => {
+    const chart = await handleLoad({
+      gender: currentTab,
+      pageSize: numOfItemsToShow,
+    });
+    if (chart) {
+      setIdolList(chart.idols);
+      setNextCursor(chart.nextCursor);
     }
   };
 
   // 탭 선택 핸들러
   const handleTabChange = (tab) => {
     setCurrentTab(tab);
+    setNextCursor(null);
+    setIdolList([]);
   };
 
   //더보기 버튼
-  const handleMoreBtn = () => {
-    const newArr = [
-      ...idolList,
-      {
-        id: idolList.length,
-        name: '추가 버튼 눌렀구나',
-        totalVotes: 1000,
-        profilePicture:
-          'https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714613892649/ive1.jpeg',
-      },
-    ];
-    setIdolList(newArr);
+  const handleMoreBtn = async () => {
+    const chart = await handleLoad({
+      gender: currentTab,
+      pageSize: numOfItemsToShow,
+      cursor: nextCursor,
+    });
+    if (chart) {
+      const newArr = [...idolList, ...chart.idols];
+      setIdolList(newArr);
+      setNextCursor(chart.nextCursor);
+    }
   };
 
   useEffect(() => {
-    handleLoad();
+    handleChartLoad();
   }, [currentTab, numOfItemsToShow]);
 
   return (
@@ -72,14 +75,18 @@ const MonthlyChart = () => {
         </CustomButton>
       </div>
       <Tab currentTab={currentTab} handleTabChange={handleTabChange} />
-      <ul className={chartClass}>
-        {idolList.map((idol, index) => {
-          return <ChartElement key={idol.id} idol={idol} ranking={index + 1} />;
-        })}
-      </ul>
-      <div className={styles.moreButton}>
-        <CustomButton btnText="더보기" onClick={handleMoreBtn} />
-      </div>
+      <IdolChart
+        isLoading={isLoading}
+        loadingError={loadingError}
+        idolList={idolList}
+      />
+      <MoreButton
+        isLoading={isLoading}
+        loadingError={loadingError}
+        idolListLength={idolList.length}
+        handleMoreBtn={handleMoreBtn}
+        nextCursor={nextCursor}
+      />
       {isOpen && (
         <ChartModal
           isOpen={isOpen}
