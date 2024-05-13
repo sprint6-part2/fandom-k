@@ -10,8 +10,6 @@ import { getStorage, setStorage } from '@/utils/localStorage';
 
 const MOBILE_WIDTH_540 = MOBILE_WIDTH + 165;
 
-setStorage('favoriteIdolList', JSON.stringify([]));
-
 const FavoriteIdol = ({ idol, onDelete, size }) => {
   return (
     <div className={style.idolItem}>
@@ -31,9 +29,8 @@ const FavoriteIdol = ({ idol, onDelete, size }) => {
   );
 };
 
-const IdolFavoriteList = ({ onDelete, windowWidth }) => {
+const IdolFavoriteList = ({ onDelete, list, windowWidth }) => {
   const [size, setSize] = useState('md');
-  const list = JSON.parse(getStorage('favoriteIdolList'));
 
   useEffect(() => {
     setSize(windowWidth > MOBILE_WIDTH_540 ? 'md' : 'sm');

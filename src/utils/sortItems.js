@@ -5,3 +5,9 @@ export const sortByItems = (arr, critia) => {
     return 0;
   });
 };
+
+export const sortByItemsNoDup = (arr, critia) => {
+  return [...new Set(sortByItems(arr).map((item) => JSON.stringify(item)))].map(
+    (item) => JSON.parse(item),
+  );
+};

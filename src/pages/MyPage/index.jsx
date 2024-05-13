@@ -16,13 +16,8 @@ import { getIdolData } from '@/apis/getIdolData';
 
 const ITEM_COUNTS = 100;
 
-const INITIAL_VALUE = {
-  allList: [],
-  favoriteList: [],
-};
-
 const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
-  const [idolList, setIdolList] = useState(INITIAL_VALUE);
+  const [idolList, setIdolList] = useState(JSON.parse(getStorage('IdolList')));
   const [isLoading, loadingError, handleLoad] = useLoad(getIdolData);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [cursor, setCursor] = useState(null);
@@ -44,29 +39,22 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
   };
 
   const deleteFavorite = (selectedItem) => {
-    let favoriteIdolList = JSON.parse(getStorage('favoriteIdolList'));
-
-    favoriteIdolList = favoriteIdolList.filter(
-      (idol) => idol.id !== selectedItem.id,
-    );
-
-    setStorage('favoriteIdolList', JSON.stringify(favoriteIdolList));
-
     setIdolList({
       ...idolList,
+      favoriteIdolList: idolList.favoriteIdolList.filter(
+        (idol) => idol.id !== selectedItem.id,
+      ),
       allList: sortByItems([...idolList.allList, selectedItem], 'id'),
     });
   };
 
   const submitIdolList = () => {
-    let favoriteIdolList = JSON.parse(getStorage('favoriteIdolList'));
-
-    favoriteIdolList = [...idolList.favoriteList, ...favoriteIdolList];
-
-    setStorage('favoriteIdolList', JSON.stringify(favoriteIdolList));
-
     setIdolList({
       ...idolList,
+      favoriteIdolList: [
+        ...idolList.favoriteList,
+        ...idolList.favoriteIdolList,
+      ],
       allList: idolList.allList.filter(
         (item) =>
           !(idolList.favoriteList.filter((i) => item.id === i.id).length > 0),
@@ -101,7 +89,6 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
         return { ...idolList, allList: [...prevList, ...list] };
       });
     }
-
     setCursor(nextCursor);
   };
 
@@ -111,14 +98,22 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
   };
 
   useEffect(() => {
-    getIdolList({ pageSize, keyword });
-  }, []);
+    if (idolList.allList.length > 0) {
+      setStorage('IdolList', JSON.stringify(idolList));
+    } else {
+      getIdolList({ pageSize, keyword });
+    }
+  }, [idolList]);
 
   return (
     <div className={style.container}>
       <Header />
       <main className={style.main}>
-        <IdolFavoriteList onDelete={deleteFavorite} windowWidth={windowWidth} />
+        <IdolFavoriteList
+          onDelete={deleteFavorite}
+          list={idolList.favoriteIdolList}
+          windowWidth={windowWidth}
+        />
         <div className={style.line}></div>
         <IdolSelectList
           list={idolList.allList}
