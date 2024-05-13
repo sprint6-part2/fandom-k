@@ -76,7 +76,7 @@ const ChartModal = ({ isOpen, closeModal, idolList, currentTab }) => {
                       clicked={selectedIdol === idol}
                     />
                     <div className={style.text}>
-                      <span>{idol.rank}</span>
+                      <span>{index + 1}</span>
                       <div className={style.name}>
                         <span>
                           {idol.group} {idol.name}
