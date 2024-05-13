@@ -5,7 +5,7 @@ import Modal from '@/components/Modal';
 import ModalHeader from '@/components/Modal/components/ModalHeader';
 import CustomButton from '@/components/CustomButton';
 import { getCredit, getUpdateCredit } from '@/contexts/CreditContext';
-import style from './modal.module.scss';
+import style from './styles.module.scss';
 import CreditIcon from '@/assets/icons/Credit';
 import { creditOptions } from '@/constants/credit';
 
