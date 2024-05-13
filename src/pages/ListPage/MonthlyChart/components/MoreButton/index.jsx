@@ -13,7 +13,7 @@ const MoreButton = ({
     <div className={styles.moreButton}>
       {isLoading && idolListLength > 0 ? (
         <CustomButton
-          btnText={<Spinner width={'100%'} height={'100%'} fill="white" />}
+          btnText={<Spinner width="100%" height="100%" fill="white" />}
           disabled
         />
       ) : (

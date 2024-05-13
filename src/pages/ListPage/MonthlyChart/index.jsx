@@ -5,7 +5,7 @@ import CustomButton from '@/components/CustomButton';
 import Chart from '@/assets/icons/Chart';
 import useSetNumOfItemsToShow from '@/hooks/useSetNumberOfItemsToShow';
 import useLoad from '@/hooks/useLoad';
-import { getCharts } from '@/api/getCharts';
+import { getCharts } from '@/apis/getCharts';
 import { FEMALE } from '@/constants/tabTypes';
 import ChartModal from './ChartModal';
 import useModal from '@/hooks/useModal';
