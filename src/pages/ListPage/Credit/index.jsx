@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 import CreditIcon from '@/assets/icons/Credit';
 import { motion } from 'framer-motion';
 import useModal from '@/hooks/useModal';
-import CreditModal from './CreditModal';
+import CreditModal from './components/CreditModal';
 import { getCredit } from '@/contexts/CreditContext';
 
 const Credit = () => {

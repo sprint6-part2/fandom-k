@@ -7,7 +7,7 @@ import CustomButton from '@/components/CustomButton';
 import Chart from '@/assets/icons/Chart';
 import { boys, girls } from './mock';
 import useSetNumOfItemsToShow from '@/hooks/useSetNumberOfItemsToShow';
-import ChartModal from './ChartModal';
+import ChartModal from './components/ChartModal';
 import useModal from '@/hooks/useModal';
 import Spinner from '@/assets/icons/Spinner';
 

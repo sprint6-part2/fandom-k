@@ -5,7 +5,7 @@ import ModalHeader from '@/components/Modal/components/ModalHeader';
 import CustomButton from '@/components/CustomButton';
 import { inputToNumber } from '@/utils/input';
 import { getCredit, getUpdateCredit } from '@/contexts/CreditContext';
-import style from './modal.module.scss';
+import style from './styles.module.scss';
 import { toast } from 'react-toastify';
 import { putContribute } from '@/apis/putContribute';
 import Spinner from '@/assets/icons/Spinner';
@@ -48,6 +48,15 @@ const DonationModal = ({ isOpen, closeModal, item, setIsDonate }) => {
     closeModal();
   };
 
+  // 버튼 내용
+  const buttonContent = isLoading ? (
+    <div className={style.spinner}>
+      <Spinner width={40} height={40} fill="white" />
+    </div>
+  ) : (
+    '후원하기'
+  );
+
   return (
     <Modal isOpen={isOpen} title="모달" onClose={handleCloseModal}>
       <ModalHeader title="후원하기" onClose={handleCloseModal} />
@@ -78,15 +87,7 @@ const DonationModal = ({ isOpen, closeModal, item, setIsDonate }) => {
           )}
         </div>
         <CustomButton
-          btnText={
-            isLoading ? (
-              <div className={style.spinner}>
-                <Spinner width={40} height={40} fill="white" />
-              </div>
-            ) : (
-              '후원하기'
-            )
-          }
+          btnText={buttonContent}
           disabled={
             !creditInput ||
             creditInput > credit ||
