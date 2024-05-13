@@ -29,7 +29,7 @@ const CustomButton = ({
   return (
     <motion.button
       initial={{ scale: 1 }}
-      whileTap={{ scale: 0.9 }}
+      whileTap={!disabled ? { scale: 0.9 } : { scale: 1 }}
       className={s.button}
       type="button"
       onClick={onClick}

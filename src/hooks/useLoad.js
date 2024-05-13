@@ -25,5 +25,3 @@ const useLoad = (getData) => {
 
   return [isLoading, loadingError, handleLoad];
 };
-
-export default useLoad;
