@@ -32,6 +32,14 @@
   @include set-flex-column-center-gap(0, 0);
 }
 
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 401px;
+}
+
 .idolInfo {
   max-width: 84px;
   @include set-flex-column-center-gap(0, 0);
@@ -57,8 +65,13 @@
 
     @include font-base($color-white, 700, 20px, 26px);
   }
+
   .list_box {
     padding-inline: 20px;
+  }
+
+  .loading {
+    height: 355px;
   }
 }
 
@@ -68,5 +81,9 @@
     margin-left: 16px;
 
     @include font-base($color-white, 700, 16px, 26px);
+  }
+
+  .loading {
+    height: 305px;
   }
 }

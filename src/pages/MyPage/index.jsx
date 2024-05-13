@@ -5,12 +5,11 @@ import { useEffect, useState } from 'react';
 import IdolFavoriteList from './components/IdolFavoriteList';
 import IdolSelectList from './components/IdolSelectList';
 import Header from '@/components/Header';
-import CustomButton from '@/components/CustomButton';
-import Plus from '@/assets/icons/Plus';
 
 import { debounce } from '@/utils/debounce';
 import { sortByItems } from '@/utils/sortItems';
 import { getStorage, setStorage } from '@/utils/localStorage';
+
 import useLoad from '@/hooks/useLoad';
 import { getIdolData } from '@/apis/getIdolData';
 
@@ -92,6 +91,12 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
     let result;
     result = await handleLoad(options);
     const { list, nextCursor } = result;
+
+    if (!result) {
+      setInit(false);
+      return;
+    }
+
     if (!options.cursor) {
       setIdolList({ ...idolList, allList: list });
     } else {
@@ -112,7 +117,7 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
     if (!init) {
       const IdolData = JSON.parse(getStorage('IdolList'));
 
-      if (IdolData) {
+      if (IdolData && idolList.allList.length > 0) {
         setIdolList(IdolData);
       } else {
         getIdolList({ pageSize, keyword });
@@ -126,11 +131,14 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
   return (
     <div className={style.container}>
       <Header />
+
       <main className={style.main}>
         <IdolFavoriteList
           onDelete={deleteFavorite}
           list={idolList.favoriteIdolList}
           windowWidth={windowWidth}
+          isLoading={isLoading}
+          loadingError={loadingError}
         />
         <div className={style.line}></div>
         <IdolSelectList
@@ -138,15 +146,10 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
           favoriteList={idolList.favoriteList}
           onClick={addFavorite}
           windowWidth={windowWidth}
+          isLoading={isLoading}
+          loadingError={loadingError}
+          onSubmit={submitIdolList}
         />
-        <CustomButton
-          btnText="제출하기"
-          rounded={true}
-          iconTextGap={4}
-          onClick={submitIdolList}
-        >
-          <Plus />
-        </CustomButton>
       </main>
     </div>
   );

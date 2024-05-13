@@ -1,10 +1,18 @@
+import { useEffect, useRef, useState } from 'react';
+
+import style from './styles.module.scss';
+
+import { carouselSettings } from './carouselSettings';
+
+import { MOBILE_WIDTH } from '@/constants/screenSizes';
+
 import Carousel from '@/components/Carousel';
 import Profile from '@/components/Profile';
+import LoadingError from '@/components/LoadingError';
+import CustomButton from '@/components/CustomButton';
 
-import { useEffect, useRef, useState } from 'react';
-import style from './styles.module.scss';
-import { MOBILE_WIDTH } from '@/constants/screenSizes';
-import { carouselSettings } from './carouselSettings';
+import Spinner from '@/assets/icons/Spinner';
+import Plus from '@/assets/icons/Plus';
 
 const MOBILE_WIDTH_540 = MOBILE_WIDTH + 165;
 
@@ -29,7 +37,15 @@ const Idol = ({ idol, onClick, checked, size }) => {
   );
 };
 
-const IdolSelectList = ({ list, favoriteList, windowWidth, onClick }) => {
+const IdolSelectList = ({
+  list,
+  favoriteList,
+  windowWidth,
+  onClick,
+  isLoading,
+  loadingError,
+  onSubmit,
+}) => {
   const [size, setSize] = useState('lg');
 
   useEffect(() => {
@@ -39,22 +55,44 @@ const IdolSelectList = ({ list, favoriteList, windowWidth, onClick }) => {
   return (
     <div className={style.container}>
       <h2 className={style.title}>관심 있는 아이돌을 추가해보세요.</h2>
-      <div className={style.list_box}>
-        <Carousel customSettings={carouselSettings} isLongArrow>
-          {list.map((idol) => {
-            const checked = favoriteList.map((v) => v.id).includes(idol.id);
-            return (
-              <Idol
-                idol={idol}
-                onClick={onClick}
-                key={idol.id}
-                checked={checked}
-                size={size}
-              />
-            );
-          })}
-        </Carousel>
-      </div>
+      {isLoading && (
+        <div className={style.loading}>
+          <Spinner />
+        </div>
+      )}
+
+      {loadingError && (
+        <div className={style.loading}>
+          <LoadingError errorMessage={loadingError.message} />
+        </div>
+      )}
+
+      {!loadingError && (
+        <div className={style.list_box}>
+          <Carousel customSettings={carouselSettings} isLongArrow>
+            {list.map((idol) => {
+              const checked = favoriteList.map((v) => v.id).includes(idol.id);
+              return (
+                <Idol
+                  idol={idol}
+                  onClick={onClick}
+                  key={idol.id}
+                  checked={checked}
+                  size={size}
+                />
+              );
+            })}
+          </Carousel>
+          <CustomButton
+            btnText="제출하기"
+            rounded={true}
+            iconTextGap={4}
+            onClick={onSubmit}
+          >
+            <Plus />
+          </CustomButton>
+        </div>
+      )}
     </div>
   );
 };

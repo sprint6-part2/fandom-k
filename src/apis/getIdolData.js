@@ -1,4 +1,5 @@
 import { baseAxios } from './api';
+import { loadingErrorMessage } from '@/constants/errorMessage';
 
 export const getIdolData = async ({
   pageSize = 100,
@@ -11,7 +12,7 @@ export const getIdolData = async ({
       `idols?pageSize=${pageSize}${cursorQuery}`,
     );
     return response.data;
-  } catch(error) {
-    throw new Error('로딩에 실패하였습니다 \n다시 시도해주세요');
+  } catch (error) {
+    throw new Error(loadingErrorMessage);
   }
-}
+};
