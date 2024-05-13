@@ -8,6 +8,7 @@ import style from './styles.module.scss';
 import { Nothing } from '../Nothing';
 import LoadingError from '@/components/LoadingError';
 import Spinner from '@/assets/icons/Spinner';
+import { checkCondition } from '@/utils/checkCondition';
 
 const MOBILE_WIDTH_540 = MOBILE_WIDTH + 165;
 
@@ -38,9 +39,11 @@ const IdolFavoriteList = ({
   loadingError,
 }) => {
   const [size, setSize] = useState('md');
+  const [showCount, setShowCount] = useState(carouselSettings.slidesToShow);
 
   useEffect(() => {
     setSize(windowWidth > MOBILE_WIDTH_540 ? 'md' : 'sm');
+    setShowCount(checkCondition(windowWidth));
   }, [windowWidth]);
 
   return (
@@ -63,12 +66,7 @@ const IdolFavoriteList = ({
             <Carousel
               customSettings={{
                 ...carouselSettings,
-                touchMove: list.length > carouselSettings.slidesToShow,
-                slidesToScroll:
-                  list.length > carouselSettings.slidesToShow
-                    ? carouselSettings.slidesToShow
-                    : 1,
-                infinite: list.length > carouselSettings.slidesToShow,
+                touchMove: list.length > showCount,
               }}
             >
               {list.map((idol) => {
