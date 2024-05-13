@@ -6,8 +6,9 @@ import ModalMobileHeader from '@/components/Modal/components/ModalMobileHeader';
 import CustomButton from '@/components/CustomButton';
 import Profile from '@/components/Profile';
 import { getCredit, getUpdateCredit } from '@/contexts/CreditContext';
-import style from './modal.module.scss';
+import style from './styles.module.scss';
 import { toast } from 'react-toastify';
+import { FEMALE } from '@/constants/tabTypes';
 
 const ChartModal = ({ isOpen, closeModal, idolList, currentTab }) => {
   const [selectedIdol, setSelectedIdol] = useState(null);
@@ -18,7 +19,7 @@ const ChartModal = ({ isOpen, closeModal, idolList, currentTab }) => {
   const setCredit = getUpdateCredit();
 
   const title =
-    currentTab === 'girl' ? '이달의 여자 아이돌' : '이달의 남자 아이돌';
+    currentTab === FEMALE ? '이달의 여자 아이돌' : '이달의 남자 아이돌';
 
   // 투표할 아이돌 선택
   const handleSelectIdol = (idol) => {

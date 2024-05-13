@@ -1,46 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { FEMALE, MALE } from '@/constants/tabTypes';
 import styles from './styles.module.scss';
 
 /**
  *
- * @param {string} currentTab 'girl' or 'boy'
+ * @param {string} currentTab 'female' or 'male'
  * @param {func}} handleTabChange 탭 바꿈 이벤트 핸들러
  */
 
 const Tab = ({ currentTab, handleTabChange }) => {
   const selectGirlTab = () => {
-    handleTabChange('girl');
+    handleTabChange(FEMALE);
   };
   const selectBoyTab = () => {
-    handleTabChange('boy');
+    handleTabChange(MALE);
   };
 
   return (
     <div className={styles.tab}>
-      <div
-        role="button"
-        tabIndex="0"
+      <button
         className={classNames(styles.tab, {
-          [styles.current]: currentTab === 'girl',
+          [styles.current]: currentTab === FEMALE,
         })}
         onClick={selectGirlTab}
-        onKeyDown={null}
       >
         이달의 여자 아이돌
-      </div>
-      <div
-        role="button"
-        tabIndex="-1"
+      </button>
+      <button
         className={classNames(styles.tab, {
-          [styles.current]: currentTab === 'boy',
+          [styles.current]: currentTab === MALE,
         })}
         onClick={selectBoyTab}
-        onKeyDown={null}
       >
         이달의 남자 아이돌
-      </div>
+      </button>
     </div>
   );
 };

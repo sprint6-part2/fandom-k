@@ -2,7 +2,7 @@ import React from 'react';
 import style from './styles.module.scss';
 import ProgressBar from '../ProgressBar';
 import CustomButton from '@/components/CustomButton';
-import DonationModal from './DonationModal';
+import DonationModal from '../DonationModal';
 import useModal from '@/hooks/useModal';
 
 const Card = ({ item }) => {
