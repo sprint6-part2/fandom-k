@@ -7,10 +7,10 @@ import useSetNumOfItemsToShow from '@/hooks/useSetNumberOfItemsToShow';
 import useLoad from '@/hooks/useLoad';
 import { getCharts } from '@/apis/getCharts';
 import { FEMALE } from '@/constants/tabTypes';
-import ChartModal from './ChartModal';
 import useModal from '@/hooks/useModal';
 import MoreButton from './components/MoreButton';
 import IdolChart from './components/IdolChart';
+import ChartModal from './components/ChartModal';
 
 const MonthlyChart = () => {
   const [isOpen, openModal, closeModal] = useModal();

@@ -6,7 +6,7 @@ import ModalMobileHeader from '@/components/Modal/components/ModalMobileHeader';
 import CustomButton from '@/components/CustomButton';
 import Profile from '@/components/Profile';
 import { getCredit, getUpdateCredit } from '@/contexts/CreditContext';
-import style from './modal.module.scss';
+import style from './styles.module.scss';
 import { toast } from 'react-toastify';
 import { FEMALE } from '@/constants/tabTypes';
 
