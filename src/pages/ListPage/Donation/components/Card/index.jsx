@@ -5,7 +5,7 @@ import CustomButton from '@/components/CustomButton';
 import DonationModal from './DonationModal';
 import useModal from '@/hooks/useModal';
 
-const Card = ({ item }) => {
+const Card = ({ item, setIsDonate }) => {
   const [isOpen, openModal, closeModal] = useModal();
 
   return (
@@ -28,7 +28,12 @@ const Card = ({ item }) => {
           targetDonation={item.targetDonation}
         />
       </div>
-      <DonationModal isOpen={isOpen} closeModal={closeModal} item={item} />
+      <DonationModal
+        isOpen={isOpen}
+        closeModal={closeModal}
+        item={item}
+        setIsDonate={setIsDonate}
+      />
     </article>
   );
 };
