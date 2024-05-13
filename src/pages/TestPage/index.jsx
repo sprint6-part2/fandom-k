@@ -7,8 +7,9 @@ import { listPageSettings, myPageSetting } from '@/constants/carouselSetting';
 import useModal from '@/hooks/useModal';
 import Modal from '@/components/Modal';
 import ModalHeader from '@/components/Modal/components/ModalHeader';
-// import ModalMobileHeader from '@/components/Modal/components/ModalMobileHeader';
 import Profile from '@/components/Profile';
+import LoadingError from '@/components/LoadingError';
+import Spinner from '@/assets/icons/Spinner';
 
 const TestPage = () => {
   const [isOpen, openModal, closeModal] = useModal();
@@ -16,10 +17,10 @@ const TestPage = () => {
   return (
     <div style={{ backgroundColor: 'black' }}>
       <Header />
+      <Spinner />
       <div
         style={{ display: 'flex', justifyContent: 'center', padding: '24px' }}
-      >
-      </div>
+      ></div>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <Profile
           clicked
@@ -94,16 +95,16 @@ const TestPage = () => {
         </Carousel>
         <p>마이페이지에 들어갈 캐러셀 컴포넌트 테스트</p>
         <Carousel customSettings={myPageSetting} isLongArrow>
-          {[1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17].map(
-            (item) => {
-              return (
-                <div className={styles.profile} key={item}>
-                  {item}
-                </div>
-              );
-            },
-          )}
+          {testData.list.map((item) => {
+            return <Profile key={item.id} imageUrl={item.profilePicture} />;
+          })}
         </Carousel>
+      </div>
+      <div>
+        <LoadingError errorMessage="후원 목록을 가져오지 못했습니다. 다시 시도해주세요" />
+        <LoadingError
+          errorMessage={`이렇게 작성하면 줄바꿈이 됩니다.\n다시 시도해주세요`}
+        />
       </div>
     </div>
   );

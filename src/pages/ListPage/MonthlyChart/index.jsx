@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import classNames from 'classnames';
 import styles from './styles.module.scss';
-import ChartElement from './components/ChartElement';
 import Tab from './components/Tab';
 import CustomButton from '@/components/CustomButton';
 import Chart from '@/assets/icons/Chart';
@@ -9,8 +7,13 @@ import useSetNumOfItemsToShow from '@/hooks/useSetNumberOfItemsToShow';
 import useLoad from '@/hooks/useLoad';
 import { getCharts } from '@/api/getCharts';
 import { FEMALE } from '@/constants/tabTypes';
+import ChartModal from './ChartModal';
+import useModal from '@/hooks/useModal';
+import MoreButton from './components/MoreButton';
+import IdolChart from './components/IdolChart';
 
 const MonthlyChart = () => {
+  const [isOpen, openModal, closeModal] = useModal();
   const [idolList, setIdolList] = useState([]);
   const [isLoading, loadingError, handleLoad] = useLoad(getCharts);
   const [currentTab, setCurrentTab] = useState(FEMALE);
@@ -20,10 +23,6 @@ const MonthlyChart = () => {
     mobile: 5,
   });
   const [nextCursor, setNextCursor] = useState();
-  const chartClass = classNames(styles.chart, {
-    [styles.even]: idolList.length % 2 === 0,
-  });
-  console.log(loadingError);
 
   //데이터 가져오기
   const handleChartLoad = async () => {
@@ -66,30 +65,36 @@ const MonthlyChart = () => {
     <div className={styles.container}>
       <div className={styles.header}>
         <h2>이달의 차트</h2>
-        <CustomButton btnText="차트 투표하기" textSize={13} maxHeight={32}>
+        <CustomButton
+          btnText="차트 투표하기"
+          textSize={13}
+          maxHeight={32}
+          onClick={openModal}
+        >
           <Chart />
         </CustomButton>
       </div>
       <Tab currentTab={currentTab} handleTabChange={handleTabChange} />
-      {loadingError && (
-        <h2 style={{ color: 'white' }}>{loadingError.message}</h2>
+      <IdolChart
+        isLoading={isLoading}
+        loadingError={loadingError}
+        idolList={idolList}
+      />
+      <MoreButton
+        isLoading={isLoading}
+        loadingError={loadingError}
+        idolListLength={idolList.length}
+        handleMoreBtn={handleMoreBtn}
+        nextCursor={nextCursor}
+      />
+      {isOpen && (
+        <ChartModal
+          isOpen={isOpen}
+          closeModal={closeModal}
+          idolList={idolList}
+          currentTab={currentTab}
+        />
       )}
-      {idolList && (
-        <ul className={chartClass}>
-          {idolList.map((idol, index) => {
-            return (
-              <ChartElement key={idol.id} idol={idol} ranking={index + 1} />
-            );
-          })}
-        </ul>
-      )}
-      {isLoading && <h2 style={{ color: 'white' }}>로딩 중입니다</h2>}
-
-      <div className={styles.moreButton}>
-        {nextCursor && (
-          <CustomButton btnText="더보기" onClick={handleMoreBtn} />
-        )}
-      </div>
     </div>
   );
 };
