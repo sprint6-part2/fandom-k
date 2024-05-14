@@ -5,7 +5,7 @@ import CustomButton from '@/components/CustomButton';
 import DonationModal from '../DonationModal';
 import useModal from '@/hooks/useModal';
 
-const Card = ({ item }) => {
+const Card = ({ item, setIsDonate }) => {
   const [isOpen, openModal, closeModal] = useModal();
 
   return (
@@ -14,7 +14,11 @@ const Card = ({ item }) => {
         <div className={style.gradient} />
         <img src={item.idol.profilePicture} alt={item.idol.name} />
         <div className={style.button}>
-          <CustomButton btnText="후원하기" onClick={openModal} />
+          <CustomButton
+            btnText={item.status ? '후원하기' : '목표달성 🎉'}
+            onClick={openModal}
+            disabled={!item.status}
+          />
         </div>
       </div>
       <div>
@@ -28,7 +32,12 @@ const Card = ({ item }) => {
           targetDonation={item.targetDonation}
         />
       </div>
-      <DonationModal isOpen={isOpen} closeModal={closeModal} item={item} />
+      <DonationModal
+        isOpen={isOpen}
+        closeModal={closeModal}
+        item={item}
+        setIsDonate={setIsDonate}
+      />
     </article>
   );
 };
