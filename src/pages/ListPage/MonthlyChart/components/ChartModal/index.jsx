@@ -52,7 +52,7 @@ const ChartModal = ({ isOpen, closeModal, currentTab, setIsVote }) => {
           setIsLoading(true);
           await postVotes(selectedIdol.id);
           setCredit(newCredit);
-          setIsVote((prev) => prev + 1);
+          setIsVote(true);
           toast(`🎉  ${selectedIdol.group} ${selectedIdol.name} 투표 완료!`);
         } catch (error) {
           toast.error(error.message);

@@ -11,7 +11,7 @@ import Spinner from '@/assets/icons/Spinner';
 const Donation = () => {
   const [isLoading, loadingError, handleLoad] = useLoad(getDonations);
   const [donationList, setDonationList] = useState(null);
-  const [isDonate, setIsDonate] = useState(0);
+  const [isDonate, setIsDonate] = useState(false);
 
   const handleDonationLoad = async () => {
     const donations = await handleLoad();
@@ -22,6 +22,7 @@ const Donation = () => {
 
   useEffect(() => {
     handleDonationLoad();
+    setIsDonate(false);
   }, [isDonate]);
 
   return (
@@ -37,7 +38,7 @@ const Donation = () => {
           <LoadingError errorMessage={loadingError.message} />
         </div>
       )}
-      {donationList && (
+      {!isLoading && !loadingError && donationList && (
         <Carousel customSettings={carouselSettings}>
           {donationList.map((item) => {
             return <Card item={item} key={item.id} setIsDonate={setIsDonate} />;

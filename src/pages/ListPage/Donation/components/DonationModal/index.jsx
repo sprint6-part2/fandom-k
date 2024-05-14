@@ -27,12 +27,10 @@ const DonationModal = ({ isOpen, closeModal, item, setIsDonate }) => {
     if (parseInt(creditInput) && creditInput <= credit) {
       try {
         setIsLoading(true);
-        const data = await putContribute(item.id, creditInput);
-        if (data.status) {
-          setCredit(parseInt(credit - creditInput));
-          toast(`🎉  ${creditInput} 크레딧 후원 성공!`);
-          setIsDonate((prev) => prev + 1);
-        }
+        await putContribute(item.id, creditInput);
+        setCredit(parseInt(credit - creditInput));
+        setIsDonate(true);
+        toast(`🎉  ${creditInput} 크레딧 후원 성공!`);
       } catch (error) {
         toast.error(error.message);
       } finally {

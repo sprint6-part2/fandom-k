@@ -14,7 +14,11 @@ const Card = ({ item, setIsDonate }) => {
         <div className={style.gradient} />
         <img src={item.idol.profilePicture} alt={item.idol.name} />
         <div className={style.button}>
-          <CustomButton btnText="후원하기" onClick={openModal} />
+          <CustomButton
+            btnText={item.status ? '후원하기' : '목표달성 🎉'}
+            onClick={openModal}
+            disabled={!item.status}
+          />
         </div>
       </div>
       <div>
