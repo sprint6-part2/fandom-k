@@ -7,7 +7,7 @@ const Description = ({ backgroundImg, mainImg, title, mainText }) => {
     [styles.end]: title === '이달의 아티스트',
   });
   return (
-    <div className={styles.description_section}>
+    <section className={styles.description_section}>
       <div className={styles.background_gradient} />
       <img
         src={backgroundImg}
@@ -19,7 +19,7 @@ const Description = ({ backgroundImg, mainImg, title, mainText }) => {
         <p className={styles.main_text}>{mainText}</p>
       </div>
       <img src={mainImg} alt="사이트 캡쳐" className={styles.main_image} />
-    </div>
+    </section>
   );
 };
 
