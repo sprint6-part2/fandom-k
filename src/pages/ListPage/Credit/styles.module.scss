@@ -16,12 +16,6 @@ $color-credit-border: #f1eef9;
   padding-inline: 64px;
 }
 
-@media (max-width: 1250px) {
-  .container {
-    margin-inline: 24px;
-  }
-}
-
 .credit {
   display: flex;
   flex-direction: column;
@@ -60,9 +54,15 @@ $color-credit-border: #f1eef9;
   }
 }
 
+@media (max-width: 1250px) {
+  .container {
+    margin-inline: 24px;
+  }
+}
+
 @media (max-width: $width-tablet) {
   .container {
-    margin: 0 auto 64px;
+    margin: 0 24px 64px;
   }
 }
 
@@ -70,7 +70,7 @@ $color-credit-border: #f1eef9;
   .container {
     height: 87px;
     padding-inline: 20px;
-    margin: 16px auto 40px;
+    margin: 16px 24px 40px;
   }
 
   .credit {

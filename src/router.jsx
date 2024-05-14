@@ -4,6 +4,8 @@ import LadingPage from './pages/LandingPage';
 import ListPage from './pages/ListPage';
 import MyPage from './pages/MyPage';
 import TestPage from './pages/TestPage';
+import NotFoundPage from './pages/NotFoundPage';
+import { CreditProvider } from '@/contexts/CreditContext';
 
 const router = createBrowserRouter([
   {
@@ -12,7 +14,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/list',
-    element: <ListPage />,
+    element: (
+      <CreditProvider>
+        <ListPage />
+      </CreditProvider>
+    ),
   },
   {
     path: '/myPage',
@@ -24,7 +30,7 @@ const router = createBrowserRouter([
   },
   {
     path: '*',
-    element: <p>존재하지 않는 페이지입니다.</p>,
+    element: <NotFoundPage />,
   },
 ]);
 
