@@ -13,6 +13,7 @@ import { postVotes } from '@/apis/postVotes';
 import Spinner from '@/assets/icons/Spinner';
 import useLoad from '@/hooks/useLoad';
 import { getCharts } from '@/apis/getCharts';
+import LoadingError from '@/components/LoadingError';
 
 const ChartModal = ({ isOpen, closeModal, currentTab, setIsVote }) => {
   const [idolList, setIdolList] = useState([]);
@@ -104,39 +105,49 @@ const ChartModal = ({ isOpen, closeModal, currentTab, setIsVote }) => {
         })}
       >
         <div className={style.chart}>
-          {idolList.map((idol, index) => {
-            return (
-              <div key={idol.id}>
-                <label className={style.idol}>
-                  <div className={style.info}>
-                    <Profile
-                      size="sm"
-                      imageUrl={idol.profilePicture}
-                      clicked={selectedIdol === idol}
-                    />
-                    <div className={style.text}>
-                      <span>{idol.rank}</span>
-                      <div className={style.name}>
-                        <span>
-                          {idol.group} {idol.name}
-                        </span>
-                        <span>{idol.totalVotes.toLocaleString('ko-KR')}표</span>
+          {isApiLoading && (
+            <div className={style.loading}>
+              <Spinner />
+            </div>
+          )}
+          {loadingError && <LoadingError errorMessage={loadingError.message} />}
+          {!isApiLoading &&
+            !loadingError &&
+            idolList.map((idol, index) => {
+              return (
+                <div key={idol.id}>
+                  <label className={style.idol}>
+                    <div className={style.info}>
+                      <Profile
+                        size="sm"
+                        imageUrl={idol.profilePicture}
+                        clicked={selectedIdol === idol}
+                      />
+                      <div className={style.text}>
+                        <span>{idol.rank}</span>
+                        <div className={style.name}>
+                          <span>
+                            {idol.group} {idol.name}
+                          </span>
+                          <span>
+                            {idol.totalVotes.toLocaleString('ko-KR')}표
+                          </span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <input
-                    className={style.radio}
-                    type="radio"
-                    name="idol"
-                    onClick={() => handleSelectIdol(idol)}
-                  />
-                </label>
-                {index !== idolList.length - 1 && (
-                  <div className={style.division} />
-                )}
-              </div>
-            );
-          })}
+                    <input
+                      className={style.radio}
+                      type="radio"
+                      name="idol"
+                      onClick={() => handleSelectIdol(idol)}
+                    />
+                  </label>
+                  {index !== idolList.length - 1 && (
+                    <div className={style.division} />
+                  )}
+                </div>
+              );
+            })}
         </div>
         <CustomButton
           btnText={buttonContent}

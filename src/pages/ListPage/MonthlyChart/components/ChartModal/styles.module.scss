@@ -20,6 +20,11 @@
   overflow-y: auto;
 }
 
+.loading {
+  display: flex;
+  justify-content: center;
+}
+
 .idol {
   display: flex;
   align-items: center;
