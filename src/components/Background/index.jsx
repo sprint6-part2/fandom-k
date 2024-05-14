@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import Gradient from '@/assets/icons/Gradient';
 import style from './styles.module.scss';
 

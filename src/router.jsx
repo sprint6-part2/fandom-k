@@ -6,11 +6,17 @@ import MyPage from './pages/MyPage';
 import TestPage from './pages/TestPage';
 import NotFoundPage from './pages/NotFoundPage';
 import { CreditProvider } from '@/contexts/CreditContext';
+import { Background } from '@/components/Background';
+import Header from '@/components/Header';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <LadingPage />,
+    element: (
+      <Background isGradient>
+        <LadingPage />
+      </Background>
+    ),
   },
   {
     path: '/list',
@@ -22,7 +28,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/myPage',
-    element: <MyPage />,
+    element: (
+      <>
+        <MyPage />
+      </>
+    ),
   },
   {
     path: '/test',
@@ -30,7 +40,11 @@ const router = createBrowserRouter([
   },
   {
     path: '*',
-    element: <NotFoundPage />,
+    element: (
+      <Background isGradient>
+        <NotFoundPage />,
+      </Background>
+    ),
   },
 ]);
 
