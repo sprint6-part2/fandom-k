@@ -1,7 +1,8 @@
 import React from 'react';
-import { RouterProvider } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
+import { RouterProvider } from 'react-router-dom';
 import router from './router';
+
 import 'reset-css';
 import './styles/normalize.scss';
 import { ToastContainer } from 'react-toastify';

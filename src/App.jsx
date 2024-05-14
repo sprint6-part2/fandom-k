@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 
 import Header from '@/components/Header';
 import { Background } from '@/components/Background';
@@ -10,9 +10,9 @@ const App = () => {
 
   return (
     <>
-      <Background isGradient={true}>
-          {!regxr.test(location.pathname) && <Header />}
-          <Outlet />
+      {regxr.test(location.pathname) && <Header />}
+      <Background isGradient>
+        <Outlet />
       </Background>
     </>
   );

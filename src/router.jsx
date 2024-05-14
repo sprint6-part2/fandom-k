@@ -6,36 +6,39 @@ import MyPage from './pages/MyPage';
 import TestPage from './pages/TestPage';
 import NotFoundPage from './pages/NotFoundPage';
 import { CreditProvider } from '@/contexts/CreditContext';
-import { Background } from '@/components/Background';
-import Header from '@/components/Header';
+import App from './App';
 
 // const location = useLocation();
-  
 
 const router = createBrowserRouter([
   {
-    path: '/',
-    element: <LadingPage />
-  },
-  {
-    path: '/list',
-    element: (
-        <CreditProvider>
+    element: <App />,
+    children: [
+      {
+        path: '/',
+        element: <LadingPage />,
+      },
+      {
+        path: '/list',
+        element: (
+          <CreditProvider>
             <ListPage />
-        </CreditProvider>
-    ),
-  },
-  {
-    path: '/myPage',
-    element: <MyPage />,
-  },
-  {
-    path: '/test',
-    element: <TestPage />,
-  },
-  {
-    path: '*',
-    element: <NotFoundPage />,
+          </CreditProvider>
+        ),
+      },
+      {
+        path: '/myPage',
+        element: <MyPage />,
+      },
+      {
+        path: '/test',
+        element: <TestPage />,
+      },
+      {
+        path: '*',
+        element: <NotFoundPage />,
+      },
+    ],
   },
 ]);
 
