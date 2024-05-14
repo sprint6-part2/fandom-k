@@ -20,6 +20,11 @@
   overflow-y: auto;
 }
 
+.loading {
+  display: flex;
+  justify-content: center;
+}
+
 .idol {
   display: flex;
   align-items: center;
@@ -98,4 +103,9 @@
   > span {
     color: $color-brand-orange;
   }
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
 }

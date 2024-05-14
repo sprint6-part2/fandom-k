@@ -77,3 +77,8 @@ $color-error: #ff2626;
     @include font-base($color-error, 500, 12px, 14px);
   }
 }
+
+.spinner {
+  display: flex;
+  justify-content: center;
+}
