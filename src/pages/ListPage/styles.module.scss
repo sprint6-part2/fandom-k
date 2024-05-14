@@ -7,11 +7,10 @@
 .main {
   max-width: 1360px;
   margin: 0 auto;
-  padding-bottom: 243px;
+  padding-bottom: 150px;
 
-  
   @media (max-width: $width-tablet) {
-    padding-bottom: 330px;
+    padding-bottom: 100px;
   }
 
   @media (max-width: $width-mobile) {

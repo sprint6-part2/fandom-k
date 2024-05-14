@@ -14,7 +14,7 @@
 
 .main {
   max-width: 1360px;
-  margin: 0 auto;
+  margin: 0 auto 100px;
   > button {
     @include flex_center;
     width: 255px;

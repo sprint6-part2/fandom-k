@@ -1,0 +1,42 @@
+@import '../../styles/';
+
+.footer {
+  max-width: 1360px;
+  margin: 0 auto;
+  text-align: center;
+  padding-block: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  @include font-base(white, 400, 15px, 26px);
+  letter-spacing: 0.5px;
+  opacity: 60%;
+
+  > div {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    img {
+      margin-bottom: 4px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    font-size: 13px;
+
+    > span {
+      > span {
+        display: none;
+      }
+    }
+
+    > div {
+      span {
+        display: none;
+      }
+    }
+  }
+}
