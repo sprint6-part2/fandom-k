@@ -1,8 +1,340 @@
-# React + Vite
+# 📖 아이돌 조공 플랫폼 Fandom-K
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- 배포 URL :
 
-Currently, two official plugins are available:
+<br>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 프로젝트 소개
+
+- Fandom-K는 아이돌 조공 플렛폼 입니다.
+- 웹 사이트 상에서 개인이 소유한 크레딧을 사용하여 후원과 투표 기능을 사용할 수 있습니다.
+- 크레딧을 사용하여 관심있는 아이돌에게 후원을 하고, 일정량 이상의 후원이 모이면, 지하철 혹은 옥외에 최애 아이돌을 광고할 수 있습니다.
+- 크레딧을 사용하여 관심있는 아이돌에게 투표를 하고, 투표수대로 순위를 매겨, 차트 상위권에 최애 아이돌을 올릴 수 있습니다.
+- 마이 페이지를 통해 내가 관심있는 아이돌을 저장해 둘 수 있습니다.
+  <br>
+
+## 팀원 구성
+
+<div align="center">
+
+|               **김고넬료**               |                **김혜경**                |               **이종욱**               |                  **이지현**                  |               **채종민**               |
+| :--------------------------------------: | :--------------------------------------: | :------------------------------------: | :------------------------------------------: | :------------------------------------: |
+| [@nelryoS2](https://github.com/nelryoS2) | [@i-nooo-2](https://github.com/i-nooo-2) | [@Bersk3r](https://github.com/Bersk3r) | [@easyhyun00](https://github.com/easyhyun00) | [@JayChae](https://github.com/JayChae) |
+
+</div>
+
+<br>
+
+## 1. 개발 환경
+
+- Front : SCSS, React, Javascript(JS(기능/유틸), JSX(컴포넌트)) Recoil
+- Back-end : 제공된 API 활용 (Swagger 문서)
+- 버전 및 이슈관리 : Github, Github Issues, Github Project
+- 협업 툴 : Discord, Notion
+- 서비스 배포 환경 : //추가해야 됨
+- 디자인 : [Figma](https://www.figma.com/design/lccVqOCzq7XCUYztyC7KlQ/[AAA]Fandom-K?node-id=8-1008&t=4AsX1uIVzno1RruG-0)
+
+### 커밋 컨벤션
+
+- gitmoji
+- Organization / 레포지토리 이름
+- orginazation : sprint6-part2
+- repo : fandom-k
+- 브랜치 이름
+- eat / chore / refactor / fix / docs
+- feat/#{이슈번호}/
+- ex feat-1-list
+- 커밋 메시지
+- feat-##/ADD (세부내용)
+- ✨ Feat / 🔨 Refactor / 📦️ Chore / 🐛 Fix / 📚 Docs / 🚚 Rename
+- ex ✨ Feat: 어떤 기능 구현
+
+### 코드 컨벤션
+
+- 파일 네이밍
+- 페이지, 컴포넌트 파일 명 ⇒ 파스칼케이스 ex ListPage.jsx Button.jsx
+- 디렉토리 명, 일반 파일명 ⇒ 카멜케이스 ex constants/example.js
+
+### 파일 컨벤션
+
+- module.scss
+
+## 2. 채택한 개발 기술과 브랜치 전략
+
+### 사용언어
+
+- React
+- SCSS
+- Javascript(JS (기능/ 유틸) , JSX (컴포넌트))
+
+### 빌드 도구
+
+- Vite
+- npm
+
+### 라이브러리
+
+- React-Router-Dom
+- Axios
+- 디자인 컴포넌트 라이브러리 (Ant Design / Material UI/Semantic UI)
+  - Carousel 등과 같은 디자인 사용
+- eslint + prettier
+
+### 기타
+
+- 절대경로 (vite.config.ts 파일 내 alias 옵션 내 @을 사용하여 절대 경로 선언)
+- 프로젝트 태스크 매니지먼트 툴
+- 깃허브 프로젝트 기능 사용
+- 폰트 크기는 px로 통일
+- 화살표 함수로 컴포넌트 및 함수 생성
+
+### 브랜치 전략
+
+- 깃허브 이슈 번호 발생 (자동으로 생성)
+- 발행된 번호 기반으로 feat-{번호} 브랜치 생성 ex feat-1
+- 로컬에서 작업 후 완성하면, git push 하여 pull request 작성
+- push 하기 전에 main 브랜치에 변동사항이 있어 작업하고 있는 코드에 반영이 안 되어 있으면 main 브랜치로 이동 후, git pull 하고 작업하던 브랜치로 이동하여 git merge main 하기
+- 충돌 나면 고치기
+- 다른 팀원들을 리뷰어로 설정하여, approve 몇 개 이상 받으면 본인이 직접 merge 버튼 눌러 main 브랜치에 merge 하기
+
+<br>
+
+## 3. 프로젝트 구조
+
+```
+├── public
+│
+└── src
+     ├── App.jsx
+     ├── Main.jsx
+     ├── router.jsx
+     ├── index.html
+     ├── apis
+     │     ├── api.js
+     │     ├── getCharts.js
+     │     └── getDonations.js
+     │          .
+     │          .
+     │          .
+     ├── assets
+     │     ├── Icons
+     │     └── Images
+     ├── components
+     │     ├── Carousel
+     │     ├── CustomButton
+     │     ├── Footer
+     │     ├── Header
+     │     ├── LoadingError
+     │     ├── Modal
+     │     ├── profile
+     │     └── Sample
+     ├── constants
+     │     ├── CarouselSetting.js
+     │     ├── credit.js
+     │     ├── endpoint.js
+     │     ├── errorMessage.js
+     │     ├── screenSizes.js
+     │     └── tabTypes.js
+     ├── contexts
+     │     └── CreditContext.jsx
+     ├── hooks
+     │     ├── hook.js
+     │     └── useLoad.js
+     │     └── useModal.js
+     │     └── useSetNumberOfItemsToShow.js
+     ├── pages
+     │     └── LandingPage
+     │     └── ListPage
+     │     └── MyPage
+     │     └── NotFoundPage
+     │     └── TestPage
+     ├── styles
+     │     └── color.scss
+     │     └── font.scss
+     │     └── index.scss
+     │     └── normalize.scss
+     │     └── variable.scss
+     ├── utils
+     │     └── debounce.js
+     │     └── getTimeLeft.js
+     │     └── input.js
+     │     └── localStorage.js
+     │     └── numberWithCommas.js
+     │     └── sortItems.js
+     │     └── splitItems.js
+     │     └── utils.js
+
+```
+
+<br>
+
+## 4. 역할 분담
+
+### 김고넬료
+
+- ## **UI**
+  -
+- ## **기능**
+
+<br>
+
+### 김혜경
+
+- ## **UI**
+  -
+- ## **기능**
+
+<br>
+    
+### 이지현
+
+- ## **UI**
+  -
+- ## **기능**
+
+<br>
+
+### 이종욱
+
+- ## **UI**
+  -
+- ## **기능**
+
+<br>
+
+### 채종민
+
+- ## **UI**
+- ## **기능**
+
+<br>
+
+## 5. 개발 기간 및 작업 관리
+
+### 개발 기간
+
+- 전체 개발 기간 : 2024-04-30 ~ 2024-05-14
+- 컴포넌트 제작 : 2024-04-30 ~ 2024-05-02
+- UI 구현 : 2024-05-03 ~ 2024-05-08
+- 기능 구현 : 2024-05-09 ~ 2024-05-13
+
+<br>
+
+### 작업 관리
+
+- GitHub Projects와 Issues를 사용하여 진행 상황을 공유했습니다.
+- 매일 팀 회의를 진행하며 작업 순서와 방향성에 대한 고민을 나누고 Notion에 회의 내용을 기록했습니다.
+
+<br>
+
+## 6. 신경 쓴 부분
+
+-
+
+-
+
+<br>
+
+## 7. 페이지별 기능
+
+### [랜딩 페이지]
+
+- 로고 버튼을 클릭하면 목록 페이지로 이동합니다.
+- 지금 시작하기 버튼을 클릭 시 목록 페이지로 이동합니다.
+
+<br>
+
+### [목록 페이지]
+
+#### 1. 후원을 기다리는 조공
+
+- 로고 버튼을 클릭하면 목록 페이지로 이동합니다.
+- 상단의 프로필 이미지를 클릭시 마이 페이지로 이동합니다.
+- 충전하기 버튼을 클릭 시 충전하기 모달창이 나타납니다.
+- PC에서 후원을 기다리는 조공 리스트는 좌/우측 버튼 클릭 시 다음 순서의 조공 카드들이 보입니다.
+- 후원을 기다리는 조공에서 원하는 아이돌 카드의 '후원하기' 버튼을 누르면 해당 아이돌을 후원할 수 있는 모달창이 나타납니다.
+
+<br>
+
+#### 2. 이달의 차트
+
+- 이달의 여자 아이돌 탭을 클릭하면 투표가 많은 순으로 여자 아이돌을 보여줍니다.
+- 이달의 남자 아이돌 탭을 클릭하면 투표가 많은 순으로 남자 아이돌을 보여줍니다.
+- 차트 투표하기 버튼을 클릭 시 투표하기 모달창이 나타납니다.
+
+### [모달창]
+
+#### 1. 크레딧 충전 모달창
+
+- 충전할 금액을 선택후 충전하기 버튼을 누르면 내 크레딧이 충전됩니다.
+
+<br>
+
+### 2. 후원하기 모달창
+
+- 내 크레딧 보다 부족한 크레딧을 입력을 했을때 후원하기 버튼이 활성화 됩니다.
+- 활성화 된 후원하기 버튼을 클릭하면 후원이 완료됩니다.
+- 후원한 만큼 크레딧이 줄어듭니다.
+
+<br>
+
+### 3. 투표 모달창
+
+- 투표하는 데 1000 크레딧이 소모됩니다.
+- 원하는 아이돌에게 무한으로 투표할 수 있습니다.
+- 투표한 만큼 크레딧이 줄어듭니다.
+
+<br>
+
+### [마이 페이지]
+
+- 관심 있는 아이돌로 추가하고 싶은 카드를 중복으로 선택을 할 수 있습니다.
+- 선택된 카드는 체크표시가 됩니다.
+- 추가하기 버튼을 누르면 선택된 카드들이 내가 관심있는 아이돌에 추가가 됩니다.
+
+<br>
+
+## 8. 트러블 슈팅
+
+- [어떠한 이슈](사이트)
+
+- [예시 이슈](https://github.com/likelion-project-README/README/wiki/README-8.%ED%8A%B8%EB%9F%AC%EB%B8%94-%EC%8A%88%ED%8C%85_%ED%94%84%EB%A1%9C%ED%95%84-%EC%88%98%EC%A0%95-%EC%9D%B4%EC%8A%88)
+
+<br>
+
+## 9. 개선 목표
+
+-
+
+<br>
+
+## 10. 프로젝트 후기
+
+### 김고넬료
+
+깃헙을 통한 협업에 익숙해지는 것, 서로 감정 상하지 않고 무사히 마무리하는 것이 1차적인 목표였어서 항상 이 부분을 명심하면서 작업했습니다.
+각자 페이지를 작업하고 합치는 과정에서 마주친 버그들이 몇 있었는데, 시간에 쫓기느라 해결하기에 급급해서 제대로 트러블슈팅 과정을 기록하지 못한 게 살짝 아쉬운 부분으로 남습니다. 그래도 2022년 한 해 동안 가장 치열하게 살았던 한 달인 것 같습니다. 조원들 모두에게 고생했다고 전하고 싶습니다🧡
+
+<br>
+
+### 김혜경
+
+여러모로 많은 것들을 배울 수 있었던 한 달이었습니다. 혼자서는 할 수 없었던 일이라는 것을 너무 잘 알기에 팀원들에게 정말 감사하다는 말 전하고 싶습니다. 개인적으로 아쉬웠던 부분은 기한 내에 기능을 구현하는 데에만 집중하면서 트러블 슈팅이나 새로 배웠던 것들을 체계적으로 기록하지 못했다는 점입니다. 이렇게 느낀 바가 있으니 이후의 제가 잘 정리하면서 개발할 거라 믿습니다… 하하 다들 수고하셨습니다!!!!
+
+<br>
+
+### 이종욱
+
+팀 프로젝트 시작에 앞서 초기 설정을 진행하며 체계적인 설계의 중요성을 느꼈습니다. 앞으로는 점점 더 체계적이고 효율적으로 프로젝트를 진행할 수 있도록 발전하고 싶습니다.
+정규 수업 직후에 프로젝트를 진행하면서 배운 내용을 직접 구현하는 과정이 어색했지만 어떤 부분이 부족한지 알 수 있는 기회였습니다. 스스로 최대한 노력해보고 팀원들과 함께 해결해 나가면서 협업의 장점을 체감할 수 있었습니다. 하지만 빠르게 작업을 진행하면서 팀원들과 함께 해결한 이슈가 어떤 이슈이며 어떻게 해결했는지에 대해 자세히 작성하지 못한 것이 아쉽습니다.
+’멋쟁이 사자처럼’이라는 같은 목표를 가진 집단에서 프로젝트에 함께할 수 있는 소중한 경험이었습니다. 함께 고생한 조원들 모두 고생하셨습니다! 앞으로도 화이팅해서 함께 목표를 이뤄가고 싶습니다.
+
+<br>
+
+### 이지현
+
+컨벤션을 정하는 것부터 Readme 파일 작성까지 전 과정을 진행하려니 처음 생각보다 많은 에너지를 썼어요. 좋은 의미로 많이 썼다기보다, 제 능력을 십분 발휘하지 못해서 아쉬움이 남는 쪽입니다. 개발한다고 개발만 해서는 안 된다는 것을 몸소 느껴보는 기간이었던 것 같습니다. 이번 기회로 프로젝트를 진행하면서, 제가 잘하는 점과 부족한 점을 확실하게 알고 가는 건 정말 좋습니다. 기술적인 부분에 있어서는 리액트의 컴포넌트화가 주는 장점을 알았습니다. 조금 느린 개발이 되었을지라도 코드 가독성 부분에 있어서 좋았고, 오류가 발생해도 전체가 아닌 오류가 난 컴포넌트와 근접한 컴포넌트만 살펴보면 수정할 수 있는 부분이 너무 편했습니다. 모두 고생 참 많으셨고 리팩토링을 통해 더 나은 프로젝트 완성까지 화이팅입니다.
+
+<br>
+
+### 채종민
