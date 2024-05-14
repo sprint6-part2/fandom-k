@@ -122,7 +122,6 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
 
   return (
     <div className={style.container}>
-      <Header />
       <main className={style.main}>
         <IdolFavoriteList
           onDelete={deleteFavorite}

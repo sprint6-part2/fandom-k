@@ -9,30 +9,25 @@ import { CreditProvider } from '@/contexts/CreditContext';
 import { Background } from '@/components/Background';
 import Header from '@/components/Header';
 
+// const location = useLocation();
+  
+
 const router = createBrowserRouter([
   {
     path: '/',
-    element: (
-      <Background isGradient>
-        <LadingPage />
-      </Background>
-    ),
+    element: <LadingPage />
   },
   {
     path: '/list',
     element: (
-      <CreditProvider>
-        <ListPage />
-      </CreditProvider>
+        <CreditProvider>
+            <ListPage />
+        </CreditProvider>
     ),
   },
   {
     path: '/myPage',
-    element: (
-      <>
-        <MyPage />
-      </>
-    ),
+    element: <MyPage />,
   },
   {
     path: '/test',
@@ -40,11 +35,7 @@ const router = createBrowserRouter([
   },
   {
     path: '*',
-    element: (
-      <Background isGradient>
-        <NotFoundPage />,
-      </Background>
-    ),
+    element: <NotFoundPage />,
   },
 ]);
 
