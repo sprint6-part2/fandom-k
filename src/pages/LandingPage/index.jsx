@@ -13,6 +13,11 @@ import sectionImage3 from '@/assets/images/capture3.png';
 
 const LadingPage = () => {
   const navigate = useNavigate();
+
+  const handleStartBtn = () => {
+    localStorage.clear();
+    navigate('/list');
+  };
   return (
     <div className={styles.container}>
       <div className={styles.contents}>
@@ -32,7 +37,7 @@ const LadingPage = () => {
             <CustomButton
               btnText="지금 시작하기"
               maxHeight={48}
-              onClick={() => navigate('/list')}
+              onClick={handleStartBtn}
             />
           </div>
         </div>
