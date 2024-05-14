@@ -9,6 +9,7 @@ import Header from '@/components/Header';
 import testData from './mock.json';
 import CustomButton from '@/components/CustomButton';
 import Plus from '@/assets/icons/Plus';
+import Footer from '@/components/Footer';
 
 import { debounce } from '@/utils/debounce';
 import { sortByItems } from '@/utils/sortItems';
@@ -43,13 +44,13 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
   };
 
   const deleteFavorite = (selectedItem) => {
-    let favoriteIdolList = JSON.parse(getStorage("favoriteIdolList"));
+    let favoriteIdolList = JSON.parse(getStorage('favoriteIdolList'));
 
     favoriteIdolList = favoriteIdolList.filter(
       (idol) => idol.id !== selectedItem.id,
     );
 
-    setStorage("favoriteIdolList", JSON.stringify(favoriteIdolList));
+    setStorage('favoriteIdolList', JSON.stringify(favoriteIdolList));
 
     setIdolList({
       ...idolList,
@@ -58,14 +59,11 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
   };
 
   const submitIdolList = () => {
-    let favoriteIdolList = JSON.parse(getStorage("favoriteIdolList"));
+    let favoriteIdolList = JSON.parse(getStorage('favoriteIdolList'));
 
-    favoriteIdolList =  [
-      ...idolList.favoriteList,
-      ...favoriteIdolList,
-    ];
-    
-    setStorage("favoriteIdolList", JSON.stringify(favoriteIdolList));
+    favoriteIdolList = [...idolList.favoriteList, ...favoriteIdolList];
+
+    setStorage('favoriteIdolList', JSON.stringify(favoriteIdolList));
 
     setIdolList({
       ...idolList,
@@ -124,10 +122,7 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
     <div className={style.container}>
       <Header />
       <main className={style.main}>
-        <IdolFavoriteList
-          onDelete={deleteFavorite}
-          windowWidth={windowWidth}
-        />
+        <IdolFavoriteList onDelete={deleteFavorite} windowWidth={windowWidth} />
         <div className={style.line}></div>
         <IdolSelectList
           list={idolList.allList}
@@ -145,6 +140,7 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
           <Plus />
         </CustomButton>
       </main>
+      <Footer />
     </div>
   );
 };

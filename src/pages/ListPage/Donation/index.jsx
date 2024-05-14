@@ -36,7 +36,7 @@ const Donation = () => {
           <LoadingError errorMessage={loadingError.message} />
         </div>
       )}
-      {donationList && (
+      {!loadingError && donationList && (
         <Carousel customSettings={carouselSettings}>
           {donationList.map((item) => {
             return <Card item={item} key={item.id} />;
