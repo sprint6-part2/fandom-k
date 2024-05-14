@@ -29,7 +29,7 @@ const CustomButton = ({
   return (
     <motion.button
       initial={{ scale: 1 }}
-      whileTap={{ scale: 0.9 }}
+      whileTap={!disabled ? { scale: 0.9 } : { scale: 1 }}
       className={s.button}
       type="button"
       onClick={onClick}
@@ -53,7 +53,7 @@ CustomButton.propTypes = {
   iconTextGap: PropTypes.oneOf([4, 8]),
   disabled: PropTypes.bool,
   rounded: PropTypes.bool,
-  btnText: PropTypes.string.isRequired,
+  btnText: PropTypes.node.isRequired,
   children: PropTypes.node,
   onClick: PropTypes.func,
 };

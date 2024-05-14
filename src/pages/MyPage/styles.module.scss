@@ -1,13 +1,33 @@
-.cardItem {
-  height: 400px;
-  background-color: antiquewhite;
+@import '../../styles/';
+
+@mixin flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.profile {
-  height: 128px;
-  width: 128px;
-  border-radius: 50%;
-  margin-bottom: 10px;
+.container {
+  background-color: $color-black-200;
+  min-height: 100vh;
+  padding-block-end: 20px;
+}
 
-  background-color: aquamarine;
+.main {
+  max-width: 1360px;
+  margin: 0 auto;
+  > button {
+    @include flex_center;
+    width: 255px;
+    height: 48px;
+
+    margin: 20px auto;
+  }
+}
+
+.line {
+  border-bottom: 1px solid $color-white;
+  max-width: 90%;
+  margin-inline: auto;
+  margin-block: 50px;
+  opacity: 0.1;
 }

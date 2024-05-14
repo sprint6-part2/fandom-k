@@ -1,0 +1,75 @@
+@import '../../../../styles/';
+
+@mixin set-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin set-flex-column-gap($row-gap, $column-gap) {
+  @include set-flex-column;
+  gap: $row-gap $column-gap;
+}
+
+@mixin set-flex-column-center-gap($row-gap, $column-gap) {
+  @include set-flex-column-gap($row-gap, $column-gap);
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin-block: 32px;
+  margin-left: 80px;
+
+  @include font-base($color-white, 700, 24px, 26px);
+}
+.idolItem {
+  @include set-flex-column-center-gap(0, 0);
+}
+
+.idolInfo {
+  @include set-flex-column-center-gap(0, 0);
+  > h2 {
+    @include font-base($color-white-200, 700, 16px, 26px);
+  }
+  > h3 {
+    max-width: fit-content;
+
+    @include font-base($color-white, 400, 13px, 16.71px);
+
+    text-align: center;
+    word-wrap: break-word;
+
+    opacity: 0.6;
+  }
+}
+
+.idolItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 10px;
+}
+
+@media (max-width: $width-tablet) {
+  .title {
+    margin-block: 24px;
+    margin-left: 24px;
+
+    @include font-base($color-white, 700, 20px, 26px);
+  }
+  .idolItem {
+  }
+}
+
+@media (max-width: $width-mobile) {
+  .title {
+    margin-block: 16px;
+    margin-left: 16px;
+
+    @include font-base($color-white, 700, 16px, 26px);
+  }
+
+  .idolItem {
+    max-width: 98px;
+  }
+}

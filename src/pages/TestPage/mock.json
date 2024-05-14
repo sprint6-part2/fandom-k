@@ -1,0 +1,518 @@
+{
+  "list": [
+    {
+      "id": 65,
+      "name": "원우",
+      "gender": "male",
+      "group": "세븐틴",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714492902115/seven1.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 68,
+      "name": "산",
+      "gender": "male",
+      "group": "에이티즈",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714493145628/ateez1.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 69,
+      "name": "정우",
+      "gender": "male",
+      "group": "엔시티127",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714493201646/nct1271.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 71,
+      "name": "재민",
+      "gender": "male",
+      "group": "엔시티드림",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714493255267/nctdream1.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 72,
+      "name": "시온",
+      "gender": "male",
+      "group": "엔시티위시",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714493292425/nctwish.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 73,
+      "name": "예준",
+      "gender": "male",
+      "group": "플레이브",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714493395422/prave1.png",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 74,
+      "name": "원빈",
+      "gender": "male",
+      "group": "라이즈",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714493431544/rllze1.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 75,
+      "name": "명재현",
+      "gender": "male",
+      "group": "보이넥스트도어",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1715066962997/boynextdoor1.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 76,
+      "name": "필릭스",
+      "gender": "male",
+      "group": "스트레이키즈",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714493528093/straykids1.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 77,
+      "name": "현재",
+      "gender": "male",
+      "group": "더보이즈",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714493561949/theboyz1.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 78,
+      "name": "신유",
+      "gender": "male",
+      "group": "투어스",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714493596109/tws1.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 79,
+      "name": "수빈",
+      "gender": "male",
+      "group": "투모로우바이투게더",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714493624990/txt1.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 80,
+      "name": "샤오쥔",
+      "gender": "male",
+      "group": "웨이션브이",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714493668646/wayv1.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 81,
+      "name": "성한빈",
+      "gender": "male",
+      "group": "제로베이스원",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714493700772/zerobaseone1.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 82,
+      "name": "민규",
+      "gender": "male",
+      "group": "세븐틴",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714493899108/seven2.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 83,
+      "name": "도영",
+      "gender": "male",
+      "group": "엔시티127",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714493941299/nct1272.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 84,
+      "name": "마크",
+      "gender": "male",
+      "group": "엔시티드림",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714493969499/nctdream2.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 85,
+      "name": "밤비",
+      "gender": "male",
+      "group": "플레이브",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714493997007/prave2.png",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 86,
+      "name": "성찬",
+      "gender": "male",
+      "group": "라이즈",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714494025609/rllze2.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 87,
+      "name": "에스쿱스",
+      "gender": "male",
+      "group": "세븐틴",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714494053844/seven3.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 88,
+      "name": "리노",
+      "gender": "male",
+      "group": "스트레이키즈",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714494096907/straykids2.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 89,
+      "name": "영훈",
+      "gender": "male",
+      "group": "더보이즈",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714494128082/theboyz2.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 90,
+      "name": "연준",
+      "gender": "male",
+      "group": "투모로우바이투게더",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714494164850/txt2.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 91,
+      "name": "장하오",
+      "gender": "male",
+      "group": "제로베이스원",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714494196033/zerobaseone2.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 136,
+      "name": "승관",
+      "gender": "male",
+      "group": "세븐틴",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714613416314/seven4.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 137,
+      "name": "카리나",
+      "gender": "female",
+      "group": "에스파",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714613612846/aespa1.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 138,
+      "name": "아현",
+      "gender": "female",
+      "group": "베이비몬스터",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714613657089/babymonster1.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 139,
+      "name": "제니",
+      "gender": "female",
+      "group": "블랙핑크",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714613706249/blackpink1.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 140,
+      "name": "민니",
+      "gender": "female",
+      "group": "(여자)아이들",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714613739640/idle1.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 141,
+      "name": "원희",
+      "gender": "female",
+      "group": "아일릿",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714613774880/illit1.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 142,
+      "name": "유나",
+      "gender": "female",
+      "group": "있지",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714613810908/itty1.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 143,
+      "name": "안유진",
+      "gender": "female",
+      "group": "아이브",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714613892649/ive1.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 144,
+      "name": "장원영",
+      "gender": "female",
+      "group": "아이브",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714613965309/ive2.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 145,
+      "name": "벨",
+      "gender": "female",
+      "group": "키스오브라이프",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714614042940/kissoflife1.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 146,
+      "name": "김채원",
+      "gender": "female",
+      "group": "르세라핌",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714614228075/le1.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 147,
+      "name": "해원",
+      "gender": "female",
+      "group": "엔믹스",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714614271077/nmix2.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 148,
+      "name": "아이린",
+      "gender": "female",
+      "group": "레드벨벳",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714614327934/redvelvet1.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 149,
+      "name": "아이사",
+      "gender": "female",
+      "group": "스테이씨",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714614376217/stayc1.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 150,
+      "name": "은하",
+      "gender": "female",
+      "group": "비비지",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714614428961/viviz1.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 151,
+      "name": "윈터",
+      "gender": "female",
+      "group": "에스파",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714614555878/aespa2.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 152,
+      "name": "지수",
+      "gender": "female",
+      "group": "블랙핑크",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714614589321/blackpink2.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 153,
+      "name": "민지",
+      "gender": "female",
+      "group": "뉴진스",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714615165347/newjeans.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 154,
+      "name": "미연",
+      "gender": "female",
+      "group": "(여자)아이들",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714615210224/idle2.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 155,
+      "name": "채령",
+      "gender": "female",
+      "group": "있지",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714615257062/itty2.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 156,
+      "name": "레이",
+      "gender": "female",
+      "group": "아이브",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714615356146/ive3.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 157,
+      "name": "나띠",
+      "gender": "female",
+      "group": "키스오브라이프",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714615495829/kissoflife2.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 158,
+      "name": "사쿠라",
+      "gender": "female",
+      "group": "르세라핌",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714615538772/le2.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 159,
+      "name": "해린",
+      "gender": "female",
+      "group": "뉴진스",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714615577107/newjeans2.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 160,
+      "name": "설윤",
+      "gender": "female",
+      "group": "엔믹스",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714615625102/nmixx1.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 161,
+      "name": "조이",
+      "gender": "female",
+      "group": "레드벨벳",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714615656284/redvelvet2.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 162,
+      "name": "시은",
+      "gender": "female",
+      "group": "스테이씨",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714615689925/stayc2.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 163,
+      "name": "하니",
+      "gender": "female",
+      "group": "뉴진스",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714615855519/newjeans3.jpeg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 221,
+      "name": "미르",
+      "gender": "male",
+      "group": "엠블랙",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714653583292/mblaq_mir.jpg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 222,
+      "name": "천둥",
+      "gender": "male",
+      "group": "엠블랙",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714653608391/mblaq_td.jpg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 223,
+      "name": "이준",
+      "gender": "male",
+      "group": "엠블랙",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714653642945/mblaq_jn.jpg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 224,
+      "name": "승호",
+      "gender": "male",
+      "group": "엠블랙",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714653651648/mblaq_sh.jpg",
+      "totalVotes": 0,
+      "teamId": 12
+    },
+    {
+      "id": 225,
+      "name": "지오",
+      "gender": "male",
+      "group": "엠블랙",
+      "profilePicture": "https://sprint-fe-project.s3.ap-northeast-2.amazonaws.com/Fandom-K/idol/1714653660929/mblaq_go.jpg",
+      "totalVotes": 0,
+      "teamId": 12
+    }
+  ],
+  "nextCursor": null
+}

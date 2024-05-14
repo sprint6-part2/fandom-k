@@ -5,6 +5,7 @@ import ListPage from './pages/ListPage';
 import MyPage from './pages/MyPage';
 import TestPage from './pages/TestPage';
 import NotFoundPage from './pages/NotFoundPage';
+import { CreditProvider } from '@/contexts/CreditContext';
 
 const router = createBrowserRouter([
   {
@@ -13,7 +14,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/list',
-    element: <ListPage />,
+    element: (
+      <CreditProvider>
+        <ListPage />
+      </CreditProvider>
+    ),
   },
   {
     path: '/myPage',
