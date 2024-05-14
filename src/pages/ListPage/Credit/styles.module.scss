@@ -66,6 +66,12 @@ $color-credit-border: #f1eef9;
   }
 }
 
+@media (max-width: 550px) {
+  .container {
+    padding-inline: 40px;
+  }
+}
+
 @media (max-width: $width-mobile) {
   .container {
     height: 87px;

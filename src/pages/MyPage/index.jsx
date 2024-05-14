@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import IdolFavoriteList from './components/IdolFavoriteList';
 import IdolSelectList from './components/IdolSelectList';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 import { debounce } from '@/utils/debounce';
 import { sortByItems } from '@/utils/sortItems';
@@ -154,6 +155,7 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
           onSubmit={submitIdolList}
         />
       </main>
+      <Footer />
     </div>
   );
 };

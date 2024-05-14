@@ -7,24 +7,36 @@ import { inputToNumber } from '@/utils/input';
 import { getCredit, getUpdateCredit } from '@/contexts/CreditContext';
 import style from './styles.module.scss';
 import { toast } from 'react-toastify';
+import { putContribute } from '@/apis/putContribute';
+import Spinner from '@/assets/icons/Spinner';
 
-const DonationModal = ({ isOpen, closeModal, item }) => {
+const DonationModal = ({ isOpen, closeModal, item, setIsDonate }) => {
   const [creditInput, setCreditInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const credit = getCredit();
   const setCredit = getUpdateCredit();
 
   // 후원할 값 입력
-  const handleInputChange = (event) => {
-    setCreditInput(event.target.value);
+  const handleInputChange = (e) => {
+    setCreditInput(e.target.value);
   };
 
   // 후원하기 버튼 클릭
-  const handleDonateClick = () => {
+  const handleDonateClick = async () => {
     if (parseInt(creditInput) && creditInput <= credit) {
-      setCredit(parseInt(credit - creditInput));
-      toast(`🎉  ${creditInput} 크레딧 후원 성공!`);
-      handleCloseModal();
+      try {
+        setIsLoading(true);
+        await putContribute(item.id, creditInput);
+        setCredit(parseInt(credit - creditInput));
+        setIsDonate(true);
+        toast(`🎉  ${creditInput} 크레딧 후원 성공!`);
+      } catch (error) {
+        toast.error(error.message);
+      } finally {
+        setIsLoading(false);
+        handleCloseModal();
+      }
     }
   };
 
@@ -33,6 +45,15 @@ const DonationModal = ({ isOpen, closeModal, item }) => {
     setCreditInput('');
     closeModal();
   };
+
+  // 버튼 내용
+  const buttonContent = isLoading ? (
+    <div className={style.spinner}>
+      <Spinner width={40} height={40} fill="white" />
+    </div>
+  ) : (
+    '후원하기'
+  );
 
   return (
     <Modal isOpen={isOpen} title="모달" onClose={handleCloseModal}>
@@ -58,16 +79,18 @@ const DonationModal = ({ isOpen, closeModal, item }) => {
             handleInputChange(e);
           }}
         />
-
         <div className={style.message}>
           {creditInput > credit && (
             <p>갖고 있는 크레딧보다 더 많이 후원할 수 없어요</p>
           )}
         </div>
         <CustomButton
-          btnText="후원하기"
+          btnText={buttonContent}
           disabled={
-            !creditInput || creditInput > credit || creditInput[0] === '0'
+            !creditInput ||
+            creditInput > credit ||
+            creditInput[0] === '0' ||
+            isLoading
           }
           onClick={handleDonateClick}
         />
