@@ -17,8 +17,6 @@ export const carouselSettings = {
   slidesToScroll: 1,
   touchMove: false,
   arrows: false,
-  autoplay: false,
-  autoplaySpeed: 5000,
   initialSlide: -0.01,
 
   responsive: [
@@ -53,14 +51,14 @@ export const carouselSettings = {
     {
       breakpoint: TABLET_WIDTH_660,
       settings: {
-        slidesToShow: 3.5,
+        slidesToShow: 3,
         slidesToScroll: 1,
       },
     },
     {
       breakpoint: TABLET_WIDTH_580,
       settings: {
-        slidesToShow: 3.2,
+        slidesToShow: 3,
         slidesToScroll: 1,
       },
     },

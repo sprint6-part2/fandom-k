@@ -27,17 +27,14 @@
   @include font-base($color-white, 700, 24px, 26px);
 }
 
+.idolList {
+  display: flex;
+  gap: 20px;
+}
+
 .idolItem {
   width: 100px;
   @include set-flex-column-center-gap(0, 0);
-}
-
-.loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  height: 401px;
 }
 
 .idolInfo {
@@ -56,6 +53,14 @@
 
     opacity: 0.6;
   }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 401px;
 }
 
 @media (max-width: $width-tablet) {
@@ -81,6 +86,10 @@
     margin-left: 16px;
 
     @include font-base($color-white, 700, 16px, 26px);
+  }
+
+  .idolItem {
+    width: 60px;
   }
 
   .loading {

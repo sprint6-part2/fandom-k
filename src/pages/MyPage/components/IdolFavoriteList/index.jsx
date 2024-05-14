@@ -8,9 +8,16 @@ import style from './styles.module.scss';
 import { Nothing } from '../Nothing';
 import LoadingError from '@/components/LoadingError';
 import Spinner from '@/assets/icons/Spinner';
-import { checkCondition } from '@/utils/checkCondition';
 
 const MOBILE_WIDTH_540 = MOBILE_WIDTH + 165;
+
+export const checkCondition = (width) => {
+  const count =
+    carouselSettings.responsive.length +
+    1 -
+    carouselSettings.responsive.filter((v) => v.breakpoint > width).length;
+  return count > 3 ? count : 3;
+};
 
 const FavoriteIdol = ({ idol, onDelete, size }) => {
   return (

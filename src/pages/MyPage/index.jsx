@@ -46,12 +46,14 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
   };
 
   const deleteFavorite = (selectedItem) => {
-    setIdolList({
-      ...idolList,
-      favoriteIdolList: idolList.favoriteIdolList.filter(
-        (idol) => idol.id !== selectedItem.id,
-      ),
-      allList: sortByItems([...idolList.allList, selectedItem], 'id'),
+    setIdolList((prevList) => {
+      return {
+        ...prevList,
+        favoriteIdolList: prevList.favoriteIdolList.filter(
+          (idol) => idol.id !== selectedItem.id,
+        ),
+        allList: sortByItems([...prevList.allList, selectedItem], 'id'),
+      };
     });
     // setStorage('IdolList', JSON.stringify(idolList));
   };
