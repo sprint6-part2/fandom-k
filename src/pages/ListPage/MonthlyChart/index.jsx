@@ -23,6 +23,7 @@ const MonthlyChart = () => {
     mobile: 5,
   });
   const [nextCursor, setNextCursor] = useState();
+  const [isVote, setIsVote] = useState(false);
 
   //데이터 가져오기
   const handleChartLoad = async () => {
@@ -59,7 +60,8 @@ const MonthlyChart = () => {
 
   useEffect(() => {
     handleChartLoad();
-  }, [currentTab, numOfItemsToShow]);
+    setIsVote(false);
+  }, [currentTab, numOfItemsToShow, isVote]);
 
   return (
     <div className={styles.container}>
@@ -91,8 +93,8 @@ const MonthlyChart = () => {
         <ChartModal
           isOpen={isOpen}
           closeModal={closeModal}
-          idolList={idolList}
           currentTab={currentTab}
+          setIsVote={setIsVote}
         />
       )}
     </div>
