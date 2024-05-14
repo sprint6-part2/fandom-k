@@ -10,12 +10,13 @@ import SectionBackground3 from '@/assets/images/nct.svg';
 import sectionImage1 from '@/assets/images/capture1.png';
 import sectionImage2 from '@/assets/images/capture2.png';
 import sectionImage3 from '@/assets/images/capture3.png';
+import { setStorage } from '@/utils/localStorage';
 
 const LadingPage = () => {
   const navigate = useNavigate();
 
   const handleStartBtn = () => {
-    localStorage.clear();
+    setStorage('credit', 0);
     navigate('/list');
   };
   return (
