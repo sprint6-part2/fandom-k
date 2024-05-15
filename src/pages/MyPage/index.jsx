@@ -17,6 +17,8 @@ import { getIdolData } from '@/apis/getIdolData';
 import { useTitle } from '@/hooks/useTitle';
 import useScrollToTop from '@/hooks/useScrollToTop';
 
+import { motion } from 'framer-motion';
+
 const ITEM_COUNTS = 100;
 
 const INITIAL_VALUE = {
@@ -74,7 +76,6 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
       allList: sortByItems([...idolList.allList, selectedItem], 'id'),
     });
     toast(`🎉 ${selectedItem.name} 삭제 완료`);
-    // setStorage('IdolList', JSON.stringify(idolList));
   };
 
   const submitIdolList = () => {
@@ -91,7 +92,6 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
       favoriteList: [],
     });
     toast(`🎉 목록 추가 완료`);
-    // setStorage('IdolList', JSON.stringify(idolList));
   };
 
   const handleResize = () => {
@@ -156,8 +156,13 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
 
   return (
     <div className={style.container}>
-      <Header />
-
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+      className={style.container}
+    >
       <main className={style.main}>
         <IdolFavoriteList
           onDelete={deleteFavorite}
@@ -180,7 +185,7 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
         />
       </main>
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 
