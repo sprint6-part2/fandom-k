@@ -18,6 +18,8 @@
 
 .list_box {
   padding-inline: 50px;
+  position: relative;
+  z-index: 100;
 }
 
 .title {
