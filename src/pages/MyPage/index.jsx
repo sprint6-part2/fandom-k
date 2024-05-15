@@ -16,6 +16,7 @@ import { sortByItems } from '@/utils/sortItems';
 import { getStorage, setStorage } from '@/utils/localStorage';
 
 import { useTitle } from '@/hooks/useTitle';
+import useScrollToTop from '@/hooks/useScrollToTop';
 
 import { motion } from 'framer-motion';
 
@@ -28,6 +29,7 @@ const INITIAL_VALUE = {
 
 const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
   useTitle('FANDOM-K | My Page');
+  useScrollToTop();
 
   const [idolList, setIdolList] = useState(INITIAL_VALUE);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);

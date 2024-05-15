@@ -5,10 +5,12 @@ import Credit from './Credit';
 import MonthlyChart from './MonthlyChart';
 import Footer from '@/components/Footer';
 import { useTitle } from '@/hooks/useTitle';
+import useScrollToTop from '@/hooks/useScrollToTop';
 import { motion } from 'framer-motion';
 
 const ListPage = () => {
   useTitle('FANDOM-K | List Page');
+  useScrollToTop();
   return (
     <motion.div
       initial={{ opacity: 0 }}
