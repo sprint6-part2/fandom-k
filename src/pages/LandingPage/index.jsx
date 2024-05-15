@@ -13,9 +13,11 @@ import sectionImage3 from '@/assets/images/capture3.png';
 import { setStorage } from '@/utils/localStorage';
 import { useTitle } from '@/hooks/useTitle';
 import { motion } from 'framer-motion';
+import useScrollToTop from '@/hooks/useScrollToTop';
 
 const LadingPage = () => {
   useTitle('FANDOM-K | Randing Page');
+  useScrollToTop();
   const navigate = useNavigate();
 
   const handleStartBtn = () => {
