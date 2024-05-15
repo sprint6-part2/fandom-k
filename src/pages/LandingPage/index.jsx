@@ -12,6 +12,7 @@ import sectionImage2 from '@/assets/images/capture2.png';
 import sectionImage3 from '@/assets/images/capture3.png';
 import { setStorage } from '@/utils/localStorage';
 import { useTitle } from '@/hooks/useTitle';
+import { motion } from 'framer-motion';
 
 const LadingPage = () => {
   useTitle('FANDOM-K | Randing Page');
@@ -34,7 +35,17 @@ const LadingPage = () => {
             <div className={styles.logo}>
               <Logo width="100%" height="100%" />
             </div>
-            <img src={mainBackgroundImage} alt="아이돌 사진" />
+            <motion.img
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: false }}
+              transition={{
+                ease: 'easeInOut',
+                duration: 3,
+              }}
+              src={mainBackgroundImage}
+              alt="아이돌 사진"
+            />
           </div>
           <div className={styles.start_btn}>
             <CustomButton
