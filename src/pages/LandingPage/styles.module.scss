@@ -76,7 +76,7 @@
     position: absolute;
     width: 932px;
     height: 781px;
-    opacity: 50%;
+    opacity: 40%;
     z-index: 0;
 
     @media (max-width: $width-tablet) {
@@ -95,14 +95,17 @@
   }
 
   p {
+    margin-top: 45px;
     z-index: 1;
     @include font-base(white, 700, 26px, 31px);
     text-align: center;
 
     @media (max-width: $width-tablet) {
+      margin-top: 0;
       @include font-base(white, 700, 20px, 24px);
     }
     @media (max-width: $width-mobile) {
+      margin-top: 0;
       @include font-base(white, 400, 20px, 24px);
     }
 

@@ -39,7 +39,7 @@ const LadingPage = () => {
             </div>
             <motion.img
               initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              whileInView={{ opacity: 0.4 }}
               viewport={{ once: false }}
               transition={{
                 ease: 'easeInOut',
