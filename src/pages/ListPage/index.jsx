@@ -19,7 +19,6 @@ const ListPage = () => {
       transition={{ duration: 1 }}
       className={style.container}
     >
-      <Header />
       <main className={style.main}>
         <Credit />
         <Donation />

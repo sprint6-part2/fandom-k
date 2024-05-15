@@ -147,7 +147,6 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
       transition={{ duration: 1 }}
       className={style.container}
     >
-      <Header />
       <main className={style.main}>
         <IdolFavoriteList
           onDelete={deleteFavorite}
