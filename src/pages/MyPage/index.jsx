@@ -4,18 +4,18 @@ import { useEffect, useState } from 'react';
 
 import IdolFavoriteList from './components/IdolFavoriteList';
 import IdolSelectList from './components/IdolSelectList';
-import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 import { debounce } from '@/utils/debounce';
 import { sortByItems } from '@/utils/sortItems';
 import { getStorage, setStorage } from '@/utils/localStorage';
 
-
 import useLoad from '@/hooks/useLoad';
 import { getIdolData } from '@/apis/getIdolData';
 import { useTitle } from '@/hooks/useTitle';
 import useScrollToTop from '@/hooks/useScrollToTop';
+
+import { motion } from 'framer-motion';
 
 const ITEM_COUNTS = 100;
 
@@ -139,7 +139,13 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
   }, [idolList]);
 
   return (
-    <div className={style.container}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+      className={style.container}
+    >
       <main className={style.main}>
         <IdolFavoriteList
           onDelete={deleteFavorite}
@@ -160,7 +166,7 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
         />
       </main>
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

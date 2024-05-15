@@ -7,12 +7,15 @@ import TestPage from './pages/TestPage';
 import NotFoundPage from './pages/NotFoundPage';
 import { CreditProvider } from '@/contexts/CreditContext';
 import App from './App';
-
-// const location = useLocation();
+import { AnimatePresence } from 'framer-motion';
 
 const router = createBrowserRouter([
   {
-    element: <App />,
+    element: (
+      <AnimatePresence>
+        <App />
+      </AnimatePresence>
+    ),
     children: [
       {
         path: '/',

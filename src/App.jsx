@@ -10,8 +10,8 @@ const App = () => {
 
   return (
     <>
-      {regxr.test(location.pathname) && <Header />}
       <Background>
+        {regxr.test(location.pathname) && <Header />}
         <Outlet />
       </Background>
     </>
