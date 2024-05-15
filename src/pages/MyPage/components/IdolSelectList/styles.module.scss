@@ -1,5 +1,11 @@
 @import '../../../../styles/';
 
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @mixin set-flex-column {
   display: flex;
   flex-direction: column;
@@ -22,8 +28,15 @@
 
   @include font-base($color-white, 700, 24px, 26px);
 }
-.idolItem {
-  @include set-flex-column-center-gap(0, 0);
+
+.list_box {
+  > button {
+    @include flex-center();
+    width: 255px;
+    height: 48px;
+
+    margin: 20px auto;
+  }
 }
 
 .idolInfo {
@@ -43,10 +56,17 @@
   }
 }
 
-.idolItem {
+.loading {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+
+  height: 401px;
+}
+
+.idolItem {
+  @include set-flex-column-center-gap(0, 0);
+
   padding-block: 10px;
 }
 
@@ -57,7 +77,9 @@
 
     @include font-base($color-white, 700, 20px, 26px);
   }
-  .idolItem {
+
+  .loading {
+    height: 355px;
   }
 }
 
@@ -71,5 +93,9 @@
 
   .idolItem {
     max-width: 98px;
+  }
+
+  .loading {
+    height: 305px;
   }
 }

@@ -10,8 +10,15 @@ const DESKTOP_WIDTH_900 = DESKTOP_WIDTH_1075 - 175;
 const TABLET_WIDTH_660 = TABLET_WIDTH - 84;
 const TABLET_WIDTH_540 = TABLET_WIDTH_660 - 120;
 
+const checkCondition = (width) => {
+  const count =
+    carouselSettings.responsive.length +
+    1 -
+    carouselSettings.responsive.filter((v) => v.breakpoint > width).length;
+  return count;
+};
+
 export const carouselSettings = {
-  // infinite: false,
   speed: 500,
   slidesToShow: 8,
   slidesToScroll: 8,
@@ -20,6 +27,7 @@ export const carouselSettings = {
   autoplay: false,
   autoplaySpeed: 5000,
   initialSlide: -0.01,
+  asNavFor: null,
 
   responsive: [
     {
@@ -81,4 +89,16 @@ export const carouselSettings = {
       },
     },
   ],
+  onReInit: () => {
+    if (
+      document.querySelectorAll('.slick-track').length === 2 &&
+      document.querySelectorAll('.slick-track')[1] &&
+      document.querySelectorAll('.slick-track')[1].clientWidth < 1200 &&
+      document.querySelectorAll('.slick-track')[1].childElementCount <=
+        checkCondition(window.innerWidth)
+    ) {
+      document.querySelectorAll('.slick-track')[1].style.transform =
+        'translate3d(0,0,0)';
+    }
+  },
 };

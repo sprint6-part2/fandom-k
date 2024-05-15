@@ -48,16 +48,22 @@ $color-arrow-hover: #2f2f2f;
   align-items: center;
 }
 
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  transition-delay: 10ms;
+}
+
 :global {
   .slick-list {
     width: 100%;
   }
   .slick-slide > div {
     margin: 0 12px;
-  }
-
-  .slick-track {
-    float: left;
   }
 
   @media (max-width: 1000px) {

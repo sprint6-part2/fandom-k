@@ -14,10 +14,9 @@ export const carouselSettings = {
   infinite: false,
   speed: 500,
   slidesToShow: 8,
-  slidesToScroll: 1,
+  slidesToScroll: 8,
+  touchMove: false,
   arrows: false,
-  autoplay: false,
-  autoplaySpeed: 5000,
   initialSlide: -0.01,
 
   responsive: [
@@ -25,44 +24,62 @@ export const carouselSettings = {
       breakpoint: DESKTOP_WIDTH_1250,
       settings: {
         slidesToShow: 7,
+        slidesToScroll: 7,
       },
     },
     {
       breakpoint: DESKTOP_WIDTH_1075,
       settings: {
         slidesToShow: 6,
+        slidesToScroll: 6,
       },
     },
     {
       breakpoint: DESKTOP_WIDTH_900,
       settings: {
         slidesToShow: 5,
+        slidesToScroll: 5,
       },
     },
     {
       breakpoint: TABLET_WIDTH,
       settings: {
         slidesToShow: 4,
+        slidesToScroll: 4,
       },
     },
     {
       breakpoint: TABLET_WIDTH_660,
       settings: {
-        slidesToShow: 3.5,
+        slidesToShow: 3,
+        slidesToScroll: 3,
       },
     },
     {
       breakpoint: TABLET_WIDTH_580,
       settings: {
-        slidesToShow: 3.2,
+        slidesToShow: 3,
+        slidesToScroll: 3,
       },
     },
     {
       breakpoint: MOBILE_WIDTH,
       settings: {
         slidesToShow: 3,
+        slidesToScroll: 3,
         arrows: false,
       },
     },
   ],
+
+  onReInit: () => {
+    if (
+      document.querySelectorAll('.slick-track').length === 2 &&
+      document.querySelectorAll('.slick-track')[0] &&
+      document.querySelectorAll('.slick-track')[0].clientWidth < 1250
+    ) {
+      document.querySelectorAll('.slick-track')[0].style.transform =
+        'translate3d(0,0,0)';
+    }
+  },
 };
