@@ -7,9 +7,11 @@ import Idol3 from '@/assets/images/seventeen.jpg';
 import Idol4 from '@/assets/images/aespa.jpg';
 import style from './styles.module.scss';
 import { useTitle } from '@/hooks/useTitle';
+import useScrollToTop from '@/hooks/useScrollToTop';
 
 const NotFoundPage = () => {
   useTitle('FANDOM-K | Not Found Page');
+  useScrollToTop();
   const navigate = useNavigate();
 
   const idolList = [Idol1, Idol2, Idol3, Idol4];

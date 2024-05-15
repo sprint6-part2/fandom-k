@@ -13,10 +13,12 @@ import sectionImage3 from '@/assets/images/capture3.png';
 import { setStorage } from '@/utils/localStorage';
 import { useTitle } from '@/hooks/useTitle';
 import { motion } from 'framer-motion';
+import useScrollToTop from '@/hooks/useScrollToTop';
 import { useEffect } from 'react';
 
 const LadingPage = () => {
   useTitle('FANDOM-K | Randing Page');
+  useScrollToTop();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -64,7 +66,7 @@ const LadingPage = () => {
             </div>
             <motion.img
               initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              whileInView={{ opacity: 0.4 }}
               viewport={{ once: false }}
               transition={{
                 ease: 'easeInOut',
