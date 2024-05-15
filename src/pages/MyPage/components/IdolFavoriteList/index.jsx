@@ -11,6 +11,9 @@ import Spinner from '@/assets/icons/Spinner';
 
 const MOBILE_WIDTH_540 = MOBILE_WIDTH + 165;
 
+const SEVENTEEN_GROUP_IMAGE =
+  'https://i.ytimg.com/vi/78mV3p24FDw/maxresdefault.jpg';
+
 export const checkCondition = (width) => {
   const count =
     carouselSettings.responsive.length +
@@ -19,11 +22,15 @@ export const checkCondition = (width) => {
   return count > 3 ? count : 3;
 };
 
-const FavoriteIdol = ({ idol, onDelete, size }) => {
+const FavoriteIdol = ({ idol, onDelete, size, groupImage }) => {
   return (
     <div className={style.idolItem}>
       <Profile
-        imageUrl={idol.profilePicture}
+        imageUrl={
+          groupImage && idol.group === '세븐틴'
+            ? groupImage
+            : idol.profilePicture
+        }
         size={size}
         selected={true}
         onClickDelete={() => {
@@ -44,9 +51,12 @@ const IdolFavoriteList = ({
   windowWidth,
   isLoading,
   loadingError,
+  collection,
 }) => {
   const [size, setSize] = useState('md');
   const [showCount, setShowCount] = useState(carouselSettings.slidesToShow);
+  const seventeen_group_image =
+    collection?.includes('세븐틴') && SEVENTEEN_GROUP_IMAGE;
 
   useEffect(() => {
     setSize(windowWidth > MOBILE_WIDTH_540 ? 'md' : 'sm');
@@ -84,6 +94,7 @@ const IdolFavoriteList = ({
                     onDelete={onDelete}
                     key={idol.id}
                     size={size}
+                    groupImage={seventeen_group_image}
                   />
                 );
               })}

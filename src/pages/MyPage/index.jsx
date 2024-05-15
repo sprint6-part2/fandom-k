@@ -11,7 +11,6 @@ import { debounce } from '@/utils/debounce';
 import { sortByItems } from '@/utils/sortItems';
 import { getStorage, setStorage } from '@/utils/localStorage';
 
-
 import useLoad from '@/hooks/useLoad';
 import { getIdolData } from '@/apis/getIdolData';
 import { useTitle } from '@/hooks/useTitle';
@@ -24,10 +23,23 @@ const INITIAL_VALUE = {
   favoriteList: [],
 };
 
+const check_collection = (idolList) => {
+  if (idolList?.allList && idolList?.favoriteIdolList) {
+    const a = Array.from(
+      new Set(idolList.favoriteIdolList.map((v) => v['group'])),
+    );
+    const b = Array.from(new Set(idolList.allList.map((v) => v['group'])));
+
+    return a.filter((x) => !b.includes(x));
+  }
+  return null;
+};
+
 const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
   useTitle('FANDOM-K | My Page');
 
   const [idolList, setIdolList] = useState(INITIAL_VALUE);
+  const [collection, setCollection] = useState([]);
   const [isLoading, loadingError, handleLoad] = useLoad(getIdolData);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [init, setInit] = useState(false);
@@ -133,6 +145,7 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
       }
     } else {
       setStorage('IdolList', JSON.stringify(idolList));
+      setCollection(check_collection(idolList));
     }
   }, [idolList]);
 
@@ -147,6 +160,7 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
           windowWidth={windowWidth}
           isLoading={isLoading}
           loadingError={loadingError}
+          collection={collection}
         />
         <div className={style.line}></div>
         <IdolSelectList
