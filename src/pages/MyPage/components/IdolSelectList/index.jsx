@@ -85,7 +85,6 @@ const IdolSelectList = ({
             <MyCarousel
               customSettings={{
                 ...carouselSettings,
-                touchMove: list.length >= showCount,
                 arrows: list.length >= showCount,
                 rows: list.length > showCount * 2 ? 2 : 1,
                 infinite: list.length > showCount * 2,

@@ -71,18 +71,10 @@ export const carouselSettings = {
       },
     },
   ],
-  onInit: () => {
-    setTimeout(() => {
-      document
-        .querySelectorAll('.slider_default .slick-track')
-        .forEach((item) => {
-          item.style.transform = 'translate3d(0,0,0)';
-        });
-    }, 100);
-  },
 
   onReInit: () => {
     if (
+      document.querySelectorAll('.slick-track').length === 2 &&
       document.querySelectorAll('.slick-track')[0] &&
       document.querySelectorAll('.slick-track')[0].clientWidth < 1250
     ) {
