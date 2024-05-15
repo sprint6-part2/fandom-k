@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './styles.module.scss';
 import classNames from 'classnames';
+import { motion } from 'framer-motion';
 
 const Description = ({ backgroundImg, mainImg, title, mainText }) => {
   const text = classNames(styles.text, {
@@ -14,11 +15,33 @@ const Description = ({ backgroundImg, mainImg, title, mainText }) => {
         alt="아이돌 사진"
         className={styles.background_image}
       />
-      <div className={text}>
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: false }}
+        transition={{
+          ease: 'easeInOut',
+          duration: 2,
+          x: { duration: 1 },
+        }}
+        className={text}
+      >
         <span className={styles.title}>{title}</span>
         <p className={styles.main_text}>{mainText}</p>
-      </div>
-      <img src={mainImg} alt="사이트 캡쳐" className={styles.main_image} />
+      </motion.div>
+      <motion.img
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: false }}
+        transition={{
+          ease: 'easeInOut',
+          duration: 2,
+          x: { duration: 1 },
+        }}
+        src={mainImg}
+        alt="사이트 캡쳐"
+        className={styles.main_image}
+      />
     </section>
   );
 };

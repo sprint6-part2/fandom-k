@@ -11,9 +11,41 @@ import sectionImage1 from '@/assets/images/capture1.png';
 import sectionImage2 from '@/assets/images/capture2.png';
 import sectionImage3 from '@/assets/images/capture3.png';
 import { setStorage } from '@/utils/localStorage';
+import { useTitle } from '@/hooks/useTitle';
+import { motion } from 'framer-motion';
+import useScrollToTop from '@/hooks/useScrollToTop';
+import { useEffect } from 'react';
 
 const LadingPage = () => {
+  useTitle('FANDOM-K | Randing Page');
+  useScrollToTop();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const asciiArt = `
+  -------------------------------------------------------------------------------------------------
+  |                                                                                               |
+  |                      _____ ____  _____  ______    _____ _______                               |
+  |                     / ____/ __ \\|  __ \\|  ____|  |_   _|__   __|                              |         
+  |                     | |   | |  | | |  | | |__ ______| |    | |                                |                 
+  |                     | |   | |  | | |  | |  __|______| |    | |                                |                
+  |                     | |___| |__| | |__| | |____    _| |_   | |                                |                
+  |                    \\_____|\\____/|_____/|______|_| |_____|__|_|                                |               
+  |                      / ____|  __ \\|  __ \\|_   _| \\ | |__   __|                                |               
+  |                     | (___ | |__) | |__) | | | |  \\| |  | |                                   |                
+  |                      \\___ \\|  ___/|  _  /  | | | . \` |  | |                                   |
+  |                      ____) | |    | | \\ \\ _| |_| |\\  |  | |                                   |
+  |                     |_____/|_|__ _|_| _\\_\\_____|_|_\\_|__|_|       __  __   ___                |
+  |                       / /__   __| |  | | |__   __|  ____|   /\\   |  \\/  | |__ \\               |
+  |                      / /_  | |  | |__| |    | |  | |__     /  \\  | \\  / |    ) |              |
+  |                     | '_ \\ | |  |  __  |    | |  |  __|   / /\\ \\ | |\\/| |   / /               |
+  |                     | (_) || |  | |  | |    | |  | |____ / ____ \\| |  | |  / /_               |
+  |                      \\___/ |_|  |_|  |_|    |_|  |______/_/    \\_\\_|  |_| |____|              |
+  |                                                                                               |
+  ------------------------------------------------------------------------------------------------
+    `;
+    console.log(asciiArt);
+  }, []);
 
   const handleStartBtn = () => {
     setStorage('credit', 0);
@@ -32,7 +64,17 @@ const LadingPage = () => {
             <div className={styles.logo}>
               <Logo width="100%" height="100%" />
             </div>
-            <img src={mainBackgroundImage} alt="아이돌 사진" />
+            <motion.img
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 0.4 }}
+              viewport={{ once: false }}
+              transition={{
+                ease: 'easeInOut',
+                duration: 3,
+              }}
+              src={mainBackgroundImage}
+              alt="아이돌 사진"
+            />
           </div>
           <div className={styles.start_btn}>
             <CustomButton
