@@ -90,10 +90,12 @@ export const carouselSettings = {
         });
     }, 100);
   },
-
   onReInit: () => {
-    if (document.querySelectorAll('.slick-track')[1].clientWidth < 1250) {
-      document.querySelectorAll('.slick-track')[1].style.transform =
+    if (
+      document.querySelectorAll('.slick-track')[0] &&
+      document.querySelectorAll('.slick-track')[0].clientWidth < 1250
+    ) {
+      document.querySelectorAll('.slick-track')[0].style.transform =
         'translate3d(0,0,0)';
     }
   },

@@ -82,7 +82,10 @@ export const carouselSettings = {
   },
 
   onReInit: () => {
-    if (document.querySelectorAll('.slick-track')[0].clientWidth < 1250) {
+    if (
+      document.querySelectorAll('.slick-track')[0] &&
+      document.querySelectorAll('.slick-track')[0].clientWidth < 1250
+    ) {
       document.querySelectorAll('.slick-track')[0].style.transform =
         'translate3d(0,0,0)';
     }
