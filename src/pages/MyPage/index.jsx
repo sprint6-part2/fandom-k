@@ -6,6 +6,7 @@ import IdolFavoriteList from './components/IdolFavoriteList';
 import IdolSelectList from './components/IdolSelectList';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { toast } from 'react-toastify';
 
 import { debounce } from '@/utils/debounce';
 import { sortByItems } from '@/utils/sortItems';
@@ -72,6 +73,7 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
       ),
       allList: sortByItems([...idolList.allList, selectedItem], 'id'),
     });
+    toast(`🎉 ${selectedItem.name} 삭제 완료`);
     // setStorage('IdolList', JSON.stringify(idolList));
   };
 
@@ -88,6 +90,7 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
       ),
       favoriteList: [],
     });
+    toast(`🎉 목록 추가 완료`);
     // setStorage('IdolList', JSON.stringify(idolList));
   };
 
