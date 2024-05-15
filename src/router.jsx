@@ -11,6 +11,7 @@ import { AnimatePresence } from 'framer-motion';
 
 const router = createBrowserRouter([
   {
+    path: '/',
     element: (
       <AnimatePresence>
         <App />
