@@ -12,7 +12,6 @@ const ListPage = () => {
   useScrollToTop();
   return (
     <div className={style.container}>
-      <Header />
       <main className={style.main}>
         <Credit />
         <Donation />
