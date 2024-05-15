@@ -11,8 +11,10 @@ import { debounce } from '@/utils/debounce';
 import { sortByItems } from '@/utils/sortItems';
 import { getStorage, setStorage } from '@/utils/localStorage';
 
+
 import useLoad from '@/hooks/useLoad';
 import { getIdolData } from '@/apis/getIdolData';
+import { useTitle } from '@/hooks/useTitle';
 
 const ITEM_COUNTS = 100;
 
@@ -23,6 +25,8 @@ const INITIAL_VALUE = {
 };
 
 const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
+  useTitle('FANDOM-K | My Page');
+
   const [idolList, setIdolList] = useState(INITIAL_VALUE);
   const [isLoading, loadingError, handleLoad] = useLoad(getIdolData);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);

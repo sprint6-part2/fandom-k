@@ -10,8 +10,10 @@ import ModalHeader from '@/components/Modal/components/ModalHeader';
 import Profile from '@/components/Profile';
 import LoadingError from '@/components/LoadingError';
 import Spinner from '@/assets/icons/Spinner';
+import { useTitle } from '@/hooks/useTitle';
 
 const TestPage = () => {
+  useTitle('FANDOM-K | Test Page');
   const [isOpen, openModal, closeModal] = useModal();
 
   return (
