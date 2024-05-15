@@ -14,6 +14,7 @@ import { getStorage, setStorage } from '@/utils/localStorage';
 import useLoad from '@/hooks/useLoad';
 import { getIdolData } from '@/apis/getIdolData';
 import { useTitle } from '@/hooks/useTitle';
+import useScrollToTop from '@/hooks/useScrollToTop';
 
 const ITEM_COUNTS = 100;
 
@@ -37,6 +38,7 @@ const check_collection = (idolList) => {
 
 const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
   useTitle('FANDOM-K | My Page');
+  useScrollToTop();
 
   const [idolList, setIdolList] = useState(INITIAL_VALUE);
   const [collection, setCollection] = useState([]);
