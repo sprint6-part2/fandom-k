@@ -156,36 +156,37 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
 
   return (
     <div className={style.container}>
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 1 }}
-      className={style.container}
-    >
-      <main className={style.main}>
-        <IdolFavoriteList
-          onDelete={deleteFavorite}
-          list={idolList.favoriteIdolList}
-          windowWidth={windowWidth}
-          isLoading={isLoading}
-          loadingError={loadingError}
-          collection={collection}
-        />
-        <div className={style.line}></div>
-        <IdolSelectList
-          list={idolList.allList}
-          favoriteList={idolList.favoriteList}
-          onClick={addFavorite}
-          windowWidth={windowWidth}
-          isLoading={isLoading}
-          loadingError={loadingError}
-          onSubmit={submitIdolList}
-          onNext={getMoreIdolList}
-        />
-      </main>
-      <Footer />
-    </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1 }}
+        className={style.container}
+      >
+        <main className={style.main}>
+          <IdolFavoriteList
+            onDelete={deleteFavorite}
+            list={idolList.favoriteIdolList}
+            windowWidth={windowWidth}
+            isLoading={isLoading}
+            loadingError={loadingError}
+            collection={collection}
+          />
+          <div className={style.line}></div>
+          <IdolSelectList
+            list={idolList.allList}
+            favoriteList={idolList.favoriteList}
+            onClick={addFavorite}
+            windowWidth={windowWidth}
+            isLoading={isLoading}
+            loadingError={loadingError}
+            onSubmit={submitIdolList}
+            onNext={getMoreIdolList}
+          />
+        </main>
+        <Footer />
+      </motion.div>
+    </div>
   );
 };
 
