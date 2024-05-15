@@ -94,7 +94,7 @@ export const carouselSettings = {
       document.querySelectorAll('.slick-track').length === 2 &&
       document.querySelectorAll('.slick-track')[1] &&
       document.querySelectorAll('.slick-track')[1].clientWidth < 1200 &&
-      document.querySelectorAll('.slick-track')[1].childElementCount <=
+      document.querySelectorAll('.slick-track')[1].childElementCount <
         checkCondition(window.innerWidth)
     ) {
       document.querySelectorAll('.slick-track')[1].style.transform =
