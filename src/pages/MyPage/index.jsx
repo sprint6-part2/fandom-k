@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 
 import IdolFavoriteList from './components/IdolFavoriteList';
 import IdolSelectList from './components/IdolSelectList';
-import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 import { debounce } from '@/utils/debounce';
