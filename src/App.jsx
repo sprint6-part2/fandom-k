@@ -11,7 +11,7 @@ const App = () => {
   return (
     <>
       {regxr.test(location.pathname) && <Header />}
-      <Background isGradient>
+      <Background>
         <Outlet />
       </Background>
     </>

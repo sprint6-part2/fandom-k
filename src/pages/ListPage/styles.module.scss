@@ -1,7 +1,7 @@
 @import '../../styles/';
 
 .container {
-  background-color: $color-black-200;
+  background-color: none;
 }
 
 .main {
@@ -9,7 +9,6 @@
   margin: 0 auto;
   padding-bottom: 243px;
 
-  
   @media (max-width: $width-tablet) {
     padding-bottom: 330px;
   }
