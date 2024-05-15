@@ -47,14 +47,12 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
   };
 
   const deleteFavorite = (selectedItem) => {
-    setIdolList((prevList) => {
-      return {
-        ...prevList,
-        favoriteIdolList: prevList.favoriteIdolList.filter(
-          (idol) => idol.id !== selectedItem.id,
-        ),
-        allList: sortByItems([...prevList.allList, selectedItem], 'id'),
-      };
+    setIdolList({
+      ...idolList,
+      favoriteIdolList: idolList.favoriteIdolList.filter(
+        (idol) => idol.id !== selectedItem.id,
+      ),
+      allList: sortByItems([...idolList.allList, selectedItem], 'id'),
     });
     // setStorage('IdolList', JSON.stringify(idolList));
   };
@@ -104,7 +102,7 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
       setIdolList({ ...idolList, allList: list });
     } else {
       setIdolList((prevList) => {
-        return { ...idolList, allList: [...prevList, ...list] };
+        return { ...prevList, allList: [...prevList.allList, ...list] };
       });
     }
     setCursor(nextCursor);
@@ -114,7 +112,9 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
 
   // 100개 이상의 데이터가 존재하는 경우, 더 불러오기 위한 함수
   const getMoreIdolList = () => {
-    getIdolList({ pageSize, cursor, keyword });
+    if (cursor !== null) {
+      getIdolList({ pageSize, cursor, keyword });
+    }
   };
 
   useEffect(() => {
@@ -153,6 +153,7 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
           isLoading={isLoading}
           loadingError={loadingError}
           onSubmit={submitIdolList}
+          onNext={getMoreIdolList}
         />
       </main>
       <Footer />

@@ -1,0 +1,74 @@
+@import '../../styles/';
+
+$color-arrow: #373737;
+$color-arrow-hover: #2f2f2f;
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 78.33px;
+  margin-inline: 15px;
+  border-radius: 6.67px;
+
+  background-color: $color-arrow;
+  opacity: 0.8;
+  transition: opacity 0.5s ease;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-arrow-hover;
+  }
+}
+
+.longArrow {
+  height: 135px;
+}
+
+.arrow:nth-child(3) {
+  transform: rotate(180deg);
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+
+  cursor: default;
+  svg {
+    display: none;
+  }
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  transition-delay: 10ms;
+}
+
+:global {
+  .slick-list {
+    width: 100%;
+  }
+  .slick-slide > div {
+    margin: 0 12px;
+  }
+
+  @media (max-width: 1000px) {
+    .slick-slide > div {
+      margin: 0 8px;
+    }
+  }
+}

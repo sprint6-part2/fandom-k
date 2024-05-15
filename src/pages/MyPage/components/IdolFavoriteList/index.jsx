@@ -1,4 +1,4 @@
-import Carousel from '@/components/Carousel';
+import MyCarousel from '@/components/MyCarousel';
 import Profile from '@/components/Profile';
 
 import { carouselSettings } from './carouselSettings';
@@ -70,9 +70,10 @@ const IdolFavoriteList = ({
       {!loadingError && (
         <div className={style.list_box}>
           {list.length > 0 ? (
-            <Carousel
+            <MyCarousel
               customSettings={{
                 ...carouselSettings,
+                infinite: list.length >= showCount,
                 touchMove: list.length > showCount,
               }}
             >
@@ -86,9 +87,9 @@ const IdolFavoriteList = ({
                   />
                 );
               })}
-            </Carousel>
+            </MyCarousel>
           ) : (
-            <Nothing />
+            <Nothing content="좋아하는 아이돌을 추가해주세요." />
           )}
         </div>
       )}

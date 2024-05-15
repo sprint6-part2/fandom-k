@@ -4,9 +4,9 @@ import { loadingErrorMessage } from '@/constants/errorMessage';
 export const getIdolData = async ({
   pageSize = 100,
   keyword = '',
-  cursor = '',
+  cursor = 0,
 }) => {
-  const cursorQuery = cursor && `&cursor=${cursor}`;
+  const cursorQuery = cursor > 0 ? `&cursor=${cursor}` : '';
   try {
     const response = await baseAxios.get(
       `idols?pageSize=${pageSize}${cursorQuery}`,

@@ -81,4 +81,20 @@ export const carouselSettings = {
       },
     },
   ],
+  onInit: () => {
+    setTimeout(() => {
+      document
+        .querySelectorAll('.slider_default .slick-track')
+        .forEach((item) => {
+          item.style.transform = 'translate3d(0,0,0)';
+        });
+    }, 100);
+  },
+
+  onReInit: () => {
+    if (document.querySelectorAll('.slick-track')[1].clientWidth < 1250) {
+      document.querySelectorAll('.slick-track')[1].style.transform =
+        'translate3d(0,0,0)';
+    }
+  },
 };
