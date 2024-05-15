@@ -17,9 +17,9 @@ const Modal = ({ isOpen, onClose, children }) => {
         <motion.aside
           className={style.modalBackDrop}
           onClick={onClose}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -100 }}
         >
           <div
             className={style.modalView}
