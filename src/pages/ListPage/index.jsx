@@ -5,11 +5,18 @@ import Credit from './Credit';
 import MonthlyChart from './MonthlyChart';
 import Footer from '@/components/Footer';
 import { useTitle } from '@/hooks/useTitle';
+import { motion } from 'framer-motion';
 
 const ListPage = () => {
   useTitle('FANDOM-K | List Page');
   return (
-    <div className={style.container}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+      className={style.container}
+    >
       <Header />
       <main className={style.main}>
         <Credit />
@@ -17,7 +24,7 @@ const ListPage = () => {
         <MonthlyChart />
       </main>
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

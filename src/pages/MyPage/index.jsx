@@ -17,6 +17,8 @@ import { getStorage, setStorage } from '@/utils/localStorage';
 
 import { useTitle } from '@/hooks/useTitle';
 
+import { motion } from 'framer-motion';
+
 const ITEM_COUNTS = 100;
 
 const INITIAL_VALUE = {
@@ -123,7 +125,13 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
   }, []);
 
   return (
-    <div className={style.container}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+      className={style.container}
+    >
       <Header />
       <main className={style.main}>
         <IdolFavoriteList onDelete={deleteFavorite} windowWidth={windowWidth} />
@@ -145,7 +153,7 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
         </CustomButton>
       </main>
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 
