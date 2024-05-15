@@ -21,7 +21,7 @@
 }
 
 .title {
-  margin-block: 32px;
+  margin-block-end: 32px;
   margin-left: 80px;
 
   @include font-base($color-white, 700, 24px, 26px);
@@ -52,7 +52,7 @@
 
 @media (max-width: $width-tablet) {
   .title {
-    margin-block: 24px;
+    margin-block-end: 24px;
     margin-left: 24px;
 
     @include font-base($color-white, 700, 20px, 26px);
@@ -64,7 +64,7 @@
 
 @media (max-width: $width-mobile) {
   .title {
-    margin-block: 16px;
+    margin-block-end: 16px;
     margin-left: 16px;
 
     @include font-base($color-white, 700, 16px, 26px);

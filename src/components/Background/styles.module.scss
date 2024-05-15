@@ -1,0 +1,15 @@
+@import '../../styles/';
+
+.container {
+  position: relative;
+  background-color: $color-black-200;
+  min-height: 100dvh;
+}
+
+.wrapper {
+  position: absolute;
+  top: 10px;
+  margin: 0;
+  padding: 0;
+  z-index: 99;
+}
