@@ -24,8 +24,8 @@ const IdolChart = ({ isLoading, loadingError, idolList }) => {
   } else {
     return (
       <ul className={chartClass}>
-        {idolList.map((idol) => {
-          return <ChartElement key={idol.id} idol={idol} />;
+        {idolList.map((idol, index) => {
+          return <ChartElement key={idol.id} idol={idol} ranking={index + 1} />;
         })}
       </ul>
     );

@@ -5,13 +5,17 @@ import { useEffect, useState } from 'react';
 import IdolFavoriteList from './components/IdolFavoriteList';
 import IdolSelectList from './components/IdolSelectList';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 import { debounce } from '@/utils/debounce';
 import { sortByItems } from '@/utils/sortItems';
 import { getStorage, setStorage } from '@/utils/localStorage';
 
+
 import useLoad from '@/hooks/useLoad';
 import { getIdolData } from '@/apis/getIdolData';
+import { useTitle } from '@/hooks/useTitle';
+import useScrollToTop from '@/hooks/useScrollToTop';
 
 const ITEM_COUNTS = 100;
 
@@ -22,6 +26,9 @@ const INITIAL_VALUE = {
 };
 
 const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
+  useTitle('FANDOM-K | My Page');
+  useScrollToTop();
+
   const [idolList, setIdolList] = useState(INITIAL_VALUE);
   const [isLoading, loadingError, handleLoad] = useLoad(getIdolData);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -133,8 +140,6 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
 
   return (
     <div className={style.container}>
-      <Header />
-
       <main className={style.main}>
         <IdolFavoriteList
           onDelete={deleteFavorite}
@@ -154,6 +159,7 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
           onSubmit={submitIdolList}
         />
       </main>
+      <Footer />
     </div>
   );
 };
