@@ -46,7 +46,7 @@
 - **Distribute** : <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Vercel_logo_black.svg/70px-Vercel_logo_black.svg.png">
 - **Idea** : <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/98/Discord_logo.svg/80px-Discord_logo.svg.png"> / <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Notion-logo.svg/20px-Notion-logo.svg.png"> **Notion**
 - **Convention** 
-   - <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/ESLint_logo.svg/20px-ESLint_logo.svg.png"> **ESLint** <sup>(<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/50px-Airbnb_Logo_B%C3%A9lo.svg.png">)</sup>  
+   - <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/ESLint_logo.svg/20px-ESLint_logo.svg.png"> <sup>**ESLint**</sup> <sup>(<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/50px-Airbnb_Logo_B%C3%A9lo.svg.png">)</sup>  
    - <img src="https://prettier.io/icon.png" height=20> <sup>**Prettier**</sup>
    - <img src="https://gitmoji.dev/static/favicon-32x32.png" height=20> <sup>**gitmoji**</sup>
 - **Additional Library** 
