@@ -1,7 +1,6 @@
 
 # 🎤✨ FANDOM-K🎶🌟
-**코드잇 스프린터 6기 Part 2 과정 중 2팀이 진행하였던 기초 프로젝트인 Fandom-K에 대한 
-프론트엔드 소스 코드 페이지입니다.**
+**코드잇 스프린터 6기 Part 2 과정 중 2팀이 진행하였던 기초 프로젝트인 Fandom-K에 대한 소스 코드 페이지입니다.**
 
 ## 🏃프로젝트 소개
 <img src="https://github.com/sprint6-part2/fandom-k/assets/50625710/294b4bd6-168a-4bef-b66f-96f7003346d6" width=400>
