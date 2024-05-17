@@ -6,15 +6,15 @@ import { Background } from '@/components/Background';
 
 const App = () => {
   const location = useLocation();
-  const regxr = /(\/list|\/myPage)/;
+  const isListOrMyPage =
+    location.pathname.startsWith('/list') ||
+    location.pathname.startsWith('/myPage');
 
   return (
-    <>
-      {regxr.test(location.pathname) && <Header />}
-      <Background>
-        <Outlet />
-      </Background>
-    </>
+    <Background>
+      {isListOrMyPage && <Header />}
+      <Outlet />
+    </Background>
   );
 };
 

@@ -11,7 +11,7 @@ const MOBILE_WIDTH_540 = MOBILE_WIDTH + 165;
 const Idol = ({ idol, onClick, checked, size }) => {
   return (
     <>
-      <div className={style.idolItem}>
+      <div className={style.idol_item}>
         <Profile
           imageUrl={idol.profilePicture}
           size={size}
@@ -20,7 +20,7 @@ const Idol = ({ idol, onClick, checked, size }) => {
             onClick(idol, !checked);
           }}
         />
-        <div className={style.idolInfo}>
+        <div className={style.idol_info}>
           <h2>{idol.name}</h2>
           <h3>{idol.group}</h3>
         </div>

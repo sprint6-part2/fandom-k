@@ -1,4 +1,3 @@
-import * as React from 'react';
 const CreditIcon = ({ width = 17, height = 21, fill = 'white', ...props }) => (
   <svg
     width={width}

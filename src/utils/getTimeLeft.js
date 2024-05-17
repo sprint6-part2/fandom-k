@@ -1,5 +1,8 @@
-//현재 시각과 비교해서 남은 시간을 알려주는 함수
-//24시간 이상이면 일수를 24시간 이내면 시간을, 1시간 이내면 분을 표시
+/**
+ * 현재 시각과 비교해서 남은 시간을 알려줍니다
+ * @param {string} deadline
+ * @returns {Array} - 남은 시간 문자열
+ */
 export const getTimeLeft = (deadline) => {
   const difference = new Date(deadline) - new Date();
   if (difference <= 0) {

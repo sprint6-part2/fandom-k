@@ -13,11 +13,11 @@ const ModalHeader = ({ title, onClose }) => {
   return (
     <div
       className={classNames(style.container, {
-        [style.titleActive]: !!title,
+        [style.title_active]: !!title,
       })}
     >
       {title && <h2 className={style.title}>{title}</h2>}
-      <ModalCloseButton className={style.closeButton} onClick={onClose} />
+      <ModalCloseButton className={style.close_button} onClick={onClose} />
     </div>
   );
 };

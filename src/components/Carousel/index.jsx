@@ -1,4 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
 import { useState, Children, useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -11,7 +10,7 @@ import { debounce } from '@/utils/debounce';
 
 const CarouselArrow = ({ onClick, longArrow, hidden }) => {
   const arrowClass = classNames(styles.arrow, {
-    [styles.longArrow]: longArrow,
+    [styles.long_arrow]: longArrow,
     [styles.hidden]: hidden && !longArrow,
   });
   return (

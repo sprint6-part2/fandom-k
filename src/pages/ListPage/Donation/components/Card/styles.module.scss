@@ -1,7 +1,7 @@
 @import '../../../../../styles/';
 
 // 카드 상단 부분
-.topWrapper {
+.top_wrapper {
   position: relative;
   height: 293px;
 
@@ -14,9 +14,8 @@
   }
 }
 
-
 @media (max-width: $width-mobile) {
-  .topWrapper {
+  .top_wrapper {
     height: 206px;
   }
 }
@@ -42,13 +41,13 @@
 }
 
 @media (max-width: 550px) {
-  .topWrapper {
+  .top_wrapper {
     height: 246px;
   }
 }
 
 @media (max-width: 460px) {
-  .topWrapper {
+  .top_wrapper {
     height: 226px;
   }
   .button {
@@ -59,7 +58,7 @@
 }
 
 @media (max-width: $width-mobile) {
-  .topWrapper {
+  .top_wrapper {
     height: 206px;
   }
 }

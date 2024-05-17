@@ -3,12 +3,9 @@ import { createBrowserRouter } from 'react-router-dom';
 import LadingPage from './pages/LandingPage';
 import ListPage from './pages/ListPage';
 import MyPage from './pages/MyPage';
-import TestPage from './pages/TestPage';
 import NotFoundPage from './pages/NotFoundPage';
 import { CreditProvider } from '@/contexts/CreditContext';
 import App from './App';
-
-// const location = useLocation();
 
 const router = createBrowserRouter([
   {
@@ -29,10 +26,6 @@ const router = createBrowserRouter([
       {
         path: '/myPage',
         element: <MyPage />,
-      },
-      {
-        path: '/test',
-        element: <TestPage />,
       },
       {
         path: '*',

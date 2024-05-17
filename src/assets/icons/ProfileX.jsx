@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 const ProfileXIcon = ({ width = '32', height = '32', ...props }) => {
   return (
     <svg

@@ -27,7 +27,7 @@ $color-credit-border: #f1eef9;
   }
 }
 
-.creditInfo {
+.credit_info {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -87,7 +87,7 @@ $color-credit-border: #f1eef9;
     }
   }
 
-  .creditInfo {
+  .credit_info {
     > span {
       font-size: 20px;
     }

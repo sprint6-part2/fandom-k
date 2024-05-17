@@ -1,6 +1,6 @@
 @import '../../styles/';
 
-.modalBackDrop {
+.modal_back_drop {
   position: fixed;
   display: flex;
   justify-content: center;
@@ -14,14 +14,11 @@
   z-index: 999;
 }
 
-.modalView {
+.modal_view {
   display: flex;
   align-items: center;
   flex-direction: column;
   border-radius: 8px;
   padding: 24px 16px;
   background-color: $color-black-100;
-  // 하기 두 값은 테스트 값이므로 삭제해도 무관
-  // width: 96dvw;
-  // height: 96dvh;
 }

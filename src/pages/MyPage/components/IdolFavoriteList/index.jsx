@@ -14,7 +14,7 @@ setStorage("favoriteIdolList",  JSON.stringify([]));
 
 const FavoriteIdol = ({ idol, onDelete, size }) => {
   return (
-    <div className={style.idolItem}>
+    <div className={style.idol_item}>
       <Profile
         imageUrl={idol.profilePicture}
         size={size}
@@ -23,7 +23,7 @@ const FavoriteIdol = ({ idol, onDelete, size }) => {
           onDelete(idol);
         }}
       />
-      <div className={style.idolInfo}>
+      <div className={style.idol_info}>
         <h2>{idol.name}</h2>
         <h3>{idol.group}</h3>
       </div>

@@ -25,7 +25,7 @@
   }
 
   /* 태블릿 */
-  @media (min-width: ($width-mobile + 1)) and (max-width: $width-tablet) {
+  @media (max-width: $width-tablet) {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;

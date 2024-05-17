@@ -10,7 +10,7 @@ const Card = ({ item, setIsDonate }) => {
 
   return (
     <article>
-      <div className={style.topWrapper}>
+      <div className={style.top_wrapper}>
         <div className={style.gradient} />
         <img src={item.idol.profilePicture} alt={item.idol.name} />
         <div className={style.button}>

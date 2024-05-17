@@ -26,17 +26,17 @@ const ProgressBar = ({
   return (
     // 높이는 26px로 고정
     <div className={styles.container}>
-      <div className={styles.infoContainer}>
+      <div className={styles.info_container}>
         <div className={styles.credit}>
           <CreditIcon />
-          <span className={styles.creditCount}>{credit}</span>
+          <span className={styles.credit_count}>{credit}</span>
         </div>
         <div className={styles.countdown}>{countdown}</div>
       </div>
-      <div className={styles.progressBar}>
+      <div className={styles.progress_bar}>
         <div
           className={styles.progressed}
-          style={{ width: `${progressed}%` }}
+          style={{ width: progressed > 100 ? '100%' : `${progressed}%` }}
         ></div>
       </div>
     </div>

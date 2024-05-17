@@ -1,4 +1,3 @@
-import * as React from 'react';
 const BackButton = ({ width = 24, height = 24, ...props }) => (
   <svg
     width={width}

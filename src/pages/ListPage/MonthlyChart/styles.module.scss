@@ -8,7 +8,7 @@
   margin: 80px auto 0;
 
   /* 태블릿 */
-  @media (min-width: ($width-mobile + 1)) and (max-width: $width-tablet) {
+  @media (max-width: $width-tablet) {
     max-width: 700px;
     min-height: 609px;
     margin: 60px auto 0;
@@ -37,7 +37,7 @@
     line-height: 26px;
     color: white;
     /* 태블릿 */
-    @media (min-width: ($width-mobile + 1)) and (max-width: $width-tablet) {
+    @media (max-width: $width-tablet) {
       @include font-weight-size(700, 20px);
     }
     /* 모바일 */

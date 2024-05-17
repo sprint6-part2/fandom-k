@@ -13,7 +13,7 @@ const Credit = () => {
     <section className={styles.container}>
       <div className={styles.credit}>
         <span>내 크레딧</span>
-        <div className={styles.creditInfo}>
+        <div className={styles.credit_info}>
           <CreditIcon />
           <span>{getCredit().toLocaleString('ko-KR')}</span>
         </div>
