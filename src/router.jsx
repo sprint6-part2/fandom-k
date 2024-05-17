@@ -6,10 +6,16 @@ import MyPage from './pages/MyPage';
 import NotFoundPage from './pages/NotFoundPage';
 import { CreditProvider } from '@/contexts/CreditContext';
 import App from './App';
+import { AnimatePresence } from 'framer-motion';
 
 const router = createBrowserRouter([
   {
-    element: <App />,
+    path: '/',
+    element: (
+      <AnimatePresence>
+        <App />
+      </AnimatePresence>
+    ),
     children: [
       {
         path: '/',

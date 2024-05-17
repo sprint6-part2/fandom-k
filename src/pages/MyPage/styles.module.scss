@@ -1,6 +1,6 @@
 @import '../../styles/';
 
-@mixin flex_center {
+@mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,14 +14,7 @@
 
 .main {
   max-width: 1360px;
-  margin: 0 auto 100px;
-  > button {
-    @include flex_center;
-    width: 255px;
-    height: 48px;
-
-    margin: 20px auto;
-  }
+  margin: 0 auto;
 }
 
 .line {

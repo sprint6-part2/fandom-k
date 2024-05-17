@@ -18,6 +18,8 @@
 
 .list_box {
   padding-inline: 50px;
+  position: relative;
+  z-index: 3;
 }
 
 .title {
@@ -50,6 +52,14 @@
   }
 }
 
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 401px;
+}
+
 @media (max-width: $width-tablet) {
   .title {
     margin-block-end: 24px;
@@ -57,8 +67,13 @@
 
     @include font-base($color-white, 700, 20px, 26px);
   }
+
   .list_box {
     padding-inline: 20px;
+  }
+
+  .loading {
+    height: 355px;
   }
 }
 
@@ -69,9 +84,12 @@
 
     @include font-base($color-white, 700, 16px, 26px);
   }
-}
-:global {
-  .slick-track {
-    margin: 0;
+
+  .idolItem {
+    width: 60px;
+  }
+
+  .loading {
+    height: 305px;
   }
 }

@@ -52,7 +52,13 @@ const LadingPage = () => {
     navigate('/list');
   };
   return (
-    <div className={styles.container}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+      className={styles.container}
+    >
       <div className={styles.contents}>
         <div className={styles.main}>
           <div className={styles.info}>
@@ -106,7 +112,7 @@ const LadingPage = () => {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
