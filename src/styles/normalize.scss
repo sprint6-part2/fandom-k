@@ -16,3 +16,17 @@ body,
 body {
   margin: 0;
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient($color-brand-pink, $color-brand-orange);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient($color-brand-orange, $color-brand-pink);
+}
