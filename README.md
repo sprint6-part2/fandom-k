@@ -110,8 +110,9 @@
 
 <br>
 
-- 이지현
-  - 프로젝트 초기 세팅배포 및 자동화 작업  
+<img src="https://github.com/sprint6-part2/fandom-k/assets/50625710/286b6c66-b20d-4447-afd6-de53ce3f2296" width=15>  이지현 
+  - 프로젝트 초기 세팅
+  - 배포 및 자동화 작업  
   - 애니메이션 적용  
   - 캐러셀, 프로필, 로딩 에러 
   - 푸터 컴포넌트 
@@ -120,7 +121,7 @@
 
 <br>
 
-- 채종민
+<img src="https://github.com/sprint6-part2/fandom-k/assets/50625710/a8197223-29dc-415f-81a2-ef4a2f0b2e34" width=15>  채종민
   - 진행바 및 헤더 로딩 스피너 
   - 이 달의 차트 파트 
   - 발표 자료 제작  
@@ -128,7 +129,7 @@
 
 <br>
 
-- 이종욱  
+<img src="https://github.com/sprint6-part2/fandom-k/assets/50625710/adb2cc9e-e901-456c-8a62-e717f544144b" width=15>  이종욱  
   - 모달 초기 UI 및 기능 제작
   - 배경 및 그라데이션 UI 제작
   - 마이 페이지
@@ -136,7 +137,7 @@
 
 <br>
 
-- 김혜경 
+<img src="https://github.com/sprint6-part2/fandom-k/assets/50625710/7fd9c255-339d-486c-a119-79f609df436f" width=15> 김혜경 
   - 스타일 초기 셋팅  
   - 버튼 UI 제작  
   - 메타데이터 작성  
@@ -144,7 +145,7 @@
   
 <br>
 
-- 김고넬료
+<img src="https://github.com/sprint6-part2/fandom-k/assets/50625710/8fd6c2c6-00ac-434c-8dbf-5e84a640f207" width=15> 김고넬료
   - README 파일 초안 작성
   
 <br>
@@ -152,17 +153,23 @@
 
 ## 💻 기술 스택
 - ### Environment
+<div>
 <img src="https://img.shields.io/badge/visual studio code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white"> 
 <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> 
 <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
 <img src="https://img.shields.io/badge/github_actions-2088ff?style=for-the-badge&logo=githubactions&logoColor=white">
+</div>
+<br>
 
 - ### Config
+<div>
 <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white"> <img src="https://img.shields.io/badge/eslint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white"> <img src="https://img.shields.io/badge/prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=black">
 <img src="https://img.shields.io/badge/vite-646cff?style=for-the-badge&logo=vite&logoColor=white">
-
+</div>
+<br>
 
 - ### Development
+<div>
 <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">  
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
 <img src="https://img.shields.io/badge/css_modules-000000?style=for-the-badge&logo=cssmodules&logoColor=white"/>
@@ -170,13 +177,19 @@
 <img src="https://img.shields.io/badge/axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white"/>
 <img src="https://img.shields.io/badge/framer-0055FF?style=for-the-badge&logo=framer&logoColor=white">
 <img src="https://img.shields.io/badge/react_router-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white">
+</div>
+<br>
 
 - ### Deploy
+<div>
 <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=Vercel&logoColor=white"/>
+</div>
+<br>
 
 - ### Collaboration Tools
+<div>
 <img src="https://img.shields.io/badge/slack-4A154B?style=for-the-badge&logo=slack&logoColor=white"/> <img src="https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=notion&logoColor=white"/>   <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=Discord&logoColor=white"/> 
-
+</div>
 <br>
 
 ## 🗂️ 폴더 구조
@@ -237,17 +250,17 @@
 
 ### 문제점
 
-- Github Orginazation에 대한 배포 시 유료 기능 지원 문제 ([#32](#32), #35)
-- 캐러셀 컴포넌트 내 React-Slick 슬라이드 멈춤 문제 (#51, #65)
-- 모달과 페이지 컴포넌트 간의 우선 순위 문제 (#60)
-- 페이지 이동 시, 스크롤이 그대로 유지되는 문제 (#82)
+- Github Orginazation에 대한 배포 시 유료 기능 지원 문제 ([#32](#32), [#35](#32))
+- 캐러셀 컴포넌트 내 React-Slick 슬라이드 멈춤 문제 ([#51](#51), [#65](#65))
+- 모달과 페이지 컴포넌트 간의 우선 순위 문제 ([#60](#60))
+- 페이지 이동 시, 스크롤이 그대로 유지되는 문제 ([#82](#82))
 
 ### 해결 방안
 
-- Git Action을 활용하여 자동 배포 및 PR 프리뷰 생성 (#32, #35)
-- React-Slick 내 설정 내용 중, useEffect가 발생될 떄, 슬라이드를 처음으로 이동하도록 변경 (#51, #65)
-- createPortal 을 활용하여 DOM 구조에 종속되지 않도록 구현 (#60)
-- 스크롤을 초기화하는 Hook을 구현하여, 각 페이지마다 적용되도록 변경 (#82)
+- Git Action을 활용하여 자동 배포 및 PR 프리뷰 생성 ([#32](#32), [#35](#32))
+- React-Slick 내 설정 내용 중, useEffect가 발생될 떄, 슬라이드를 처음으로 이동하도록 변경 ([#51](#51), [#65](#65))
+- createPortal 을 활용하여 DOM 구조에 종속되지 않도록 구현 ([#60](#60))
+- 스크롤을 초기화하는 Hook을 구현하여, 각 페이지마다 적용되도록 변경 ([#60](#60))
 
 <br>
 
