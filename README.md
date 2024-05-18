@@ -18,14 +18,6 @@
 
 <br>
 
-## 🤔 프로젝트 선정 이유
-
-- 실제로 아이돌을 좋아하는 팀원
-- 타 프로젝트와 난이도 차이가 크지 않음
-- 어려운 프로젝트에 도전하고 싶은 욕구
-
-<br>
-
 ## 📌 주요 기능
 
 - **헤더**
@@ -107,28 +99,32 @@
 
 <br>
 
-## 💻 개발 환경
+## 💻 기술 스택
+- ### Environment
+<img src="https://img.shields.io/badge/visual studio code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white"> 
+<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> 
+<img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
+<img src="https://img.shields.io/badge/github_actions-2088ff?style=for-the-badge&logo=githubactions&logoColor=white">
 
-- **Version** : <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/30px-Node.js_logo.svg.png"> **20.12.2 (NPM)**
-- **IDE** : <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/20px-Visual_Studio_Code_1.35_icon.svg.png"> **Visual Studio Code**
-- **Language**: <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/20px-Unofficial_JavaScript_logo_2.svg.png"> **ECMAScript 2023**
-- **Base Library** : <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/20px-React-icon.svg.png"> **React 18.2.0**
-- **Style** : <img src="https://sass-lang.com/assets/img/logos/logo.svg" height=20> **Module.scss** / <img src="https://camo.githubusercontent.com/3bcd317876dc122d3055613c7f5450134050d0c5a8683807c6f2e8e2178737b0/68747470733a2f2f6672616d657275736572636f6e74656e742e636f6d2f696d616765732f34386861395a52396f5a51475136675a38595566456c50335430412e706e67" height=17> **Framer Motion**
-- **CI/CD** : <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/40px-Git-logo.svg.png"> / <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Font_Awesome_5_brands_github.svg/20px-Font_Awesome_5_brands_github.svg.png"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/GitHub_logo_2013.svg/50px-GitHub_logo_2013.svg.png">
-- **API** : <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Swagger-logo.png/20px-Swagger-logo.png"> **Swagger**
-- **Network** : <img src="https://camo.githubusercontent.com/e56453737f3695a5d21d1393764ac1bc89032f5f4d2fc9fa486c980859347275/68747470733a2f2f6178696f732d687474702e636f6d2f6173736574732f6c6f676f2e737667" height=10 >
-- **Build** : <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/20px-Vitejs-logo.svg.png"> **Vite**
-- **Distribute** : <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Vercel_logo_black.svg/70px-Vercel_logo_black.svg.png">
-- **Idea** : <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/98/Discord_logo.svg/80px-Discord_logo.svg.png"> / <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Notion-logo.svg/20px-Notion-logo.svg.png"> **Notion**
-- **Convention**
-  - <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/ESLint_logo.svg/20px-ESLint_logo.svg.png"> <sup>**ESLint**</sup> <sup>(<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/50px-Airbnb_Logo_B%C3%A9lo.svg.png">)</sup>
-  - <img src="https://prettier.io/icon.png" height=20> <sup>**Prettier**</sup>
-  - <img src="https://gitmoji.dev/static/favicon-32x32.png" height=20> <sup>**gitmoji**</sup>
-- **Additional Library**
-  - **React Slick**
-  - **React Portal**
-  - **React Router DOM**
-- **SVG** : **[SVG Component](https://www.svgviewer.dev/)**
+- ### Config
+<img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white"> <img src="https://img.shields.io/badge/eslint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white"> <img src="https://img.shields.io/badge/prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=black">
+<img src="https://img.shields.io/badge/vite-646cff?style=for-the-badge&logo=vite&logoColor=white">
+
+
+- ### Development
+<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">  
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+<img src="https://img.shields.io/badge/css_modules-000000?style=for-the-badge&logo=cssmodules&logoColor=white"/>
+<img src="https://img.shields.io/badge/scss-CC6699?style=for-the-badge&logo=sass&logoColor=white"/>
+<img src="https://img.shields.io/badge/axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white"/>
+<img src="https://img.shields.io/badge/framer-0055FF?style=for-the-badge&logo=framer&logoColor=white">
+<img src="https://img.shields.io/badge/react_router-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white">
+
+- ### Deploy
+<img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=Vercel&logoColor=white"/>
+
+- ### Collaboration Tools
+<img src="https://img.shields.io/badge/slack-4A154B?style=for-the-badge&logo=slack&logoColor=white"/> <img src="https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=notion&logoColor=white"/>   <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=Discord&logoColor=white"/> 
 
 <br>
 
@@ -168,11 +164,8 @@
  ┃ ┃ ┃ ┗ 📂Nothing
  ┃ ┣ 📂NotFoundPage
  ┣ 📂styles
- ┣ 📂utils
- ┣ 📜App.jsx
- ┣ 📜main.jsx
- ┗ 📜router.jsx
-```
+ ┗ 📂utils
+ ```
 
 <br>
 
@@ -193,7 +186,7 @@
 
 ### 문제점
 
-- Github Orginazation에 대한 배포 시 유료 기능 지원 문제 (#32, #35)
+- Github Orginazation에 대한 배포 시 유료 기능 지원 문제 ([#32](#32), #35)
 - 캐러셀 컴포넌트 내 React-Slick 슬라이드 멈춤 문제 (#51, #65)
 - 모달과 페이지 컴포넌트 간의 우선 순위 문제 (#60)
 - 페이지 이동 시, 스크롤이 그대로 유지되는 문제 (#82)
