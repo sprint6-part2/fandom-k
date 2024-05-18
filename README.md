@@ -110,7 +110,7 @@
 
 <br>
 
-<img src="https://github.com/sprint6-part2/fandom-k/assets/50625710/286b6c66-b20d-4447-afd6-de53ce3f2296" width=15>  이지현 
+<img src="https://github.com/sprint6-part2/fandom-k/assets/50625710/286b6c66-b20d-4447-afd6-de53ce3f2296" width=15>  **이지현** 
   - 프로젝트 초기 세팅
   - 배포 및 자동화 작업  
   - 애니메이션 적용  
@@ -121,7 +121,7 @@
 
 <br>
 
-<img src="https://github.com/sprint6-part2/fandom-k/assets/50625710/a8197223-29dc-415f-81a2-ef4a2f0b2e34" width=15>  채종민
+<img src="https://github.com/sprint6-part2/fandom-k/assets/50625710/a8197223-29dc-415f-81a2-ef4a2f0b2e34" width=15>  **채종민**
   - 진행바 및 헤더 로딩 스피너 
   - 이 달의 차트 파트 
   - 발표 자료 제작  
@@ -129,7 +129,7 @@
 
 <br>
 
-<img src="https://github.com/sprint6-part2/fandom-k/assets/50625710/adb2cc9e-e901-456c-8a62-e717f544144b" width=15>  이종욱  
+<img src="https://github.com/sprint6-part2/fandom-k/assets/50625710/adb2cc9e-e901-456c-8a62-e717f544144b" width=15>  **이종욱**  
   - 모달 초기 UI 및 기능 제작
   - 배경 및 그라데이션 UI 제작
   - 마이 페이지
@@ -137,7 +137,7 @@
 
 <br>
 
-<img src="https://github.com/sprint6-part2/fandom-k/assets/50625710/7fd9c255-339d-486c-a119-79f609df436f" width=15> 김혜경 
+<img src="https://github.com/sprint6-part2/fandom-k/assets/50625710/7fd9c255-339d-486c-a119-79f609df436f" width=15> **김혜경** 
   - 스타일 초기 셋팅  
   - 버튼 UI 제작  
   - 메타데이터 작성  
@@ -145,7 +145,7 @@
   
 <br>
 
-<img src="https://github.com/sprint6-part2/fandom-k/assets/50625710/8fd6c2c6-00ac-434c-8dbf-5e84a640f207" width=15> 김고넬료
+<img src="https://github.com/sprint6-part2/fandom-k/assets/50625710/8fd6c2c6-00ac-434c-8dbf-5e84a640f207" width=15> **김고넬료**
   - README 파일 초안 작성
   
 <br>
