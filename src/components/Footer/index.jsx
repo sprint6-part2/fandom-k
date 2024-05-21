@@ -11,14 +11,10 @@ const Footer = () => {
       <span>
         <span>6기 2조 </span>Fandom-K
       </span>
-      <div>
-        <img
-          src={GithubLogo}
-          width={20}
-          onClick={() =>
-            window.open('https://github.com/sprint6-part2/fandom-k')
-          }
-        />
+      <div
+        onClick={() => window.open('https://github.com/sprint6-part2/fandom-k')}
+      >
+        <img src={GithubLogo} width={20} />
         <span>GitHub</span>
       </div>
     </footer>
