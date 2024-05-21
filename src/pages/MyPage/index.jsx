@@ -39,7 +39,7 @@ const check_collection = (idolList) => {
   return null;
 };
 
-const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
+const MyPage = () => {
   useTitle('FANDOM-K | My Page');
   useScrollToTop();
 
@@ -146,7 +146,7 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
         setIdolList(IdolData);
         setInit(true);
       } else {
-        getIdolList({ pageSize, keyword });
+        getIdolList({ pageSize: ITEM_COUNTS, keyword: '' });
       }
     } else {
       setStorage('IdolList', JSON.stringify(idolList));

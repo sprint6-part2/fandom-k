@@ -25,6 +25,14 @@ export const checkCondition = (width) => {
   return count > 3 ? count : 3;
 };
 
+/**
+ * @param {object} idol 아이돌에 대한 정보
+ * @param {function} onClick 아이콘을 클릭했을 때 실행되는 함수
+ * @param {boolean} checked 아이콘 클릭 여부 판단
+ * @param {string} size 반응형에서 설정할 아이콘 크기
+ * @returns
+ */
+
 const Idol = ({ idol, onClick, checked, size }) => {
   return (
     <>
@@ -45,6 +53,18 @@ const Idol = ({ idol, onClick, checked, size }) => {
     </>
   );
 };
+
+/**
+ * @param {Object[]} list 아이돌에 대한 정보가 담긴 배열
+ * @param {Object[]} favoriteList 선호하는 아이돌에 대한 정보가 담긴 배열
+ * @param {number} windowWidth 현재 윈도우의 크기
+ * @param {function} onClick 아이콘을 클릭했을 때 실행할 등록된 함수
+ * @param {boolean} isLoading 로딩 중인지 여부
+ * @param {object} loadingError 발생한 에러에 대한 정보
+ * @param {function} onSubmit 제출버튼을 클릭했을 때 실행할 등록된 함수
+ * @param {function} onNext 다음 데이터를 요청할 때 사용할 함수
+ * @returns
+ */
 
 const IdolSelectList = ({
   list,

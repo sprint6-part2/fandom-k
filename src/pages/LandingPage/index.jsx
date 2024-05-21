@@ -16,7 +16,7 @@ import { motion } from 'framer-motion';
 import useScrollToTop from '@/hooks/useScrollToTop';
 import { useEffect } from 'react';
 
-const LadingPage = () => {
+const LandingPage = () => {
   useTitle('FANDOM-K | Randing Page');
   useScrollToTop();
   const navigate = useNavigate();
@@ -116,4 +116,4 @@ const LadingPage = () => {
   );
 };
 
-export default LadingPage;
+export default LandingPage;

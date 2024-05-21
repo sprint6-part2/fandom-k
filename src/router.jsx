@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import LadingPage from './pages/LandingPage';
+import LandingPage from './pages/LandingPage';
 import ListPage from './pages/ListPage';
 import MyPage from './pages/MyPage';
 import NotFoundPage from './pages/NotFoundPage';
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <LadingPage />,
+        element: <LandingPage />,
       },
       {
         path: '/list',
