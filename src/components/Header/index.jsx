@@ -11,7 +11,7 @@ const Header = () => {
         <Link to="/list" className={styles.logo}>
           <Logo />
         </Link>
-        <Link to="/myPage" className={styles.profileImg}>
+        <Link to="/myPage" className={styles.profile_img}>
           <img src={userIcon} alt="프로필 이미지" />
         </Link>
       </div>

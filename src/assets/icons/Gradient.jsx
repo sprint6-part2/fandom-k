@@ -1,4 +1,3 @@
-import * as React from 'react';
 const Gradient = ({ width = 225, height = 364, ...props }) => (
   <svg
     width={width}

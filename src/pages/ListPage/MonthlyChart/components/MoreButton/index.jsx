@@ -10,7 +10,7 @@ const MoreButton = ({
   nextCursor,
 }) => {
   return (
-    <div className={styles.moreButton}>
+    <div className={styles.more_button}>
       {isLoading && idolListLength > 0 ? (
         <CustomButton
           btnText={<Spinner width="100%" height="100%" fill="white" />}

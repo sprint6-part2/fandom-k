@@ -12,7 +12,7 @@ const ModalMobileHeader = ({ title, onClose }) => {
   return (
     <div className={style.container}>
       <h2 className={style.title}>{title}</h2>
-      <BackButton className={style.backButton} onClick={onClose} />
+      <BackButton className={style.back_button} onClick={onClose} />
     </div>
   );
 };

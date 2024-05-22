@@ -1,4 +1,3 @@
-import * as React from 'react';
 const ModalCloseButton = ({
   width = 14,
   height = 14,

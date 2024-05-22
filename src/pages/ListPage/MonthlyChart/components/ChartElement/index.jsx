@@ -22,14 +22,14 @@ const ChartElement = ({ idol, ranking }) => {
       transition={{ duration: 1 }}
       className={styles.container}
     >
-      <div className={styles.idolInfo}>
+      <div className={styles.idol_info}>
         <div className={styles.img}>
           <Profile size="sm" imageUrl={profilePicture} />
         </div>
         <span className={styles.ranking}>{ranking}</span>
         <div className={styles.name}>{name}</div>
       </div>
-      <div className={styles.totalVotes}>{totalVotes}</div>
+      <div className={styles.total_votes}>{totalVotes}</div>
     </motion.li>
   );
 };

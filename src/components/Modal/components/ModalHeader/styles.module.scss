@@ -7,10 +7,10 @@
   > h2 {
     @include font-base($color-white, 600, 18px, 21.48px);
   }
-  > .closeButton {
+  > .close_button {
     cursor: pointer;
   }
-  &.titleActive {
+  &.title_active {
     justify-content: space-between;
   }
 }

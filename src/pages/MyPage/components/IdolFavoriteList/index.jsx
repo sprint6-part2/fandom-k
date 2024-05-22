@@ -22,9 +22,17 @@ export const checkCondition = (width) => {
   return count > 3 ? count : 3;
 };
 
+/**
+ * @param {object} idol 아이돌에 대한 정보
+ * @param {function} onDelete x 아이콘을 클릭했을 때 실행되는 함수
+ * @param {string} size 반응형에서 설정할 아이콘 크기
+ * @param {string} groupImage 특정 조건에서 실행할 이미지 경로
+ * @returns
+ */
+
 const FavoriteIdol = ({ idol, onDelete, size, groupImage }) => {
   return (
-    <div className={style.idolItem}>
+    <div className={style.idol_item}>
       <Profile
         imageUrl={
           groupImage && idol.group === '세븐틴'
@@ -37,13 +45,23 @@ const FavoriteIdol = ({ idol, onDelete, size, groupImage }) => {
           onDelete(idol);
         }}
       />
-      <div className={style.idolInfo}>
+      <div className={style.idol_info}>
         <h2>{idol.name}</h2>
         <h3>{idol.group}</h3>
       </div>
     </div>
   );
 };
+
+/**
+ * @param {function} onDelete x 아이콘을 클릭했을 때 실행되는 함수
+ * @param {Object[]} list 아이돌에 대한 정보
+ * @param {number} windowWidth 현재 윈도우의 크기
+ * @param {boolean} isLoading 로딩 중인지 여부
+ * @param {object} loadingError 발생한 에러에 대한 정보
+ * @param {string[]} collection 멤버가 다 모인 아이돌의 그룹 이름 리스트
+ * @returns
+ */
 
 const IdolFavoriteList = ({
   onDelete,

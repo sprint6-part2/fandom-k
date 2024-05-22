@@ -8,7 +8,7 @@
   justify-content: space-between;
 }
 
-.infoContainer {
+.info_container {
   display: flex;
   justify-content: space-between;
 }
@@ -19,7 +19,7 @@
   grid-template-columns: 12px 1fr;
   gap: 2px;
 
-  .creditCount {
+  .credit_count {
     @include font-weight-size(400, 12px);
     @include font-line_height-letter_spacing(18px, -0.2px);
     color: $color-brand-orange;
@@ -32,7 +32,7 @@
   color: white;
 }
 
-.progressBar {
+.progress_bar {
   width: 100%;
   height: 1px;
   background-color: white;

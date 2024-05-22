@@ -1,4 +1,3 @@
-import * as React from 'react';
 const Chart = ({ width = 24, height = 25, stroke = 'white', ...props }) => (
   <svg
     width={width}

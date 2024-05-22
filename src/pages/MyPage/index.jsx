@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 import IdolFavoriteList from './components/IdolFavoriteList';
 import IdolSelectList from './components/IdolSelectList';
-import Header from '@/components/Header';
+
 import Footer from '@/components/Footer';
 import { toast } from 'react-toastify';
 
@@ -39,7 +39,7 @@ const check_collection = (idolList) => {
   return null;
 };
 
-const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
+const MyPage = () => {
   useTitle('FANDOM-K | My Page');
   useScrollToTop();
 
@@ -146,7 +146,7 @@ const MyPage = ({ pageSize = ITEM_COUNTS, keyword = '' }) => {
         setIdolList(IdolData);
         setInit(true);
       } else {
-        getIdolList({ pageSize, keyword });
+        getIdolList({ pageSize: ITEM_COUNTS, keyword: '' });
       }
     } else {
       setStorage('IdolList', JSON.stringify(idolList));

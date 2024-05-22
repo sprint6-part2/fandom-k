@@ -1,6 +1,3 @@
-/* eslint-disable object-curly-newline */
-import * as React from 'react';
-
 const CheckIcon = ({ width = 36, height = 27, fill = 'white', ...props }) => {
   return (
     <svg

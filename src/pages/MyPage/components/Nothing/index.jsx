@@ -1,5 +1,9 @@
 import Logo from '@/assets/icons/Logo';
 import style from './styles.module.scss';
+/**
+ * @param {string} content 보여주고자 하는 내용
+ * @returns
+ */
 
 export const Nothing = ({ content }) => {
   return (

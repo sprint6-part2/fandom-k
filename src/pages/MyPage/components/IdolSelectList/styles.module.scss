@@ -39,7 +39,7 @@
   }
 }
 
-.idolInfo {
+.idol_info {
   @include set-flex-column-center-gap(0, 0);
   > h2 {
     @include font-base($color-white-200, 700, 16px, 26px);
@@ -64,7 +64,7 @@
   height: 401px;
 }
 
-.idolItem {
+.idol_item {
   @include set-flex-column-center-gap(0, 0);
 
   padding-block: 10px;
@@ -91,7 +91,7 @@
     @include font-base($color-white, 700, 16px, 26px);
   }
 
-  .idolItem {
+  .idol_item {
     max-width: 98px;
   }
 

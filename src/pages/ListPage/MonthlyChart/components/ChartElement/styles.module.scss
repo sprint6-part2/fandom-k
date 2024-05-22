@@ -8,7 +8,7 @@ $color-white-60-percent: #ffffff99;
   justify-content: space-between;
   align-items: center;
   /* 태블릿 */
-  @media (min-width: ($width-mobile + 1)) and (max-width: $width-tablet) {
+  @media (max-width: $width-tablet) {
     width: 100%;
   }
   /* 모바일 */
@@ -17,7 +17,7 @@ $color-white-60-percent: #ffffff99;
   }
 }
 
-.idolInfo {
+.idol_info {
   display: flex;
   gap: 12px;
   align-items: center;
@@ -39,7 +39,7 @@ $color-white-60-percent: #ffffff99;
   line-height: 19px;
   color: $color-white-87-percent;
   /* 태블릿 */
-  @media (min-width: ($width-mobile + 1)) and (max-width: $width-tablet) {
+  @media (max-width: $width-tablet) {
     @include font-weight-size(500, 14px);
   }
   /* 모바일 */
@@ -48,11 +48,11 @@ $color-white-60-percent: #ffffff99;
   }
 }
 
-.totalVotes {
+.total_votes {
   @include font-weight-size(400, 16px);
   line-height: 19px;
   color: $color-white-60-percent;
-  @media (min-width: ($width-mobile + 1)) and (max-width: $width-tablet) {
+  @media (max-width: $width-tablet) {
     @include font-weight-size(400, 14px);
   }
   /* 모바일 */

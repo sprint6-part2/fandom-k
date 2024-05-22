@@ -29,17 +29,12 @@
   @include font-base($color-white, 700, 24px, 26px);
 }
 
-.idolList {
-  display: flex;
-  gap: 20px;
-}
-
-.idolItem {
+.idol_item {
   width: 100px;
   @include set-flex-column-center-gap(0, 0);
 }
 
-.idolInfo {
+.idol_info {
   max-width: 84px;
   @include set-flex-column-center-gap(0, 0);
   > h2 {

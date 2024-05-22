@@ -15,14 +15,14 @@ const Modal = ({ isOpen, onClose, children }) => {
     <AnimatePresence>
       {isOpen && (
         <motion.aside
-          className={style.modalBackDrop}
+          className={style.modal_back_drop}
           onClick={onClose}
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -100 }}
         >
           <div
-            className={style.modalView}
+            className={style.modal_view}
             onClick={(e) => {
               return e.stopPropagation();
             }}
