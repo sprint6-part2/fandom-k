@@ -1,7 +1,11 @@
 # 🎤✨ FANDOM-K🎶🌟
 
 코드잇 스프린트 6기 Part 2 과정에서 2팀이 진행한 기초 프로젝트 **Fandom-K** 레포지토리
+<br>
 
+## 🔗 배포 주소
+
+https://fandom-k.vercel.app
 <br>
 
 ## 🏃프로젝트 소개
@@ -11,10 +15,10 @@
 - 리스트 페이지를 통해 아이돌을 후원하고 투표
 - 마이 페이지를 통해 좋아하는 아이돌을 선택하여, 좋아하는 아이돌 목록 생성
 
-<img src="https://github.com/sprint6-part2/fandom-k/assets/50625710/294b4bd6-168a-4bef-b66f-96f7003346d6" width=350>
-<img src="https://github.com/sprint6-part2/fandom-k/assets/50625710/415183f1-2f40-4c9f-8cbc-87fe20e2bb80" width=350>
-<img src="https://github.com/sprint6-part2/fandom-k/assets/50625710/33d61cf5-4430-4c2b-83f3-349451305e16" width=350>
-<img src="https://github.com/sprint6-part2/fandom-k/assets/50625710/8bd6ded6-89a5-4f4f-9d01-fda4808ccb20" width=350>
+[<img src="https://github.com/sprint6-part2/fandom-k/assets/50625710/294b4bd6-168a-4bef-b66f-96f7003346d6" width=350>](https://fandom-k.vercel.app/)
+[<img src="https://github.com/sprint6-part2/fandom-k/assets/50625710/415183f1-2f40-4c9f-8cbc-87fe20e2bb80" width=350>](https://fandom-k.vercel.app/myPage)
+[<img src="https://github.com/sprint6-part2/fandom-k/assets/50625710/33d61cf5-4430-4c2b-83f3-349451305e16" width=350>](https://fandom-k.vercel.app/list)
+[<img src="https://github.com/sprint6-part2/fandom-k/assets/50625710/8bd6ded6-89a5-4f4f-9d01-fda4808ccb20" width=350>](https://fandom-k.vercel.app/list)
 
 <br>
 
@@ -186,6 +190,7 @@
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
 <img src="https://img.shields.io/badge/css_modules-000000?style=for-the-badge&logo=cssmodules&logoColor=white"/>
 <img src="https://img.shields.io/badge/scss-CC6699?style=for-the-badge&logo=sass&logoColor=white"/>
+<br>
 
 <img src="https://img.shields.io/badge/axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white"/>
 <img src="https://img.shields.io/badge/framer motion-0055FF?style=for-the-badge&logo=framer&logoColor=white">
@@ -239,14 +244,7 @@
  ┣ 📂pages
  ┃ ┣ 📂LandingPage
  ┃ ┣ 📂ListPage
- ┃ ┃ ┣ 📂Credit
- ┃ ┃ ┣ 📂Donation
- ┃ ┃ ┣ 📂MonthlyChart
  ┃ ┣ 📂MyPage
- ┃ ┃ ┣ 📂components
- ┃ ┃ ┃ ┣ 📂IdolFavoriteList
- ┃ ┃ ┃ ┣ 📂IdolSelectList
- ┃ ┃ ┃ ┗ 📂Nothing
  ┃ ┣ 📂NotFoundPage
  ┣ 📂styles
  ┗ 📂utils
@@ -271,17 +269,17 @@
 
 ### 문제점
 
-- Github Orginazation에 대한 배포 시 유료 기능 지원 문제 ([#32](#32), [#35](#32))
-- 캐러셀 컴포넌트 내 React-Slick 슬라이드 멈춤 문제 ([#51](#51), [#65](#65))
-- 모달과 페이지 컴포넌트 간의 우선 순위 문제 ([#60](#60))
-- 페이지 이동 시, 스크롤이 그대로 유지되는 문제 ([#82](#82))
+- Github Orginazation에 대한 배포 시 유료 기능 지원 문제
+- 캐러셀 컴포넌트 내 React-Slick 슬라이드 멈춤 문제
+- 모달과 페이지 컴포넌트 간의 우선 순위 문제
+- 페이지 이동 시, 스크롤이 그대로 유지되는 문제
 
 ### 해결 방안
 
-- Git Action을 활용하여 자동 배포 및 PR 프리뷰 생성 ([#32](#32), [#35](#32))
-- React-Slick 내 설정 내용 중, useEffect가 발생될 떄, 슬라이드를 처음으로 이동하도록 변경 ([#51](#51), [#65](#65))
-- createPortal 을 활용하여 DOM 구조에 종속되지 않도록 구현 ([#60](#60))
-- 스크롤을 초기화하는 Hook을 구현하여, 각 페이지마다 적용되도록 변경 ([#60](#60))
+- Git Action을 활용하여 자동 배포 및 PR 프리뷰 생성 ([#32](https://github.com/sprint6-part2/fandom-k/pull/32), [#35](https://github.com/sprint6-part2/fandom-k/pull/35))
+- React-Slick 내 설정 내용 중, useEffect가 발생될 떄, 슬라이드를 처음으로 이동하도록 변경 ([#51](https://github.com/sprint6-part2/fandom-k/pull/51), [#65](https://github.com/sprint6-part2/fandom-k/pull/65))
+- createPortal 을 활용하여 DOM 구조에 종속되지 않도록 구현 ([#60](https://github.com/sprint6-part2/fandom-k/pull/60))
+- 스크롤을 초기화하는 Hook을 구현하여, 각 페이지마다 적용되도록 변경 ([#60](https://github.com/sprint6-part2/fandom-k/pull/60))
 
 <br>
 
