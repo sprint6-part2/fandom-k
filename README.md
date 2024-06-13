@@ -8,6 +8,11 @@
 https://fandom-k.vercel.app
 <br>
 
+## 🔗 발표 자료
+
+https://www.canva.com/design/DAGFB1jYCs8/2sdofvC198HH8-4ix5SFbQ/edit
+<br>
+
 ## 🏃프로젝트 소개
 
 **아이돌 조공 플랫폼 Fandom-K**
